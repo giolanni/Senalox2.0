@@ -1,6 +1,6 @@
 
 # ---- File: C:\Users\GioAsus\senalox\main.py ----
-from shared.data_loader import ... load_estrazioni_multifile
+from shared.data_loader import load_estrazioni_multifile
 from src.core.generator import genera_sestina_pesata
 from src.simulation.backtesting import simulazione_storica,simulazione_storica_completa
 
@@ -493,7 +493,7 @@ class MainWindow(tk.Tk):
 
 # ---- File: C:\Users\GioAsus\senalox\src\ml\optimizer.py ----
 from typing import List, Dict
-from src.model import Estrazione
+from shared.models.estrazione import Estrazione
 
 def train_weight_optimizer(estrazioni: List[Estrazione]) -> Dict[str, float]:
     # Implementazione dell'ottimizzazione dei pesi tramite ML

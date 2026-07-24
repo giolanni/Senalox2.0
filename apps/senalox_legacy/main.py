@@ -1,5 +1,5 @@
 import argparse
-from shared.data_loader import ... load_estrazioni_multifile
+from shared.data_loader import load_estrazioni_multifile
 from src.core.generator import genera_sestina_pesata
 from src.core.simulation import simulazione_storica_completa
 from src.core.ml_model import DataPreprocessor, LotteryPredictor

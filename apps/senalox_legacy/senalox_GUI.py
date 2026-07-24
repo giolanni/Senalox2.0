@@ -4,11 +4,9 @@ from tkinter import ttk, messagebox, scrolledtext
 from tkcalendar import DateEntry
 from datetime import datetime
 
-from shared.data_loader import (
-    load_estrazioni_multifile,
-    load_estrazioni_filtered,
-)
+from shared.data_loader import load_estrazioni_filtered
 from src.core.generator import genera_sestina_pesata, genera_pool_pesato
+from shared.algorithm_info import get_algorithm_description
 
 from src.core.pattern_analyzer import (
     ricorrenze_per_data,
@@ -30,11 +28,18 @@ class SenaloxGUI:
     def __init__(self, master, start_year=None):
         self.master = master
         self.start_year = start_year
-        self.estrazioni = load_estrazioni_filtered("./data", start_year)
-        
-        master.title("Senalox - Generatore SuperEnalotto")
-        ttk.Label(master, text=self.get_data_range_text(), font=('Arial', 10)).pack(pady=5)
-        master.geometry("800x600")
+        self.estrazioni = load_estrazioni_filtered(start_year=start_year)
+
+        # Modalità statistica attiva: OVERALL oppure NEW MODE (2009+).
+        self.mode_var = tk.StringVar(
+            value="NEW_MODE" if start_year == 2009 else "OVERALL"
+        )
+        self.mode_status_var = tk.StringVar()
+
+        master.title("Senalox 1.0 - Generatore SuperEnalotto")
+        master.geometry("800x650")
+
+        self.create_mode_selector()
 
         self.notebook = ttk.Notebook(master)
         self.notebook.pack(expand=True, fill="both")
@@ -44,29 +49,112 @@ class SenaloxGUI:
         self.create_pattern_analysis_tab()
         self.create_historical_analysis_tab()
 
+
+    def create_mode_selector(self):
+        """
+        Crea il selettore della modalità statistica e mostra sempre
+        quale archivio è attualmente utilizzato.
+        """
+        mode_frame = ttk.LabelFrame(
+            self.master,
+            text="Archivio statistico",
+            padding=10,
+        )
+        mode_frame.pack(fill=tk.X, padx=10, pady=(10, 5))
+
+        ttk.Radiobutton(
+            mode_frame,
+            text="OVERALL - tutte le estrazioni",
+            variable=self.mode_var,
+            value="OVERALL",
+            command=self.change_mode,
+        ).pack(side=tk.LEFT, padx=(0, 20))
+
+        ttk.Radiobutton(
+            mode_frame,
+            text="NEW MODE - dal 01/07/2009",
+            variable=self.mode_var,
+            value="NEW_MODE",
+            command=self.change_mode,
+        ).pack(side=tk.LEFT)
+
+        ttk.Label(
+            self.master,
+            textvariable=self.mode_status_var,
+            font=("Arial", 10, "bold"),
+        ).pack(pady=(0, 5))
+
+        self.update_mode_status()
+
+    def change_mode(self):
+        """Ricarica le estrazioni secondo la modalità scelta dall'utente."""
+        try:
+            if self.mode_var.get() == "NEW_MODE":
+                self.start_year = 2009
+            else:
+                self.start_year = None
+
+            self.estrazioni = load_estrazioni_filtered(
+                start_year=self.start_year
+            )
+
+            self.update_mode_status()
+
+        except Exception as error:
+            messagebox.showerror(
+                "Errore",
+                f"Impossibile cambiare modalità:\n{error}",
+            )
+
+    def update_mode_status(self):
+        """Aggiorna l'indicatore visibile della modalità attiva."""
+        if self.start_year == 2009:
+            description = "NEW MODE (2009+) - estrazioni dal 01/07/2009"
+        else:
+            description = "OVERALL (FULL) - tutte le estrazioni disponibili"
+
+        self.mode_status_var.set(
+            f"MODALITÀ ATTIVA: {description} | "
+            f"Estrazioni caricate: {len(self.estrazioni)}"
+        )
+
+        self.master.title(f"Senalox 1.0 - {description}")
+
     def create_tabs(self):
         """Crea i vari tab per ogni metodo di generazione."""
         self.tabs = {}
 
         methods = [
-            ("Frequenze", self.generate_by_frequenze,
-             "Questo metodo analizza la frequenza con cui ogni numero è stato estratto storicamente. "
-             "I numeri più frequenti sono considerati più probabili per le estrazioni future."),
-            ("Ritardi", self.generate_by_ritardi,
-             "Questo metodo considera il tempo trascorso dall'ultima estrazione di ciascun numero. "
-             "I numeri con i ritardi più lunghi sono considerati più probabili per le prossime estrazioni."),
-            ("Somme", self.generate_by_somme,
-             "Questo metodo analizza la somma dei numeri estratti in ogni estrazione. "
-             "Genera una sestina con una somma vicina alla media storica delle somme."),
-            ("Parità", self.generate_by_parita,
-             "Questo metodo esamina la distribuzione di numeri pari e dispari nelle estrazioni passate. "
-             "Genera una sestina che riflette la tendenza storica di parità/disparità."),
-            ("Decine", self.generate_by_decine,
-             "Questo metodo analizza la distribuzione dei numeri per decine (1-10, 11-20, ecc.). "
-             "Genera una sestina che riflette la distribuzione storica delle decine."),
-            ("Sequenze", self.generate_by_sequenze,
-             "Questo metodo cerca sequenze di numeri consecutivi nelle estrazioni passate. "
-             "Genera una sestina che include possibili sequenze basate sui pattern storici.")
+            (
+                "Frequenze",
+                self.generate_by_frequenze,
+                get_algorithm_description("Frequenze"),
+            ),
+            (
+                "Ritardi",
+                self.generate_by_ritardi,
+                get_algorithm_description("Ritardi"),
+            ),
+            (
+                "Somme",
+                self.generate_by_somme,
+                get_algorithm_description("Somme"),
+            ),
+            (
+                "Parità",
+                self.generate_by_parita,
+                get_algorithm_description("Parità"),
+            ),
+            (
+                "Decine",
+                self.generate_by_decine,
+                get_algorithm_description("Decine"),
+            ),
+            (
+                "Sequenze",
+                self.generate_by_sequenze,
+                get_algorithm_description("Sequenze"),
+            ),
         ]
 
         for method_name, method_function, description in methods:
@@ -75,7 +163,12 @@ class SenaloxGUI:
             self.tabs[method_name] = frame
 
             # Aggiungi descrizione del metodo
-            desc_text = scrolledtext.ScrolledText(frame, wrap=tk.WORD, height=4)
+            desc_text = scrolledtext.ScrolledText(
+                frame,
+                wrap=tk.WORD,
+                height=10,
+                font=("Arial", 10),
+            )
             desc_text.insert(tk.INSERT, description)
             desc_text.config(state=tk.DISABLED)
             desc_text.pack(pady=10, padx=10, fill=tk.X)
@@ -101,10 +194,8 @@ class SenaloxGUI:
         self.tabs["Generazione Pesata"] = frame
 
         # Descrizione del metodo
-        desc_text = scrolledtext.ScrolledText(frame, wrap=tk.WORD, height=4)
-        desc_text.insert(tk.INSERT, "Questo metodo genera due tipi di sestine basate sulla frequenza storica dei numeri:\n"
-                                     "- Sestina Random: Una sestina generata casualmente, dando più peso ai numeri estratti più spesso.\n"
-                                     "- Sestina Top: Una sestina composta dai 6 numeri più frequenti, basata sull'analisi storica.")
+        desc_text = scrolledtext.ScrolledText(frame, wrap=tk.WORD, height=10)
+        desc_text.insert(tk.INSERT, get_algorithm_description("Generazione Pesata"),)
         desc_text.config(state=tk.DISABLED)
         desc_text.pack(pady=10, padx=10, fill=tk.X)
 
@@ -122,15 +213,20 @@ class SenaloxGUI:
         copy_button.pack(pady=5)
     
     def load_estrazioni(self):
-        """Carica le estrazioni dal file CSV."""
-        try:
-            estrazioni = load_estrazioni_multifile("./data")
-            if not estrazioni:
-                raise ValueError("Nessuna estrazione caricata")
-            return estrazioni
-        except Exception as e:
-            messagebox.showerror("Errore", f"Errore durante il caricamento delle estrazioni: {e}")
+        """
+        Restituisce le estrazioni già caricate per la modalità attiva.
+
+        Non rilegge l'archivio OVERALL: in questo modo tutte le generazioni
+        rispettano davvero la scelta OVERALL oppure NEW MODE.
+        """
+        if not self.estrazioni:
+            messagebox.showerror(
+                "Errore",
+                "Nessuna estrazione disponibile nella modalità selezionata.",
+            )
             return None
+
+        return self.estrazioni
         
     def generate_sestina(self, method_function, tab_name):
         """Genera una sestina utilizzando il metodo specificato."""
@@ -321,7 +417,20 @@ class SenaloxGUI:
         selected_date = datetime.combine(selected_date, datetime.min.time())
             
         # Filtra ulteriormente le estrazioni fino alla data selezionata
-        historical_estrazioni = [e for e in filtered_estrazioni if e.data <= selected_date]
+        historical_estrazioni = [
+            e
+            for e in filtered_estrazioni
+            if (
+                e.data.date()
+                if isinstance(e.data, datetime)
+                else e.data
+            )
+            <= (
+                selected_date.date()
+                if isinstance(selected_date, datetime)
+                else selected_date
+            )
+        ]
 
         if not historical_estrazioni:
             messagebox.showwarning("Attenzione", "Nessuna estrazione trovata prima della data selezionata.")

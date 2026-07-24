@@ -1,6 +1,6 @@
 from datetime import datetime
 import random
-from shared.data_loader import ... load_estrazioni_filtered
+from shared.data_loader import load_estrazioni_filtered
 
 class StrategyOptimizer:
     def __init__(self, data_path, start_year=None):

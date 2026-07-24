@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-from shared.data_loader import ... load_estrazioni_multifile
+from shared.data_loader import load_estrazioni_multifile
 from src.core.generator import genera_sestina, STRATEGIES
 
 class SenaloxGUI:
