@@ -5,6 +5,7 @@ from datetime import date, datetime
 from shared import data_loader as loader
 from src.core import analyzer, generator
 from src.gui.components.strategies_tab import StrategyTab
+from shared.algorithm_info import get_algorithm_description
 
 
 class MainWindow(tk.Tk):
@@ -103,54 +104,54 @@ class MainWindow(tk.Tk):
         self.create_strategy_tabs()
     
     def create_strategy_tabs(self):
-    """
-    Ricrea i tab delle strategie usando la modalità dati attualmente attiva.
-    """
+        """
+        Ricrea i tab delle strategie usando la modalità dati attualmente attiva.
+        """
 
-    # Rimuove tutti i vecchi tab, mantenendo soltanto la Home.
-    for tab in self.notebook.tabs()[1:]:
-        self.notebook.forget(tab)
+        # Rimuove tutti i vecchi tab, mantenendo soltanto la Home.
+        for tab in self.notebook.tabs()[1:]:
+            self.notebook.forget(tab)
 
-    # Costruisce il testo della modalità attualmente selezionata.
-    if self.current_mode == "2009":
-        dataset_label = "NEW MODE — dal 01/07/2009"
-    else:
-        dataset_label = "OVERALL — archivio completo"
+        # Costruisce il testo della modalità attualmente selezionata.
+        if self.current_mode == "2009":
+            dataset_label = "NEW MODE — dal 01/07/2009"
+        else:
+            dataset_label = "OVERALL — archivio completo"
 
-    extraction_count = len(self.estrazioni_filtered)
+        extraction_count = len(self.estrazioni_filtered)
 
-    # Crea un tab per ciascuna strategia registrata nel generatore.
-    for name in self.generatore.strategie.keys():
+        # Crea un tab per ciascuna strategia registrata nel generatore.
+        for name in self.generatore.strategie.keys():
 
-        tab = StrategyTab(
+            tab = StrategyTab(
+                parent=self.notebook,
+                name=name,
+                generator=lambda n=name: self.generatore.strategie[n][0].generate(),
+                description=get_algorithm_description(name),
+                dataset_label=dataset_label,
+                extraction_count=extraction_count,
+            )
+
+            self.notebook.add(
+                tab,
+                text=name,
+            )
+
+        # Tab della strategia combinata pesata.
+        pesata_tab = StrategyTab(
             parent=self.notebook,
-            name=name,
-            generator=lambda n=name: self.generatore.strategie[n][0].generate(),
-            description=get_algorithm_description(name),
+            name="Pesata",
+            generator=self.generatore.genera_sestina_pesata,
+            description=get_algorithm_description("Pesata"),
             dataset_label=dataset_label,
             extraction_count=extraction_count,
         )
 
         self.notebook.add(
-            tab,
-            text=name,
+            pesata_tab,
+            text="Combinata Pesata",
         )
-
-    # Tab della strategia combinata pesata.
-    pesata_tab = StrategyTab(
-        parent=self.notebook,
-        name="Pesata",
-        generator=self.generatore.genera_sestina_pesata,
-        description=get_algorithm_description("Pesata"),
-        dataset_label=dataset_label,
-        extraction_count=extraction_count,
-    )
-
-    self.notebook.add(
-        pesata_tab,
-        text="Combinata Pesata",
-    )
-    
+        
     def load_initial_data(self):
         try:
             self.estrazioni = loader.load_estrazioni_multifile()
