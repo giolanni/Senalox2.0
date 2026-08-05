@@ -1,0 +1,6 @@
+ESPERIMENTO PARITÀ — NEW_MODE
+Estrazioni analizzate: 2818
+Periodo: 2009-07-02 / 2026-08-04
+Configurazione più frequente: 3 pari + 3 dispari (31.01%)
+
+Nota metodologica: la frequenza descrittiva non dimostra capacità predittiva. Le transizioni e la stabilità temporale servono a decidere se costruire un backtest dedicato.

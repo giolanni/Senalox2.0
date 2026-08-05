@@ -1,0 +1,6 @@
+ESPERIMENTO PARITÀ — OVERALL
+Estrazioni analizzate: 4243
+Periodo: 1997-12-03 / 2026-08-04
+Configurazione più frequente: 3 pari + 3 dispari (31.65%)
+
+Nota metodologica: la frequenza descrittiva non dimostra capacità predittiva. Le transizioni e la stabilità temporale servono a decidere se costruire un backtest dedicato.

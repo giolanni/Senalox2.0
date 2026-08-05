@@ -1,0 +1,33 @@
+LABORATORIO TRIGGER SINGOLO — NEW_MODE
+Estrazioni: 2818
+Finestra successiva: 9
+Dimensione gruppo: 13
+Simulazioni casuali per trigger/split: 500
+
+Baseline teorica indicativa P(>=4 in una singola estrazione): 0.3522%
+Baseline teorica indicativa in 9 estrazioni (ipotesi indipendenza): 3.1256%
+
+Migliori candidati sul TEST (ordinati per lift >=4 rispetto ai pool casuali):
+Trigger 64 | pool 03,14,25,33,46,48,52,58,68,69,76,81,85 | occorrenze 35 | >=4 17.14% | baseline 3.19% | lift +13.95 pp | membri stabili 4/13: 03,14,52,69
+Trigger 44 | pool 02,05,23,35,36,39,56,57,60,64,75,81,82 | occorrenze 35 | >=4 14.29% | baseline 3.10% | lift +11.18 pp | membri stabili 3/13: 23,60,82
+Trigger 54 | pool 05,10,19,22,25,39,47,49,67,68,69,75,85 | occorrenze 37 | >=4 13.51% | baseline 2.94% | lift +10.58 pp | membri stabili 1/13: 39
+Trigger 45 | pool 01,11,18,26,34,38,44,55,58,63,75,78,81 | occorrenze 41 | >=4 12.20% | baseline 3.07% | lift +9.13 pp | membri stabili 3/13: 11,58,78
+Trigger 06 | pool 16,21,22,27,37,38,41,42,51,59,79,80,88 | occorrenze 43 | >=4 11.63% | baseline 3.11% | lift +8.52 pp | membri stabili 3/13: 37,42,59
+Trigger 39 | pool 03,06,12,17,23,25,34,40,62,76,81,87,89 | occorrenze 35 | >=4 11.43% | baseline 3.43% | lift +7.99 pp | membri stabili 1/13: 81
+Trigger 62 | pool 13,19,24,26,32,36,45,51,52,63,64,70,83 | occorrenze 37 | >=4 10.81% | baseline 2.84% | lift +7.97 pp | membri stabili 5/13: 19,45,51,63,83
+Trigger 81 | pool 01,13,20,38,51,57,61,69,73,74,75,77,83 | occorrenze 38 | >=4 10.53% | baseline 3.03% | lift +7.50 pp | membri stabili 5/13: 38,51,61,73,83
+Trigger 72 | pool 10,16,23,29,35,41,44,47,50,57,68,75,79 | occorrenze 39 | >=4 10.26% | baseline 3.24% | lift +7.02 pp | membri stabili 4/13: 10,29,41,50
+Trigger 35 | pool 03,05,07,09,11,21,22,40,48,58,65,82,90 | occorrenze 32 | >=4 9.38% | baseline 3.30% | lift +6.08 pp | membri stabili 2/13: 40,48
+Trigger 43 | pool 01,03,28,30,32,39,60,63,64,70,75,84,86 | occorrenze 45 | >=4 8.89% | baseline 3.12% | lift +5.77 pp | membri stabili 2/13: 60,70
+Trigger 89 | pool 03,04,05,08,16,33,35,65,71,72,76,79,85 | occorrenze 35 | >=4 8.57% | baseline 3.04% | lift +5.53 pp | membri stabili 3/13: 33,35,72
+Trigger 29 | pool 02,07,16,28,31,45,56,67,68,72,74,77,84 | occorrenze 35 | >=4 8.57% | baseline 3.10% | lift +5.47 pp | membri stabili 3/13: 02,16,84
+Trigger 73 | pool 10,12,13,16,19,23,27,35,39,43,52,64,68 | occorrenze 47 | >=4 8.51% | baseline 3.18% | lift +5.33 pp | membri stabili 3/13: 35,43,68
+Trigger 27 | pool 01,14,19,25,41,43,52,60,63,64,67,71,81 | occorrenze 37 | >=4 8.11% | baseline 3.04% | lift +5.06 pp | membri stabili 4/13: 01,41,43,52
+
+FILE AGGIUNTIVI:
+- single_trigger_members_w9_p13_new_mode.csv: spiega perche' ogni numero e' stato selezionato e come si comporta nei tre split.
+- single_trigger_positions_w9_p13_new_mode.csv: mostra la posizione +1, +2, ..., +9 in cui ogni numero compare.
+- single_trigger_stability_w9_p13_new_mode.csv: riassume quanti membri del pool mantengono lift positivo in validazione e test.
+
+AVVERTENZA: un risultato positivo sul TEST e' soltanto un candidato. Deve essere stabile
+su piu' finestre, periodi e dataset prima di essere promosso a regola validata.
