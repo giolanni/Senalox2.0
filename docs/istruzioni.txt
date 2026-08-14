@@ -1,0 +1,8 @@
+
+#vedere i trigger attivi
+python -m analysis.laboratory.trigger_patterns.operational.active_triggers
+
+#vedere i risultlati dei active_triggers
+python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026
+python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details
+python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details --csv
