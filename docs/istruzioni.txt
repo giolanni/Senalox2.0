@@ -6,3 +6,13 @@ python -m analysis.laboratory.trigger_patterns.operational.active_triggers
 python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026
 python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details
 python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details --csv
+
+
+# ultima estrazione
+python -m analysis.laboratory.trigger_patterns.operational.check_draws
+
+# ultime X estrazioni
+python -m analysis.laboratory.trigger_patterns.operational.check_draws -x 10
+
+# ultime X + CSV
+python -m analysis.laboratory.trigger_patterns.operational.check_draws -x 10 -csv
