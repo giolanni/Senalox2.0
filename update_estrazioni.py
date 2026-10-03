@@ -44,11 +44,11 @@ MESI = {
 # Esempio:
 # 02 ott  02 31 55 56 73 84  77  41  158
 RIGA_ESTRAZIONE = re.compile(
-    r"(?<!\\d)(\\d{1,2})\\s+"
-    r"(gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)\\s+"
-    r"(\\d{1,2})\\s+(\\d{1,2})\\s+(\\d{1,2})\\s+"
-    r"(\\d{1,2})\\s+(\\d{1,2})\\s+(\\d{1,2})\\s+"
-    r"(\\d{1,2})\\s+(\\d{1,2})\\s+(\\d+)(?!\\d)",
+    r"(?<!\d)(\d{1,2})\s+"
+    r"(gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)\s+"
+    r"(\d{1,2})\s+(\d{1,2})\s+(\d{1,2})\s+"
+    r"(\d{1,2})\s+(\d{1,2})\s+(\d{1,2})\s+"
+    r"(\d{1,2})\s+(\d{1,2})\s+(\d+)(?!\d)",
     re.IGNORECASE,
 )
 
@@ -78,7 +78,7 @@ def scarica_anno(anno: int) -> list[dict[str, object]]:
     # Il sito puo' separare i valori della stessa estrazione in celle/tag HTML.
     # Normalizziamo quindi l'intera pagina in un flusso di testo unico.
     testo = BeautifulSoup(response.text, "html.parser").get_text(" ", strip=True)
-    testo = re.sub(r"\\s+", " ", testo)
+    testo = re.sub(r"\s+", " ", testo)
 
     estrazioni: list[dict[str, object]] = []
 
