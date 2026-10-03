@@ -136,36 +136,37 @@ def main():
 
         headers = [
             "DataEstrazione",
+            "Trigger",
+            "Risultato",
             "NumeriEstratti",
             "Jolly",
-            "Trigger",
+            "NumeriIndovinati",
+            "JollyPresente",
+            "EstrazioneSu9",
             "PrimaAttivazione",
             "UltimaAttivazione",
             "AttivazioniCiclo",
             "RiattivazioniCiclo",
-            "EstrazioneSu9",
-            "NumeriIndovinati",
-            "JollyPresente",
-            "Risultato",
             "NumeriSistema",
         ]
 
-        # RIGA 2 FISSA DI SPIEGAZIONE.
-        descriptions = [
-            "Data dell'estrazione analizzata",
-            "I 6 numeri principali estratti",
-            "Numero Jolly dell'estrazione",
-            "Trigger globale attivo",
-            "Data della prima attivazione del ciclo globale corrente",
-            "Data dell'ultima attivazione o riattivazione del trigger",
-            "Numero totale di attivazioni nel ciclo globale corrente",
-            "Numero di riattivazioni avvenute mentre il trigger era gia attivo",
-            "Posizione dell'estrazione rispetto all'ultima attivazione (da 1 a 9)",
-            "Quanti dei 6 estratti sono presenti nei 13 numeri del sistema",
-            "SI se il Jolly e presente nei 13 numeri del sistema, altrimenti NO",
-            "Risultato ottenuto: 2, 3, 4, 5, 5+1 oppure 6",
-            "I 13 numeri associati al sistema trigger",
-        ]
+        # RIGA 2 FISSA DI SPIEGAZIONE, nello stesso ordine delle colonne.
+        descriptions_by_header = {
+            "DataEstrazione": "Data dell'estrazione analizzata",
+            "Trigger": "Trigger globale attivo",
+            "Risultato": "Risultato ottenuto: 2, 3, 4, 5, 5+1 oppure 6",
+            "NumeriEstratti": "I 6 numeri principali estratti",
+            "Jolly": "Numero Jolly dell'estrazione",
+            "NumeriIndovinati": "Quanti dei 6 estratti sono presenti nei 13 numeri del sistema",
+            "JollyPresente": "SI se il Jolly e presente nei 13 numeri del sistema, altrimenti NO",
+            "EstrazioneSu9": "Posizione dell'estrazione rispetto all'ultima attivazione (da 1 a 9)",
+            "PrimaAttivazione": "Data della prima attivazione del ciclo globale corrente",
+            "UltimaAttivazione": "Data dell'ultima attivazione o riattivazione del trigger",
+            "AttivazioniCiclo": "Numero totale di attivazioni nel ciclo globale corrente",
+            "RiattivazioniCiclo": "Numero di riattivazioni avvenute mentre il trigger era gia attivo",
+            "NumeriSistema": "I 13 numeri associati al sistema trigger",
+        }
+        descriptions = [descriptions_by_header[h] for h in headers]
 
         with outfile.open("w", newline="", encoding="utf-8-sig") as f:
             writer = csv.writer(f, delimiter=";")
