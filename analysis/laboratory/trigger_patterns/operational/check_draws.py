@@ -140,13 +140,8 @@ def main():
             "Risultato",
             "NumeriEstratti",
             "Jolly",
-            "NumeriIndovinati",
             "JollyPresente",
             "EstrazioneSu9",
-            "PrimaAttivazione",
-            "UltimaAttivazione",
-            "AttivazioniCiclo",
-            "RiattivazioniCiclo",
             "NumeriSistema",
         ]
 
@@ -157,13 +152,8 @@ def main():
             "Risultato": "Risultato ottenuto: 2, 3, 4, 5, 5+1 oppure 6",
             "NumeriEstratti": "I 6 numeri principali estratti",
             "Jolly": "Numero Jolly dell'estrazione",
-            "NumeriIndovinati": "Quanti dei 6 estratti sono presenti nei 13 numeri del sistema",
             "JollyPresente": "SI se il Jolly e presente nei 13 numeri del sistema, altrimenti NO",
             "EstrazioneSu9": "Posizione dell'estrazione rispetto all'ultima attivazione (da 1 a 9)",
-            "PrimaAttivazione": "Data della prima attivazione del ciclo globale corrente",
-            "UltimaAttivazione": "Data dell'ultima attivazione o riattivazione del trigger",
-            "AttivazioniCiclo": "Numero totale di attivazioni nel ciclo globale corrente",
-            "RiattivazioniCiclo": "Numero di riattivazioni avvenute mentre il trigger era gia attivo",
             "NumeriSistema": "I 13 numeri associati al sistema trigger",
         }
         descriptions = [descriptions_by_header[h] for h in headers]
