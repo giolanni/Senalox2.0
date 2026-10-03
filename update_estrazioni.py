@@ -105,7 +105,7 @@ def scarica_anno(anno: int) -> list[dict[str, object]]:
             or not 1 <= superstar <= 90
         ):
             print(
-                f"ATTENZIONE: riga non valida ignorata: {riga.strip()}",
+                f"ATTENZIONE: estrazione non valida ignorata: {' '.join(valori)}",
                 file=sys.stderr,
             )
             continue
