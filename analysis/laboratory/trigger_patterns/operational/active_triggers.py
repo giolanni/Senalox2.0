@@ -1,5 +1,5 @@
 """
-Mostra i sistemi Trigger NEW MODE attivi sull'ultima estrazione disponibile.
+Mostra i sistemi Trigger NEW MODE giocabili dalla prossima estrazione.
 
 Logica globale:
 - un trigger compare una sola volta tra gli attivi;
@@ -33,17 +33,26 @@ def main():
     last_index = len(estrazioni) - 1
     last_date = estrazioni[-1].data
 
+    # final_states include anche un trigger che ha appena consumato la nona
+    # e ultima estrazione utile: serve a check_draws per valutare quella
+    # estrazione, ma non e piu giocabile dalla successiva.
+    playable_states = {
+        trigger: state
+        for trigger, state in final_states.items()
+        if last_index < state["active_until_idx"]
+    }
+
     print("=" * 86)
     print("SENALOX - TRIGGER ATTIVI GLOBALI (NEW MODE)")
     print(f"Ultima estrazione: {last_date:%d/%m/%Y}")
     print("=" * 86)
 
-    if not final_states:
-        print("Nessun trigger attivo.")
+    if not playable_states:
+        print("Nessun trigger attivo per la prossima estrazione.")
         return
 
-    for trigger in sorted(final_states):
-        state = final_states[trigger]
+    for trigger in sorted(playable_states):
+        state = playable_states[trigger]
         cfg = TRIGGER_SYSTEMS[trigger]
 
         first_date = estrazioni[state["cycle_start_idx"]].data
