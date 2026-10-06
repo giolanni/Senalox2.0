@@ -7,7 +7,11 @@ python -m analysis.laboratory.trigger_patterns.operational.trigger_performance -
 python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details
 python -m analysis.laboratory.trigger_patterns.operational.trigger_performance --year 2026 --details --csv
 
+#AGGIORNARE LE estrazioni
 
+python update_estrazioni.py
+
+@@@@@@@ CHECK ESTRZIONI @@@@@@@@@@@
 # ultima estrazione
 python -m analysis.laboratory.trigger_patterns.operational.check_draws
 
