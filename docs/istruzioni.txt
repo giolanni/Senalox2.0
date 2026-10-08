@@ -25,3 +25,5 @@ python -m analysis.laboratory.trigger_patterns.operational.check_draws -x 10 -cs
 ############ GENERA ESTRAZIONI ################
 
 python -m analysis.laboratory.trigger_patterns.operational.generate_sestine -n 3
+
+python -m analysis.laboratory.trigger_patterns.operational.generate_sestine -n 3 --periodo 4mesi
