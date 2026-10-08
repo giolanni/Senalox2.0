@@ -20,3 +20,8 @@ python -m analysis.laboratory.trigger_patterns.operational.check_draws -x 10
 
 # ultime X + CSV
 python -m analysis.laboratory.trigger_patterns.operational.check_draws -x 10 -csv
+
+
+############ GENERA ESTRAZIONI ################
+
+python -m analysis.laboratory.trigger_patterns.operational.generate_sestine -n 3
