@@ -19,9 +19,14 @@ from datetime import date, datetime
 from io import StringIO
 
 import requests
+import truststore
 from bs4 import BeautifulSoup
 
 from shared.paths import ESTRAZIONI_FILE
+
+# Usa anche le autorita di certificazione attendibili di Windows.
+# Mantiene attiva la verifica HTTPS (nessun verify=False).
+truststore.inject_into_ssl()
 
 
 URL_TEMPLATE = "https://franknet.altervista.org/superena/{anno}.HTM"
