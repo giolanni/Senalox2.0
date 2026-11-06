@@ -14,6 +14,7 @@ LOGICA GLOBALE:
 
 import argparse
 import csv
+from datetime import datetime
 from pathlib import Path
 
 from shared.data_loader import load_estrazioni_new_mode
@@ -39,7 +40,19 @@ def main():
     parser.add_argument(
         "-csv", "--csv", action="store_true", dest="export_csv"
     )
+    parser.add_argument("--dal", help="Data iniziale GG/MM/AAAA (inclusa)")
+    parser.add_argument("--al", help="Data finale GG/MM/AAAA (inclusa)")
     args = parser.parse_args()
+    if bool(args.dal) != bool(args.al):
+        parser.error("--dal e --al devono essere indicati insieme")
+    if args.dal:
+        try:
+            date_from = datetime.strptime(args.dal, "%d/%m/%Y").date()
+            date_to = datetime.strptime(args.al, "%d/%m/%Y").date()
+        except ValueError:
+            parser.error("Date non valide: usare GG/MM/AAAA")
+        if date_from > date_to:
+            parser.error("La data iniziale deve precedere quella finale")
 
     if args.x < 1:
         parser.error("-x deve essere almeno 1")
@@ -53,13 +66,20 @@ def main():
 
     n = min(args.x, len(estrazioni))
     first_target_idx = len(estrazioni) - n
+    target_indices = list(range(first_target_idx, len(estrazioni)))
+    if args.dal:
+        target_indices = [i for i, d in enumerate(estrazioni) if date_from <= d.data <= date_to]
+        n = len(target_indices)
+        if not n:
+            print("Nessuna estrazione trovata nel periodo richiesto.")
+            return
     csv_rows = []
 
     print("=" * 104)
     print(f"SENALOX - CONTROLLO RISULTATI TRIGGER GLOBALI - ULTIME {n} ESTRAZIONI")
     print("=" * 104)
 
-    for target_idx in range(first_target_idx, len(estrazioni)):
+    for target_idx in target_indices:
         draw = estrazioni[target_idx]
         active_states = snapshots[target_idx]
         result_rows = []
