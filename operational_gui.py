@@ -43,7 +43,8 @@ class OperationalPanel(tk.Tk):
             ("Ranking attivi (anno / 4 mesi)", self._ranking),
         ])
         self._section(controls, "Risultati e sestine", [
-            ("Controlla ultime estrazioni", self._check),
+            ("Controlla ultime N estrazioni", self._check),
+            ("Controlla intervallo di date", self._check_dates),
             ("Genera sestine", self._generate),
         ])
         params = ttk.LabelFrame(outer, text="Parametri", padding=10)
@@ -61,6 +62,12 @@ class OperationalPanel(tk.Tk):
         ttk.Label(params, text="Periodo ranking").grid(row=0, column=6, padx=4)
         ttk.Combobox(params, textvariable=self.period, values=("auto", "anno", "4mesi"),
                      state="readonly", width=8).grid(row=0, column=7, padx=4)
+        self.date_from = tk.StringVar()
+        self.date_to = tk.StringVar()
+        ttk.Label(params, text="Dal (GG/MM/AAAA)").grid(row=1, column=0, columnspan=2, pady=(10, 0))
+        ttk.Entry(params, textvariable=self.date_from, width=13).grid(row=1, column=2, columnspan=2, pady=(10, 0))
+        ttk.Label(params, text="Al (GG/MM/AAAA)").grid(row=1, column=4, columnspan=2, pady=(10, 0))
+        ttk.Entry(params, textvariable=self.date_to, width=13).grid(row=1, column=6, columnspan=2, pady=(10, 0))
         bar = ttk.Frame(outer)
         bar.pack(fill="x", pady=(4, 6))
         self.status = tk.StringVar(value="Pronto")
@@ -101,6 +108,19 @@ class OperationalPanel(tk.Tk):
         n = self._positive(self.draws.get(), "Ultime estrazioni")
         if n is not None:
             self._run([OPS + ".check_draws", "-x", str(n)])
+
+    def _check_dates(self):
+        from datetime import datetime
+        start, end = self.date_from.get().strip(), self.date_to.get().strip()
+        try:
+            a = datetime.strptime(start, "%d/%m/%Y").date()
+            b = datetime.strptime(end, "%d/%m/%Y").date()
+            if a > b:
+                raise ValueError
+        except ValueError:
+            messagebox.showerror("Date non valide", "Indica Dal e Al in formato GG/MM/AAAA, in ordine cronologico.")
+            return
+        self._run([OPS + ".check_draws", "--dal", start, "--al", end])
 
     def _performance(self):
         year = self._positive(self.year.get(), "Anno")
