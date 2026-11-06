@@ -53,8 +53,8 @@ class SenaloxLauncher(tk.Tk):
         super().__init__()
 
         self.title("Senalox")
-        self.geometry("620x390")
-        self.minsize(620, 390)
+        self.geometry("620x510")
+        self.minsize(620, 510)
 
         self._configure_style()
         self._create_widgets()
@@ -180,6 +180,18 @@ class SenaloxLauncher(tk.Tk):
         ).pack(
             pady=(8, 0),
         )
+
+        operational_box = ttk.LabelFrame(container, text="Strumenti operativi NEW MODE", padding=16)
+        operational_box.pack(fill="x", pady=(16, 0))
+        ttk.Button(operational_box, text="Apri pannello operativo",
+                   style="Version.TButton", command=self._launch_operational).pack(fill="x")
+        ttk.Label(operational_box,
+                  text="Estrazioni, controlli, trigger, classifiche e sestine.",
+                  style="Status.TLabel").pack(pady=(8, 0))
+
+    def _launch_operational(self) -> None:
+        self._launch(working_dir=PROJECT_ROOT, script_name="operational_gui.py",
+                     label="Strumenti operativi Senalox")
 
     def _launch_legacy(self) -> None:
         """
