@@ -40,6 +40,7 @@ def main():
     parser.add_argument("-n", "--numero", type=int, required=True, help="Numero di sestine")
     parser.add_argument("--periodo", choices=("auto", "anno", "4mesi"), default="auto")
     parser.add_argument("--seed", type=int, help="Seed per rendere ripetibile la selezione casuale")
+    parser.add_argument("--ranking-only", action="store_true", help="Mostra solo la classifica senza generare sestine")
     args = parser.parse_args()
     if args.numero < 1:
         parser.error("Il numero di sestine deve essere positivo")
@@ -71,6 +72,8 @@ def main():
     for pos, t in enumerate(ranking, 1):
         c = stats[t]
         print(f"{pos:>3} {t:>3} {c['active']:>4} " + " ".join(f"{c[k]:>3}" for k in ("2","3","4","5","5+1","6")))
+    if args.ranking_only:
+        return
     print("\nSESTINE")
     for pos, t in enumerate(ranking[:count], 1):
         stable = set(TRIGGER_SYSTEMS[t]["stable"])
