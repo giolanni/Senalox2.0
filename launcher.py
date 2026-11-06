@@ -53,8 +53,8 @@ class SenaloxLauncher(tk.Tk):
         super().__init__()
 
         self.title("Senalox")
-        self.geometry("620x510")
-        self.minsize(620, 510)
+        self.geometry("760x690")
+        self.minsize(700, 650)
 
         self._configure_style()
         self._create_widgets()
@@ -94,7 +94,7 @@ class SenaloxLauncher(tk.Tk):
 
         container = ttk.Frame(
             self,
-            padding=28,
+            padding=20,
         )
 
         container.pack(
@@ -115,7 +115,7 @@ class SenaloxLauncher(tk.Tk):
             text="Un unico accesso alla versione stabile e alla nuova evoluzione",
             style="Subtitle.TLabel",
         ).pack(
-            pady=(0, 28),
+            pady=(0, 12),
         )
 
         # ------------------------------------------------------------------
@@ -125,7 +125,7 @@ class SenaloxLauncher(tk.Tk):
         legacy_box = ttk.LabelFrame(
             container,
             text="Versione stabile",
-            padding=16,
+            padding=12,
         )
 
         legacy_box.pack(
@@ -182,7 +182,7 @@ class SenaloxLauncher(tk.Tk):
         )
 
         operational_box = ttk.LabelFrame(container, text="Strumenti operativi NEW MODE", padding=16)
-        operational_box.pack(fill="x", pady=(16, 0))
+        operational_box.pack(fill="x", pady=(12, 0))
         ttk.Button(operational_box, text="Apri pannello operativo",
                    style="Version.TButton", command=self._launch_operational).pack(fill="x")
         ttk.Label(operational_box,
