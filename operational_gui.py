@@ -47,6 +47,10 @@ class OperationalPanel(tk.Tk):
             ("Controlla intervallo di date", self._check_dates),
             ("Genera sestine", self._generate),
         ])
+        repo_bar = ttk.Frame(outer)
+        repo_bar.pack(fill="x", pady=(10, 0))
+        ttk.Button(repo_bar, text="Gestisci repository Git (stato, pull, commit, push)",
+                   command=self._open_repository).pack(fill="x")
         params = ttk.LabelFrame(outer, text="Parametri", padding=10)
         params.pack(fill="x", pady=(10, 8))
         self.year = tk.StringVar(value=str(__import__("datetime").date.today().year))
@@ -85,6 +89,14 @@ class OperationalPanel(tk.Tk):
         xscroll.grid(row=1, column=0, sticky="ew")
         frame.rowconfigure(0, weight=1)
         frame.columnconfigure(0, weight=1)
+
+    def _open_repository(self):
+        from repository_gui import RepositoryPanel
+        if getattr(self, "_repository_window", None) and self._repository_window.winfo_exists():
+            self._repository_window.lift()
+            self._repository_window.focus_force()
+        else:
+            self._repository_window = RepositoryPanel(self)
 
     def _section(self, parent, title, items):
         frame = ttk.LabelFrame(parent, text=title, padding=8)
