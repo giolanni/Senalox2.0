@@ -78,7 +78,7 @@ class WheelPage(ttk.Frame):
         self.lotti = {}
         self.ticket = None
         self.pagina = 0
-        self.periodo = tk.StringVar(value='Dal luglio 2009')
+        self.periodo = tk.StringVar()
         self.quantita = tk.StringVar(value='3')
         style = ttk.Style(self)
         style.configure('Ruote.Treeview', rowheight=28, font=('Segoe UI',10))
@@ -93,9 +93,20 @@ class WheelPage(ttk.Frame):
         self.tabs.pack(fill='both',expand=True)
         gioco = ttk.Frame(self.tabs,padding=12)
         storico = ttk.Frame(self.tabs,padding=12)
-        self.tabs.add(gioco,text='  Trigger attivi e sestine  ')
-        self.tabs.add(storico,text='  Statistiche storiche  ')
-        ttk.Label(gioco,text='Trigger per il prossimo concorso',font=('Segoe UI',14,'bold')).pack(anchor='w',pady=(0,7))
+        attivi = ttk.Frame(self.tabs,padding=12)
+        self.tabs.add(attivi,text='  Prossimo concorso  ')
+        self.tabs.add(gioco,text='  Genera sestine  ')
+        self.tabs.add(storico,text='  Risultati per metodo  ')
+        ttk.Label(attivi,text='Metodi ancora in gioco',font=('Segoe UI',14,'bold')).pack(anchor='w')
+        self.elenco = tabella(attivi,[('Metodo',160),('Segnale Lotto',115),('Già giocati',90),('Restano',80)],8)
+        self.elenco.bind('<<TreeviewSelect>>',self.scegli_attivo)
+        self.elenco.bind('<Double-1>',lambda _: self.apri_generatore())
+        self.prova = ttk.Label(attivi,wraplength=560)
+        self.prova.pack(anchor='w',pady=6)
+        self.apri = ttk.Button(attivi,text='Genera sestine per questo metodo',command=self.apri_generatore)
+        self.apri.pack(anchor='w')
+        self.apri.state(['disabled'])
+        ttk.Label(gioco,text='Sestine per il metodo',font=('Segoe UI',14,'bold')).pack(anchor='w',pady=(0,7))
         self.selettore = ttk.Combobox(gioco,state='readonly',width=34)
         self.selettore.pack(anchor='w')
         self.selettore.bind('<<ComboboxSelected>>',self.seleziona)
@@ -127,15 +138,13 @@ class WheelPage(ttk.Frame):
         self.periodi = ttk.Combobox(filtri,state='readonly',textvariable=self.periodo,width=21)
         self.periodi.pack(side='left',padx=8)
         self.periodi.bind('<<ComboboxSelected>>',self.mostra_stats)
-        self.vista = tk.StringVar(value='Tredicine · punti per concorso')
-        controllo = ttk.Combobox(filtri, textvariable=self.vista, state='readonly', width=32,
-                                 values=('Tredicine · punti per concorso', 'Coppie · punti per concorso',
-                                         'Spia accesa e spenta', 'Esito entro nove colpi'))
-        controllo.pack(side='left')
-        controllo.bind('<<ComboboxSelected>>', self.mostra_stats)
-        self.legenda = ttk.Label(storico, wraplength=550)
-        self.legenda.pack(anchor='w', pady=(8, 0))
-        self.storico = tabella(storico, [], 10)
+        ttk.Label(storico,text='Quanti numeri del metodo sono usciti nella stessa sestina?',
+                  font=('Segoe UI',12,'bold')).pack(anchor='w',pady=(10,0))
+        self.storico = tabella(storico,[('Metodo',145),('Concorsi',75),
+                                *[(f'{k} punto' if k==1 else f'{k} punti',62) for k in range(1,7)]],8)
+        self.storico.bind('<<TreeviewSelect>>',self.dettaglio_storico)
+        self.sintesi = ttk.Label(storico,wraplength=550,justify='left')
+        self.sintesi.pack(anchor='w',pady=(6,0))
         self.seleziona()
         self.refresh()
 
@@ -162,16 +171,60 @@ class WheelPage(ttk.Frame):
             messagebox.showerror('Aggiornamento trigger',str(dati),parent=self)
             return
         self.lotto,self.se,self.stats,self.attivi = dati
-        self.info.configure(text=f'Lotto {self.lotto:%d/%m/%Y}   ·   SuperEnalotto {self.se:%d/%m/%Y}')
-        self.tabs.tab(0,text=f'  Trigger attivi ({len(self.attivi)}) e sestine  ')
+        aggiornamento = f'Lotto {self.lotto:%d/%m/%Y}   ·   SuperEnalotto {self.se:%d/%m/%Y}'
+        if self.lotto != self.se:
+            aggiornamento += f'   ·   Situazione al {min(self.lotto,self.se):%d/%m/%Y}'
+        self.info.configure(text=aggiornamento)
+        nomi_attivi = sorted({self.nome_segnale(n) for n in self.attivi})
+        self.tabs.tab(0,text=f'  Prossimo concorso ({len(nomi_attivi)} attivi)  ')
+        precedente = self.elenco.selection()
+        self.elenco.delete(*self.elenco.get_children())
+        for i, nome in enumerate(nomi_attivi):
+            r = self.attivi[self.variante(nome)]
+            self.elenco.insert('', 'end', iid=nome, values=(nome, r['Attivazione'].strftime('%d/%m/%Y'),
+                              r['Osservati'], 9-r['Osservati']), tags=('chiaro',) if i%2==0 else ())
+        if nomi_attivi:
+            self.elenco.selection_set(precedente[0] if precedente and precedente[0] in nomi_attivi else nomi_attivi[0])
+        self.scegli_attivo()
         nomi = sorted(self.attivi)
         self.selettore.configure(values=nomi)
         if self.selettore.get() not in nomi:
             self.selettore.set(nomi[0] if nomi else '')
         anni = sorted({r['Periodo'] for r in self.stats if r['Periodo'].isdigit()},reverse=True)
+        if not self.periodo.get():
+            self.periodo.set(str(min(self.lotto,self.se).year))
         self.periodi.configure(values=['Dal luglio 2009','Tutto lo storico',*anni])
         self.seleziona()
         self.mostra_stats()
+
+    @staticmethod
+    def nome_segnale(nome):
+        return 'Milano 10' if nome.startswith('Milano 10 ') else nome
+
+    def variante(self, nome):
+        if nome == 'Milano 10':
+            return 'Milano 10 Excel'
+        return nome
+
+    def scegli_attivo(self, event=None):
+        scelta = self.elenco.selection()
+        if not scelta:
+            self.prova.configure(text='Nessun metodo attivo alla data degli archivi.')
+            self.apri.state(['disabled'])
+            return
+        r = self.attivi[self.variante(scelta[0])]
+        pos = r['Posizione_spia']
+        motivo = f"Spia in posizione {pos}." if pos else f"Primo estratto {r['Primo_estratto_Lotto']}."
+        self.prova.configure(text=f"{scelta[0]} · Cinque estratti Lotto: {r['Estratti_Lotto']}. {motivo} "
+                                 f"Il prossimo è il colpo {r['Osservati']+1} di 9.")
+        self.apri.state(['!disabled'])
+
+    def apri_generatore(self):
+        scelta = self.elenco.selection()
+        if scelta:
+            self.selettore.set(self.variante(scelta[0]))
+            self.seleziona()
+            self.tabs.select(1)
 
     def seleziona(self, event=None):
         self.ticket = self.lotti.get(self.chiave())
@@ -229,58 +282,37 @@ class WheelPage(ttk.Frame):
     def mostra_stats(self,event=None):
         periodo = {'Tutto lo storico':'Overall','Dal luglio 2009':'New mode'}.get(self.periodo.get(),self.periodo.get())
         self.storico.delete(*self.storico.get_children())
-        vista = self.vista.get()
-        coppie = vista.startswith('Coppie')
-        soglia = 1 if coppie else 3
-        regole = {nome: (condizione, len(pool)) for nome, _, condizione, pool in REGOLE}
-        if vista == 'Spia accesa e spenta':
-            colonne = ['Metodo','3+ accesa','% accesa','3+ spenta','% spenta','Diff. p.p.']
-            legenda = ('Stessa tredicina fissa. Ogni rapporto indica concorsi con almeno tre punti / concorsi osservati. '
-                       'La differenza è in punti percentuali. Il confronto esclude i primi nove concorsi dello storico.')
-        elif vista == 'Esito entro nove colpi':
-            colonne = ['Metodo','Obiettivo','Cicli completi','Con centro','Senza centro','% con centro']
-            legenda = ('Si considerano i cicli con tutti e nove i concorsi osservabili, per anno del segnale. '
-                       'Un ciclo con più centri vale una volta. Le riattivazioni sono cicli distinti.')
+        self.righe = {r['Metodo']:r for r in self.stats if r['Periodo']==periodo}
+        for i,(nome, _, _, pool) in enumerate(REGOLE):
+            r = self.righe.get(nome, {})
+            valori = [r.get(f'Punti_{k}',0) if k<=len(pool) else '—' for k in range(1,7)]
+            self.storico.insert('','end',iid=nome,values=(nome,r.get('Concorsi_attivi_disputati',0),*valori),
+                                tags=('chiaro',) if i%2==0 else ())
+        self.sintesi.configure(text='Ogni data conta una volta. Seleziona un metodo per leggere la regola e confrontare i risultati.')
+
+    def dettaglio_storico(self, event=None):
+        scelta = self.storico.selection()
+        if not scelta:
+            return
+        nome = scelta[0]
+        _, ruota, condizione, valori = next(regola for regola in REGOLE if regola[0]==nome)
+        r = self.righe.get(nome, {})
+        if isinstance(condizione,int):
+            regola = f'{nome}: {condizione} in qualsiasi posizione su {ruota}.'
         else:
-            categorie = range(1, 3) if coppie else range(2, 7)
-            colonne = ['Metodo','Concorsi attivi',*[f'{k} pt' for k in categorie],f'% con {soglia}+']
-            legenda = ('Ogni colonna punti conta i concorsi con esattamente quel numero di corrispondenze '
-                       'nella sestina principale. La percentuale usa tutti i concorsi attivi del periodo, '
-                       'contati una volta per metodo e data.')
-        self.legenda.configure(text=legenda)
-        self.storico.configure(columns=colonne)
-        for col in colonne:
-            self.storico.heading(col,text=col)
-            self.storico.column(col, width=150 if col=='Metodo' else max(49, len(col)*8+12),
-                                minwidth=45, anchor='w' if col=='Metodo' else 'center')
-        def percent(n, d):
-            return f'{100*n/d:.2f}%'.replace('.', ',') if d else '—'
-        dati = []
-        for r in self.stats:
-            if r['Periodo'] != periodo:
-                continue
-            nome = r['Metodo']
-            condizione, dimensione = regole[nome]
-            if vista == 'Spia accesa e spenta':
-                if not isinstance(condizione, int):
-                    continue
-                a, b = r['Base_attivo'], r['Base_passivo']
-                x, y = r['Tre_o_piu_attivo'], r['Tre_o_piu_passivo']
-                delta = 100*(x/a-y/b) if a and b else None
-                valori = (nome, f'{x}/{a}', percent(x,a), f'{y}/{b}', percent(y,b),
-                          f'{delta:+.2f}'.replace('.',',') if delta is not None else '—')
-                ordine = delta
-            elif vista == 'Esito entro nove colpi':
-                n, ok = r['Finestre_complete'], r['OK_complete']
-                valori = (nome, '1+ su 2' if dimensione==2 else '3+ su 13', n, ok, n-ok, percent(ok,n))
-                ordine = ok/n if n else None
-            else:
-                if coppie != (dimensione==2):
-                    continue
-                n = r['Concorsi_attivi_disputati']
-                centri = sum(r[f'Punti_{k}'] for k in range(soglia,7))
-                valori = (nome,n,*[r[f'Punti_{k}'] for k in categorie],percent(centri,n))
-                ordine = centri/n if n else None
-            dati.append((ordine if ordine is not None else float('-inf'), valori))
-        for i, (_, valori) in enumerate(sorted(dati, key=lambda item: -item[0])):
-            self.storico.insert('', 'end', values=valori, tags=('chiaro',) if i%2==0 else ())
+            regola = (f'{nome}: {condizione} estrazione del mese su {ruota}. Al primo estratto si sommano '
+                      + ', '.join(map(str,valori))+' (oltre 90 si sottrae 90).')
+        soglia = 1 if len(valori)==2 else 3
+        n = r.get('Concorsi_attivi_disputati',0)
+        centri = sum(r.get(f'Punti_{k}',0) for k in range(soglia,7))
+        def rapporto(ok, totale):
+            if not totale:
+                return 'nessun concorso'
+            return f'{ok} su {totale} ({100*ok/totale:.1f}%)'.replace('.',',')
+        righe = [regola,f'Almeno {soglia} in una sestina durante i nove colpi: {rapporto(centri,n)}.']
+        if isinstance(condizione,int):
+            righe.append('Stessi 13 numeri fuori dai nove colpi: '+rapporto(r.get('Tre_o_piu_passivo',0),r.get('Base_passivo',0))+'.')
+        completi = r.get('Finestre_complete',0)
+        if completi:
+            righe.append(f"Segnali del periodo con almeno un centro entro nove colpi: {r['OK_complete']} su {completi} completi.")
+        self.sintesi.configure(text='\n'.join(righe))
