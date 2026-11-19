@@ -63,7 +63,7 @@ class OperationalPanel(tk.Tk):
                  font=("Segoe UI", 19, "bold"), anchor="w").pack(fill="x", padx=22, pady=(28, 2))
         tk.Label(nav, text="PANNELLO OPERATIVO", bg=NAV, fg="#9db1cc",
                  font=("Segoe UI", 9), anchor="w").pack(fill="x", padx=22, pady=(0, 32))
-        for name in ("Archivio", "Trigger", "Risultati", "Sestine", "Repository Git"):
+        for name in ("Archivio", "Trigger", "Trigger su ruota", "Risultati", "Sestine", "Repository Git"):
             btn = tk.Button(nav, text=name, anchor="w", relief="flat", bd=0,
                             padx=20, pady=13, cursor="hand2",
                             bg=NAV, fg="#dbe6f5", activebackground="#284466",
@@ -115,6 +115,7 @@ class OperationalPanel(tk.Tk):
         descriptions = {
             "Archivio": "Aggiorna l'archivio delle estrazioni.",
             "Trigger": "Controlla trigger attivi, performance e classifiche.",
+            "Trigger su ruota": "Verifica i metodi storici Lotto sui nove concorsi successivi del SuperEnalotto.",
             "Risultati": "Verifica gli esiti delle ultime estrazioni o di un intervallo.",
             "Sestine": "Genera combinazioni dai trigger selezionati dal ranking.",
             "Repository Git": "Controlla le modifiche e sincronizza il progetto con GitHub.",
@@ -132,6 +133,13 @@ class OperationalPanel(tk.Tk):
             self._action("Performance anno selezionato", self._performance)
             self._field(row, "Periodo ranking", self.period, 12, choices=("auto", "anno", "4mesi"))
             self._action("Ranking dei trigger attivi", self._ranking)
+        elif name == "Trigger su ruota":
+            modulo = "analysis.laboratory.trigger_ruote"
+            self._action("Statistiche dal luglio 2009", lambda: self._run([modulo]))
+            self._action("Tutto lo storico", lambda: self._run([modulo, "--periodo", "Overall"]))
+            row = self._fields()
+            self._field(row, "Anno di attivazione", self.year, 10)
+            self._action("Statistiche annuali", lambda: self._run([modulo, "--periodo", self.year.get().strip()]))
         elif name == "Risultati":
             row = self._fields()
             self._field(row, "Numero ultime estrazioni", self.draws, 12)
