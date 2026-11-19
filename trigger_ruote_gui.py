@@ -3,6 +3,7 @@ from math import comb
 from queue import Empty, Queue
 from random import SystemRandom
 from threading import Thread
+from analysis.laboratory.trigger_ruote import REGOLE
 import tkinter as tk
 from tkinter import messagebox, ttk
 
@@ -126,10 +127,15 @@ class WheelPage(ttk.Frame):
         self.periodi = ttk.Combobox(filtri,state='readonly',textvariable=self.periodo,width=21)
         self.periodi.pack(side='left',padx=8)
         self.periodi.bind('<<ComboboxSelected>>',self.mostra_stats)
-        self.storico = tabella(storico,[('Metodo',140),('Soglia',54),('OK',52),('KO',52),
-                                ('Complete',78),('Successo %',84),('Nuovi',62),('Disputati',76)],10)
-        ttk.Label(storico,text='OK e KO sulle finestre complete di 9 colpi. Concorsi attivi contati una volta per data.',
-                  wraplength=550).pack(anchor='w',pady=6)
+        self.vista = tk.StringVar(value='Tredicine · punti per concorso')
+        controllo = ttk.Combobox(filtri, textvariable=self.vista, state='readonly', width=32,
+                                 values=('Tredicine · punti per concorso', 'Coppie · punti per concorso',
+                                         'Spia accesa e spenta', 'Esito entro nove colpi'))
+        controllo.pack(side='left')
+        controllo.bind('<<ComboboxSelected>>', self.mostra_stats)
+        self.legenda = ttk.Label(storico, wraplength=550)
+        self.legenda.pack(anchor='w', pady=(8, 0))
+        self.storico = tabella(storico, [], 10)
         self.seleziona()
         self.refresh()
 
@@ -223,11 +229,58 @@ class WheelPage(ttk.Frame):
     def mostra_stats(self,event=None):
         periodo = {'Tutto lo storico':'Overall','Dal luglio 2009':'New mode'}.get(self.periodo.get(),self.periodo.get())
         self.storico.delete(*self.storico.get_children())
-        righe = sorted((r for r in self.stats if r['Periodo']==periodo),
-                       key=lambda r:float(r['Percentuale'] or -1), reverse=True)
-        for i,r in enumerate(righe):
-            totale,ok = r['Finestre_complete'],r['OK_complete']
-            soglia = 1 if r['Metodo'] in ('Bari prima','Milano ultima','Firenze ultima') else 3
-            percentuale = f"{100*ok/totale:.2f}".replace('.',',') if totale else '—'
-            self.storico.insert('','end',values=(r['Metodo'],soglia,ok,totale-ok,totale,percentuale,r['Nuovi_concorsi'],r['Concorsi_attivi_disputati']),
-                                tags=('chiaro',) if i%2==0 else ())
+        vista = self.vista.get()
+        coppie = vista.startswith('Coppie')
+        soglia = 1 if coppie else 3
+        regole = {nome: (condizione, len(pool)) for nome, _, condizione, pool in REGOLE}
+        if vista == 'Spia accesa e spenta':
+            colonne = ['Metodo','3+ accesa','% accesa','3+ spenta','% spenta','Diff. p.p.']
+            legenda = ('Stessa tredicina fissa. Ogni rapporto indica concorsi con almeno tre punti / concorsi osservati. '
+                       'La differenza è in punti percentuali. Il confronto esclude i primi nove concorsi dello storico.')
+        elif vista == 'Esito entro nove colpi':
+            colonne = ['Metodo','Obiettivo','Cicli completi','Con centro','Senza centro','% con centro']
+            legenda = ('Si considerano i cicli con tutti e nove i concorsi osservabili, per anno del segnale. '
+                       'Un ciclo con più centri vale una volta. Le riattivazioni sono cicli distinti.')
+        else:
+            categorie = range(1, 3) if coppie else range(2, 7)
+            colonne = ['Metodo','Concorsi attivi',*[f'{k} pt' for k in categorie],f'% con {soglia}+']
+            legenda = ('Ogni colonna punti conta i concorsi con esattamente quel numero di corrispondenze '
+                       'nella sestina principale. La percentuale usa tutti i concorsi attivi del periodo, '
+                       'contati una volta per metodo e data.')
+        self.legenda.configure(text=legenda)
+        self.storico.configure(columns=colonne)
+        for col in colonne:
+            self.storico.heading(col,text=col)
+            self.storico.column(col, width=150 if col=='Metodo' else max(49, len(col)*8+12),
+                                minwidth=45, anchor='w' if col=='Metodo' else 'center')
+        def percent(n, d):
+            return f'{100*n/d:.2f}%'.replace('.', ',') if d else '—'
+        dati = []
+        for r in self.stats:
+            if r['Periodo'] != periodo:
+                continue
+            nome = r['Metodo']
+            condizione, dimensione = regole[nome]
+            if vista == 'Spia accesa e spenta':
+                if not isinstance(condizione, int):
+                    continue
+                a, b = r['Base_attivo'], r['Base_passivo']
+                x, y = r['Tre_o_piu_attivo'], r['Tre_o_piu_passivo']
+                delta = 100*(x/a-y/b) if a and b else None
+                valori = (nome, f'{x}/{a}', percent(x,a), f'{y}/{b}', percent(y,b),
+                          f'{delta:+.2f}'.replace('.',',') if delta is not None else '—')
+                ordine = delta
+            elif vista == 'Esito entro nove colpi':
+                n, ok = r['Finestre_complete'], r['OK_complete']
+                valori = (nome, '1+ su 2' if dimensione==2 else '3+ su 13', n, ok, n-ok, percent(ok,n))
+                ordine = ok/n if n else None
+            else:
+                if coppie != (dimensione==2):
+                    continue
+                n = r['Concorsi_attivi_disputati']
+                centri = sum(r[f'Punti_{k}'] for k in range(soglia,7))
+                valori = (nome,n,*[r[f'Punti_{k}'] for k in categorie],percent(centri,n))
+                ordine = centri/n if n else None
+            dati.append((ordine if ordine is not None else float('-inf'), valori))
+        for i, (_, valori) in enumerate(sorted(dati, key=lambda item: -item[0])):
+            self.storico.insert('', 'end', values=valori, tags=('chiaro',) if i%2==0 else ())

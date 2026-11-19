@@ -129,25 +129,35 @@ def registro_giornaliero(colpi):
     return sorted(registro.values(), key=lambda r: (r['Data'], r['Metodo']))
 
 
-def riepilogo(eventi, giornaliero):
-    osservati = Counter()
+def riepilogo(eventi, giornaliero, confronti):
+    punti = defaultdict(Counter)
+    confronto = defaultdict(dict)
+    for r in confronti:
+        confronto[r['Periodo'], r['Metodo']][r['Stato']] = r
     for r in giornaliero:
         for periodo in periodi(r['Data']):
-            osservati[periodo, r['Metodo']] += 1
+            punti[periodo, r['Metodo']][r['Punti']] += 1
     gruppi = defaultdict(list)
     for r in eventi:
         d = r['Attivazione']
         for periodo in periodi(d):
             gruppi[periodo,r['Metodo']].append(r)
     rows = []
-    for periodo, nome in sorted(gruppi.keys() | osservati.keys()):
+    for periodo, nome in sorted(gruppi.keys() | punti.keys() | confronto.keys()):
         gruppo = gruppi[periodo,nome]
         stati = Counter(r['Stato'] for r in gruppo)
         # Frequenza calcolata su coorti con nove esiti osservabili anche per chi ha già fatto centro.
         maturi = [r for r in gruppo if r['Osservati']==9]
         ok = sum(r['Stato']=='OK' for r in maturi)
+        risultati = punti[periodo, nome]
+        frequenze = {}
+        for stato in ('attivo', 'passivo'):
+            r = confronto[periodo, nome].get(stato, {})
+            frequenze['Base_' + stato] = r.get('Concorsi', 0)
+            frequenze['Tre_o_piu_' + stato] = sum(r.get(f'Punti_{k}', 0) for k in range(3, 7))
         rows.append(dict(Periodo=periodo, Metodo=nome, Attivazioni=len(gruppo), Nuovi_concorsi=sum(r['Nuovi_concorsi'] for r in gruppo),
-                         Concorsi_attivi_disputati=osservati[periodo,nome], OK=stati['OK'],
+                         Concorsi_attivi_disputati=sum(risultati.values()),
+                         **{f'Punti_{k}': risultati[k] for k in range(7)}, **frequenze, OK=stati['OK'],
                          KO=stati['KO'], Aperti=stati['APERTO'], Finestre_complete=len(maturi),
                          OK_complete=ok, Percentuale=round(100*ok/len(maturi),2) if maturi else ''))
     return rows
@@ -156,7 +166,7 @@ def riepilogo(eventi, giornaliero):
 def aggiorna_report(lotto, estrazioni, output):
     eventi,colpi,confronti = analizza(lotto,estrazioni)
     giornaliero = registro_giornaliero(colpi)
-    stats = riepilogo(eventi, giornaliero)
+    stats = riepilogo(eventi, giornaliero, confronti)
     output.mkdir(parents=True,exist_ok=True)
     for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
         scrivi(output/(nome+'.csv'),righe)
