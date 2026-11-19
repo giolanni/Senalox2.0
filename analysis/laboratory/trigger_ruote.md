@@ -4,7 +4,7 @@ Dal pannello operativo scegliere **Trigger su ruota**. Il calcolo scarica lo ZIP
 
     python -m analysis.laboratory.trigger_ruote --lotto storico.zip --periodo 2026
 
-Ogni uscita della spia in una delle cinque posizioni apre una finestra distinta, anche quando due finestre si sovrappongono. I metodi mensili usano il primo estratto e la somma circolare da 1 a 90. Per Milano a due numeri vale il testo che indica l'ultima estrazione del mese. L'ultimo mese dell'archivio Lotto resta in attesa della prima estrazione del mese seguente per confermarne la chiusura.
+Il 90 (o il 10 per Milano 10) in prima posizione sulla ruota Lotto indicata apre una finestra distinta, anche quando due finestre si sovrappongono. I metodi mensili usano il primo estratto e la somma circolare da 1 a 90. Per Milano a due numeri vale il testo che indica l'ultima estrazione del mese. L'ultimo mese dell'archivio Lotto resta in attesa della prima estrazione del mese seguente per confermarne la chiusura.
 
 Il colpo 1 è il primo concorso SuperEnalotto con data successiva all'estrazione Lotto. I risultati riguardano la copertura della sestina principale. Jolly, SuperStar, importi e combinazioni effettivamente giocate sono esclusi. Le soglie adottate sono almeno 3 numeri per le tredicine e almeno 1 per le coppie.
 

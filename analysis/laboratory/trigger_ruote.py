@@ -80,7 +80,7 @@ def analizza(ruote, estrazioni):
             elif condizione == 'ultima':
                 scatta = i+1 < len(calendario) and calendario[i+1].month != giorno.month
             else:
-                scatta = condizione in numeri
+                scatta = numeri[0] == condizione
             if not scatta:
                 continue
             pool = set(valori) if isinstance(condizione,int) else {(numeri[0]+x-1)%90+1 for x in valori}
@@ -97,7 +97,7 @@ def analizza(ruote, estrazioni):
                 if not primo and len(comuni)>=soglia:
                     primo, punti, data_esito = n, len(comuni), d
             stato = 'OK' if primo else 'KO' if len(finestra)==9 else 'APERTO'
-            eventi.append(dict(Metodo=nome, Attivazione=giorno, Pool=' '.join(map(str,sorted(pool))),
+            eventi.append(dict(Metodo=nome, Attivazione=giorno, Primo_estratto_Lotto=numeri[0], Pool=' '.join(map(str,sorted(pool))),
                                Soglia=soglia, Osservati=len(finestra), Stato=stato, Primo_colpo=primo or '',
                                Punti_primo=punti or '', Data_esito=data_esito))
         if isinstance(condizione,int):
