@@ -16,3 +16,5 @@ In analysis/output/trigger_ruote si trovano quattro file CSV separati da punto e
 - **attivi_passivi.csv** conta ogni concorso una volta per singola tredicina fissa. Un concorso è attivo quando cade in almeno una finestra di nove colpi, anche dopo un primo successo. Il periodo segue la data del concorso. I primi nove concorsi dello storico sono esclusi da questo confronto per evitare esposizioni parziali.
 
 New mode inizia il 1° luglio 2009. Milano 10 ha due versioni, con 71 nella fonte stampata e 21 nel foglio personale. Milano 90 e Venezia 90 usano la stessa tredicina. Sommare le righe dei metodi può contare più volte la stessa sestina.
+
+Il contatore Concorsi_attivi_accreditati assegna subito nove colpi per ogni attivazione, tutti nell’anno del segnale. Colpi_osservati conta i colpi già disputati per quelle attivazioni. Eventuali finestre sovrapposte contano per ciascuna attivazione in entrambe le colonne.

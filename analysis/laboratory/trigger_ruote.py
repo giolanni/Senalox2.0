@@ -126,7 +126,8 @@ def riepilogo(eventi):
         # Frequenza calcolata su coorti con nove esiti osservabili anche per chi ha già fatto centro.
         maturi = [r for r in gruppo if r['Osservati']==9]
         ok = sum(r['Stato']=='OK' for r in maturi)
-        rows.append(dict(Periodo=periodo, Metodo=nome, Attivazioni=len(gruppo), OK=stati['OK'],
+        rows.append(dict(Periodo=periodo, Metodo=nome, Attivazioni=len(gruppo), Concorsi_attivi_accreditati=9*len(gruppo),
+                         Colpi_osservati=sum(r['Osservati'] for r in gruppo), OK=stati['OK'],
                          KO=stati['KO'], Aperti=stati['APERTO'], Finestre_complete=len(maturi),
                          OK_complete=ok, Percentuale=round(100*ok/len(maturi),2) if maturi else ''))
     return rows
@@ -146,10 +147,10 @@ def main():
     for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('attivi_passivi',confronti)]:
         scrivi(args.output/(nome+'.csv'),righe)
     print(f'Ultimo Lotto {max(lotto)} | Ultimo SuperEnalotto {estrazioni[-1].data} | {args.periodo}')
-    print('Metodo               OK su complete    %      Soglia')
+    print('Metodo               OK su complete    %      Accreditati  Osservati  Soglia')
     for r in sorted(stats,key=lambda r:float(r['Percentuale'] or 0),reverse=True):
         if r['Periodo']==args.periodo:
-            print(f"{r['Metodo']:20} {r['OK_complete']:3}/{r['Finestre_complete']:<4} {str(r['Percentuale']):>7}     {1 if r['Metodo'] in ('Bari prima','Firenze ultima','Milano ultima') else 3}")
+            print(f"{r['Metodo']:20} {r['OK_complete']:3}/{r['Finestre_complete']:<4} {str(r['Percentuale']):>7}     {r['Concorsi_attivi_accreditati']:8}  {r['Colpi_osservati']:9}    {1 if r['Metodo'] in ('Bari prima','Firenze ultima','Milano ultima') else 3}")
     print(f'Dettagli: {args.output}')
 
 
