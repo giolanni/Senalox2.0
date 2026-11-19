@@ -153,6 +153,16 @@ def riepilogo(eventi, giornaliero):
     return rows
 
 
+def aggiorna_report(lotto, estrazioni, output):
+    eventi,colpi,confronti = analizza(lotto,estrazioni)
+    giornaliero = registro_giornaliero(colpi)
+    stats = riepilogo(eventi, giornaliero)
+    output.mkdir(parents=True,exist_ok=True)
+    for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
+        scrivi(output/(nome+'.csv'),righe)
+    return eventi, stats
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--lotto',type=Path,help='ZIP ufficiale locale (default: download aggiornato)')
@@ -161,12 +171,7 @@ def main():
     args = parser.parse_args()
     lotto = carica_lotto(args.lotto)
     estrazioni = load_estrazioni_overall()
-    eventi,colpi,confronti = analizza(lotto,estrazioni)
-    giornaliero = registro_giornaliero(colpi)
-    stats = riepilogo(eventi, giornaliero)
-    args.output.mkdir(parents=True,exist_ok=True)
-    for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
-        scrivi(args.output/(nome+'.csv'),righe)
+    eventi, stats = aggiorna_report(lotto, estrazioni, args.output)
     print(f'Ultimo Lotto {max(lotto)} | Ultimo SuperEnalotto {estrazioni[-1].data} | {args.periodo}')
     print('Metodo               OK su complete    %            Nuovi  Disputati  Soglia')
     for r in sorted(stats,key=lambda r:float(r['Percentuale'] or 0),reverse=True):

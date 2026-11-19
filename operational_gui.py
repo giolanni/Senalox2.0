@@ -80,15 +80,18 @@ class OperationalPanel(tk.Tk):
         self.heading.pack(anchor="w")
         self.description = ttk.Label(main, style="Muted.TLabel")
         self.description.pack(anchor="w", pady=(4, 16))
-        self.panel = ttk.Frame(main, style="Card.TFrame", padding=16)
+        self.wheel_page = None
+        self.standard = ttk.Frame(main, style="App.TFrame")
+        self.standard.pack(fill="both", expand=True)
+        self.panel = ttk.Frame(self.standard, style="Card.TFrame", padding=16)
         self.panel.pack(fill="x")
-        toolbar = ttk.Frame(main, style="App.TFrame")
+        toolbar = ttk.Frame(self.standard, style="App.TFrame")
         toolbar.pack(fill="x", pady=(18, 8))
         ttk.Label(toolbar, text="Risultati operazione", style="Heading.TLabel",
                   font=("Segoe UI", 12, "bold")).pack(side="left")
         ttk.Button(toolbar, text="Salva testo", command=self._save).pack(side="right", padx=(8, 0))
         ttk.Button(toolbar, text="Pulisci", command=self._clear).pack(side="right")
-        console = ttk.Frame(main, style="App.TFrame")
+        console = ttk.Frame(self.standard, style="App.TFrame")
         console.pack(fill="both", expand=True)
         self.output = tk.Text(console, wrap="none", bg="#ffffff", fg=TEXT,
                               font=("Consolas", 10), relief="flat", padx=12, pady=12)
@@ -100,7 +103,7 @@ class OperationalPanel(tk.Tk):
         x.grid(row=1, column=0, sticky="ew")
         console.columnconfigure(0, weight=1)
         console.rowconfigure(0, weight=1)
-        footer = ttk.Frame(main, style="App.TFrame")
+        footer = ttk.Frame(self.standard, style="App.TFrame")
         footer.pack(fill="x", pady=(9, 0))
         ttk.Label(footer, textvariable=self.status, style="Muted.TLabel").pack(side="left")
 
@@ -122,6 +125,16 @@ class OperationalPanel(tk.Tk):
         }
         self.heading.configure(text=name)
         self.description.configure(text=descriptions[name])
+        if name == "Trigger su ruota":
+            from trigger_ruote_gui import WheelPage
+            self.standard.pack_forget()
+            if self.wheel_page is None:
+                self.wheel_page = WheelPage(self.standard.master)
+            self.wheel_page.pack(fill="both", expand=True)
+            return
+        if self.wheel_page is not None:
+            self.wheel_page.pack_forget()
+        self.standard.pack(fill="both", expand=True)
         if name == "Archivio":
             self._action("Aggiorna estrazioni", lambda: self._run(["update_estrazioni.py"], script=True))
             self._hint("L'aggiornamento scarica le estrazioni disponibili e aggiorna i dati locali.")
@@ -133,13 +146,6 @@ class OperationalPanel(tk.Tk):
             self._action("Performance anno selezionato", self._performance)
             self._field(row, "Periodo ranking", self.period, 12, choices=("auto", "anno", "4mesi"))
             self._action("Ranking dei trigger attivi", self._ranking)
-        elif name == "Trigger su ruota":
-            modulo = "analysis.laboratory.trigger_ruote"
-            self._action("Statistiche dal luglio 2009", lambda: self._run([modulo]))
-            self._action("Tutto lo storico", lambda: self._run([modulo, "--periodo", "Overall"]))
-            row = self._fields()
-            self._field(row, "Anno di attivazione", self.year, 10)
-            self._action("Statistiche annuali", lambda: self._run([modulo, "--periodo", self.year.get().strip()]))
         elif name == "Risultati":
             row = self._fields()
             self._field(row, "Numero ultime estrazioni", self.draws, 12)

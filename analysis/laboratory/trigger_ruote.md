@@ -1,6 +1,8 @@
 # Trigger su ruota
 
-Dal pannello operativo scegliere **Trigger su ruota**. Il calcolo scarica lo ZIP completo di Lotto Italia e legge le sestine locali con il caricatore condiviso. Aggiornare le sestine dalla pagina Archivio. Per riutilizzare uno ZIP già scaricato:
+Dal pannello operativo scegliere **Trigger su ruota**. La scheda **Trigger attivi e sestine** mostra i metodi con almeno un colpo disponibile alla data comune dei due archivi. Selezionare un metodo, impostare la quantità e premere **Genera sestine**. Per le tredicine ogni combinazione contiene sei numeri del metodo. Per i metodi a due fissi si aggiungono quattro numeri casuali tra gli altri 88. Le combinazioni sono distinte all’interno di ciascuna generazione. Il cambio di metodo conserva l’ultimo gruppo generato durante la sessione.
+
+La scheda **Statistiche storiche** permette di scegliere tutto lo storico, il periodo dal luglio 2009 o un singolo anno. **Aggiorna dati** rilegge gli archivi e ricalcola le tabelle. Il calcolo scarica lo ZIP completo di Lotto Italia e legge le sestine locali con il caricatore condiviso. Aggiornare le sestine dalla pagina Archivio. Per riutilizzare uno ZIP già scaricato:
 
     python -m analysis.laboratory.trigger_ruote --lotto storico.zip --periodo 2026
 
