@@ -8,7 +8,7 @@ Il 90 (o il 10 per Milano 10) in prima posizione sulla ruota Lotto indicata apre
 
 Il colpo 1 è il primo concorso SuperEnalotto con data successiva all'estrazione Lotto. I risultati riguardano la copertura della sestina principale. Jolly, SuperStar, importi e combinazioni effettivamente giocate sono esclusi. Le soglie adottate sono almeno 3 numeri per le tredicine e almeno 1 per le coppie.
 
-In analysis/output/trigger_ruote si trovano quattro file CSV separati da punto e virgola.
+In analysis/output/trigger_ruote si trovano cinque file CSV separati da punto e virgola.
 
 - **statistiche.csv** contiene il riepilogo per anno di attivazione e per periodo. La percentuale usa le sole attivazioni con tutti e nove i colpi osservabili. OK e KO usano la prima occorrenza della soglia. Un ciclo ancora corto può già essere OK.
 - **attivazioni.csv** contiene data del segnale, numeri previsti, primo esito e stato per ogni ciclo.
@@ -17,4 +17,4 @@ In analysis/output/trigger_ruote si trovano quattro file CSV separati da punto e
 
 New mode inizia il 1° luglio 2009. Milano 10 ha due versioni, con 71 nella fonte stampata e 21 nel foglio personale. Milano 90 e Venezia 90 usano la stessa tredicina. Sommare le righe dei metodi può contare più volte la stessa sestina.
 
-Il contatore Concorsi_attivi_accreditati assegna subito nove colpi per ogni attivazione, tutti nell’anno del segnale. Colpi_osservati conta i colpi già disputati per quelle attivazioni. Eventuali finestre sovrapposte contano per ciascuna attivazione in entrambe le colonne.
+**concorsi_attivi.csv** è il registro giornaliero: una riga per metodo e data, con riferimento al segnale più recente. Una riattivazione rinnova i nove colpi a partire dal concorso successivo. Nuovi_concorsi misura solo quelli aggiunti e segue la data del segnale. Concorsi_attivi_disputati conta ciascuna data effettiva una volta e segue l’anno del concorso. Le statistiche OK per attivazione restano consultabili separatamente.

@@ -71,6 +71,7 @@ def analizza(ruote, estrazioni):
     eventi, colpi, confronti = [], [], []
     for nome, ruota, condizione, valori in REGOLE:
         attivi = set()
+        fine_precedente = 0
         for i, giorno in enumerate(calendario):
             if not giorni[0] <= giorno <= fine:
                 continue
@@ -86,6 +87,8 @@ def analizza(ruote, estrazioni):
             pool = set(valori) if isinstance(condizione,int) else {(numeri[0]+x-1)%90+1 for x in valori}
             soglia = 1 if len(pool)==2 else 3
             inizio = bisect_right(giorni, giorno)
+            sovrapposti = max(0, fine_precedente - inizio)
+            fine_precedente = inizio + 9
             finestra = giorni[inizio:inizio+9]
             attivi.update(finestra)
             primo, punti, data_esito = 0, 0, ''
@@ -98,7 +101,7 @@ def analizza(ruote, estrazioni):
                     primo, punti, data_esito = n, len(comuni), d
             stato = 'OK' if primo else 'KO' if len(finestra)==9 else 'APERTO'
             eventi.append(dict(Metodo=nome, Attivazione=giorno, Primo_estratto_Lotto=numeri[0], Pool=' '.join(map(str,sorted(pool))),
-                               Soglia=soglia, Osservati=len(finestra), Stato=stato, Primo_colpo=primo or '',
+                               Soglia=soglia, Nuovi_concorsi=9-sovrapposti, Sovrapposti=sovrapposti, Osservati=len(finestra), Stato=stato, Primo_colpo=primo or '',
                                Punti_primo=punti or '', Data_esito=data_esito))
         if isinstance(condizione,int):
             # Nove concorsi interi come esposizione. Un concorso conta una sola volta per metodo.
@@ -114,20 +117,37 @@ def analizza(ruote, estrazioni):
     return eventi, colpi, confronti
 
 
-def riepilogo(eventi):
+def periodi(d):
+    return ('Overall', 'New mode' if d >= NEW_MODE_START_DATE else 'Pre 2009-07', str(d.year))
+
+
+def registro_giornaliero(colpi):
+    # I segnali arrivano in ordine cronologico per metodo.
+    registro = {}
+    for r in colpi:
+        registro[r['Metodo'], r['Data']] = r
+    return sorted(registro.values(), key=lambda r: (r['Data'], r['Metodo']))
+
+
+def riepilogo(eventi, giornaliero):
+    osservati = Counter()
+    for r in giornaliero:
+        for periodo in periodi(r['Data']):
+            osservati[periodo, r['Metodo']] += 1
     gruppi = defaultdict(list)
     for r in eventi:
         d = r['Attivazione']
-        for periodo in ('Overall', 'New mode' if d>=NEW_MODE_START_DATE else 'Pre 2009-07', str(d.year)):
+        for periodo in periodi(d):
             gruppi[periodo,r['Metodo']].append(r)
     rows = []
-    for (periodo,nome), gruppo in gruppi.items():
+    for periodo, nome in sorted(gruppi.keys() | osservati.keys()):
+        gruppo = gruppi[periodo,nome]
         stati = Counter(r['Stato'] for r in gruppo)
         # Frequenza calcolata su coorti con nove esiti osservabili anche per chi ha già fatto centro.
         maturi = [r for r in gruppo if r['Osservati']==9]
         ok = sum(r['Stato']=='OK' for r in maturi)
-        rows.append(dict(Periodo=periodo, Metodo=nome, Attivazioni=len(gruppo), Concorsi_attivi_accreditati=9*len(gruppo),
-                         Colpi_osservati=sum(r['Osservati'] for r in gruppo), OK=stati['OK'],
+        rows.append(dict(Periodo=periodo, Metodo=nome, Attivazioni=len(gruppo), Nuovi_concorsi=sum(r['Nuovi_concorsi'] for r in gruppo),
+                         Concorsi_attivi_disputati=osservati[periodo,nome], OK=stati['OK'],
                          KO=stati['KO'], Aperti=stati['APERTO'], Finestre_complete=len(maturi),
                          OK_complete=ok, Percentuale=round(100*ok/len(maturi),2) if maturi else ''))
     return rows
@@ -142,15 +162,16 @@ def main():
     lotto = carica_lotto(args.lotto)
     estrazioni = load_estrazioni_overall()
     eventi,colpi,confronti = analizza(lotto,estrazioni)
-    stats = riepilogo(eventi)
+    giornaliero = registro_giornaliero(colpi)
+    stats = riepilogo(eventi, giornaliero)
     args.output.mkdir(parents=True,exist_ok=True)
-    for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('attivi_passivi',confronti)]:
+    for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
         scrivi(args.output/(nome+'.csv'),righe)
     print(f'Ultimo Lotto {max(lotto)} | Ultimo SuperEnalotto {estrazioni[-1].data} | {args.periodo}')
-    print('Metodo               OK su complete    %      Accreditati  Osservati  Soglia')
+    print('Metodo               OK su complete    %            Nuovi  Disputati  Soglia')
     for r in sorted(stats,key=lambda r:float(r['Percentuale'] or 0),reverse=True):
         if r['Periodo']==args.periodo:
-            print(f"{r['Metodo']:20} {r['OK_complete']:3}/{r['Finestre_complete']:<4} {str(r['Percentuale']):>7}     {r['Concorsi_attivi_accreditati']:8}  {r['Colpi_osservati']:9}    {1 if r['Metodo'] in ('Bari prima','Firenze ultima','Milano ultima') else 3}")
+            print(f"{r['Metodo']:20} {r['OK_complete']:3}/{r['Finestre_complete']:<4} {str(r['Percentuale']):>7}     {r['Nuovi_concorsi']:8}  {r['Concorsi_attivi_disputati']:9}    {1 if r['Metodo'] in ('Bari prima','Firenze ultima','Milano ultima') else 3}")
     print(f'Dettagli: {args.output}')
 
 
