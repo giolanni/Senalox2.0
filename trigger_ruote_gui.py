@@ -19,10 +19,18 @@ def numeri(pool):
 def carica_quadro():
     lotto = carica_lotto(None)
     estrazioni = load_estrazioni_overall()
-    eventi, stats = aggiorna_report(lotto, estrazioni, PROJECT_ROOT/'analysis/output/trigger_ruote')
+    eventi, stats, giornaliero = aggiorna_report(lotto, estrazioni, PROJECT_ROOT/'analysis/output/trigger_ruote')
     recenti = {r['Metodo']: r for r in eventi}
-    attivi = {nome: r for nome, r in recenti.items() if r['Osservati'] < 9}
-    return max(lotto), estrazioni[-1].data, stats, attivi
+    attivi = {nome: r for nome, r in recenti.items() if r['Sempre_attivo'] or r['Osservati'] < 9}
+    fine = min(max(lotto), estrazioni[-1].data)
+    ultime = [e for e in estrazioni if e.data <= fine][-30:]
+    risultati = {e.data: (e.numeri, []) for e in reversed(ultime)}
+    pools = {(e['Metodo'], e['Attivazione']): e['Pool'] for e in eventi}
+    for r in giornaliero:
+        if r['Data'] in risultati:
+            pool = pools[r['Metodo'], r['Attivazione']]
+            risultati[r['Data']][1].append((r['Metodo'], r['Punti'], r['Numeri'] or '—', pool))
+    return max(lotto), estrazioni[-1].data, stats, attivi, risultati
 
 
 class Sestine:
@@ -97,8 +105,21 @@ class WheelPage(ttk.Frame):
         self.tabs.add(attivi,text='  Prossimo concorso  ')
         self.tabs.add(gioco,text='  Genera sestine  ')
         self.tabs.add(storico,text='  Risultati per metodo  ')
+        recenti = ttk.Frame(self.tabs, padding=12)
+        self.tabs.add(recenti, text='  Ultime estrazioni  ')
+        barra_date = ttk.Frame(recenti)
+        barra_date.pack(fill='x')
+        ttk.Label(barra_date, text='Estrazione SuperEnalotto').pack(side='left')
+        self.data_recente = ttk.Combobox(barra_date, width=13, state='readonly')
+        self.data_recente.pack(side='left', padx=8)
+        self.data_recente.bind('<<ComboboxSelected>>', self.mostra_estrazione)
+        self.sei_estratti = ttk.Label(recenti, font=('Segoe UI', 12, 'bold'))
+        self.sei_estratti.pack(anchor='w', pady=(10, 2))
+        self.esiti_recenti = tabella(recenti, [('Metodo', 135), ('Punti', 50),
+                                     ('Numeri centrati', 100), ('Tredicina in gioco', 270)], 10)
+        self.esiti_recenti.tag_configure('centro', background='#d9f1e3')
         ttk.Label(attivi,text='Metodi ancora in gioco',font=('Segoe UI',14,'bold')).pack(anchor='w')
-        self.elenco = tabella(attivi,[('Metodo',160),('Segnale Lotto',115),('Già giocati',90),('Restano',80)],8)
+        self.elenco = tabella(attivi,[('Metodo',160),('Validità',115),('Data Lotto',95),('Già giocati',90),('Restano',80)],8)
         self.elenco.bind('<<TreeviewSelect>>',self.scegli_attivo)
         self.elenco.bind('<Double-1>',lambda _: self.apri_generatore())
         self.prova = ttk.Label(attivi,wraplength=560)
@@ -170,7 +191,12 @@ class WheelPage(ttk.Frame):
             self.info.configure(text='Aggiornamento fallito.' + (f' Ultimi dati al {min(self.lotto,self.se):%d/%m/%Y}.' if self.lotto else ''))
             messagebox.showerror('Aggiornamento trigger',str(dati),parent=self)
             return
-        self.lotto,self.se,self.stats,self.attivi = dati
+        self.lotto,self.se,self.stats,self.attivi,self.risultati = dati
+        self.date_recenti = list(self.risultati)
+        self.data_recente.configure(values=[d.strftime('%d/%m/%Y') for d in self.date_recenti])
+        if self.date_recenti:
+            self.data_recente.current(0)
+        self.mostra_estrazione()
         aggiornamento = f'Lotto {self.lotto:%d/%m/%Y}   ·   SuperEnalotto {self.se:%d/%m/%Y}'
         if self.lotto != self.se:
             aggiornamento += f'   ·   Situazione al {min(self.lotto,self.se):%d/%m/%Y}'
@@ -181,8 +207,8 @@ class WheelPage(ttk.Frame):
         self.elenco.delete(*self.elenco.get_children())
         for i, nome in enumerate(nomi_attivi):
             r = self.attivi[self.variante(nome)]
-            self.elenco.insert('', 'end', iid=nome, values=(nome, r['Attivazione'].strftime('%d/%m/%Y'),
-                              r['Osservati'], 9-r['Osservati']), tags=('chiaro',) if i%2==0 else ())
+            self.elenco.insert('', 'end', iid=nome, values=(nome, 'Sempre attivo' if r['Sempre_attivo'] else '9 concorsi', r['Attivazione'].strftime('%d/%m/%Y'),
+                              '—' if r['Sempre_attivo'] else r['Osservati'], '—' if r['Sempre_attivo'] else 9-r['Osservati']), tags=('chiaro',) if i%2==0 else ())
         if nomi_attivi:
             self.elenco.selection_set(precedente[0] if precedente and precedente[0] in nomi_attivi else nomi_attivi[0])
         self.scegli_attivo()
@@ -196,6 +222,17 @@ class WheelPage(ttk.Frame):
         self.periodi.configure(values=['Dal luglio 2009','Tutto lo storico',*anni])
         self.seleziona()
         self.mostra_stats()
+
+    def mostra_estrazione(self, event=None):
+        self.esiti_recenti.delete(*self.esiti_recenti.get_children())
+        i = self.data_recente.current()
+        if i < 0:
+            self.sei_estratti.configure(text='Nessuna estrazione disponibile.')
+            return
+        sestina, righe = self.risultati[self.date_recenti[i]]
+        self.sei_estratti.configure(text='Sestina estratta   ' + numeri(sestina))
+        for riga in sorted(righe, key=lambda r: (-r[1], r[0])):
+            self.esiti_recenti.insert('', 'end', values=riga, tags=('centro',) if riga[1] >= 3 else ())
 
     @staticmethod
     def nome_segnale(nome):
@@ -213,6 +250,11 @@ class WheelPage(ttk.Frame):
             self.apri.state(['disabled'])
             return
         r = self.attivi[self.variante(scelta[0])]
+        if r['Sempre_attivo']:
+            self.prova.configure(text=f"{scelta[0]} · Sempre attivo. Tredicina calcolata sul primo estratto "
+                                     f"{r['Primo_estratto_Lotto']} del {r['Attivazione']:%d/%m/%Y}.")
+            self.apri.state(['!disabled'])
+            return
         pos = r['Posizione_spia']
         motivo = f"Spia in posizione {pos}." if pos else f"Primo estratto {r['Primo_estratto_Lotto']}."
         self.prova.configure(text=f"{scelta[0]} · Cinque estratti Lotto: {r['Estratti_Lotto']}. {motivo} "
@@ -238,7 +280,7 @@ class WheelPage(ttk.Frame):
             self.genera.state(['disabled'])
             return
         self.genera.state(['!disabled'])
-        self.dettaglio.configure(text=f"Attivazione {r['Attivazione']:%d/%m/%Y}     ·     Prossimo colpo {r['Osservati']+1} di 9")
+        self.dettaglio.configure(text=f"Sempre attivo · Tredicina aggiornata il {r['Attivazione']:%d/%m/%Y}" if r['Sempre_attivo'] else f"Attivazione {r['Attivazione']:%d/%m/%Y}     ·     Prossimo colpo {r['Osservati']+1} di 9")
         self.pool_label.configure(text=numeri(map(int,r['Pool'].split())))
         self.modalita.configure(text='I due numeri restano fissi. Gli altri quattro sono estratti dagli altri 88 numeri.' if r['Soglia']==1
                                else 'Ogni sestina contiene sei numeri estratti dai tredici del metodo.')
@@ -298,7 +340,7 @@ class WheelPage(ttk.Frame):
         _, ruota, condizione, valori = next(regola for regola in REGOLE if regola[0]==nome)
         r = self.righe.get(nome, {})
         if isinstance(condizione,int):
-            regola = f'{nome}: {condizione} in qualsiasi posizione su {ruota}.'
+            regola = f'{nome}: {condizione} primo estratto su {ruota}.'
         else:
             regola = (f'{nome}: {condizione} estrazione del mese su {ruota}. Al primo estratto si sommano '
                       + ', '.join(map(str,valori))+' (oltre 90 si sottrae 90).')
@@ -309,7 +351,8 @@ class WheelPage(ttk.Frame):
             if not totale:
                 return 'nessun concorso'
             return f'{ok} su {totale} ({100*ok/totale:.1f}%)'.replace('.',',')
-        righe = [regola,f'Almeno {soglia} in una sestina durante i nove colpi: {rapporto(centri,n)}.']
+        ambito = 'nei concorsi del periodo' if condizione == 'prima' else 'durante i nove colpi'
+        righe = [regola,f'Almeno {soglia} in una sestina {ambito}: {rapporto(centri,n)}.']
         if isinstance(condizione,int):
             righe.append('Stessi 13 numeri fuori dai nove colpi: '+rapporto(r.get('Tre_o_piu_passivo',0),r.get('Base_passivo',0))+'.')
         completi = r.get('Finestre_complete',0)
