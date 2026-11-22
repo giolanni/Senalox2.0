@@ -28,9 +28,6 @@ REGOLE = [
     ('Roma prima','RM','prima',(74,83,17,38,7,70,23,27,42,55,52,75,16)),
     ('Palermo prima','PA','prima',(27,35,24,4,49,20,42,43,6,65,30,50,23)),
     ('Napoli prima','NA','prima',(41,85,26,35,50,39,44,55,13,19,52,78,38)),
-    ('Bari prima','BA','prima',(10,70)),
-    ('Firenze ultima','FI','ultima',(27,74)),
-    ('Milano ultima','MI','ultima',(18,24)),
 ]
 
 
@@ -69,27 +66,34 @@ def analizza(ruote, estrazioni):
     if len(giorni) != sum(e.data <= fine for e in estrazioni):
         raise ValueError('Date duplicate nel SuperEnalotto')
     eventi, colpi, confronti = [], [], []
+    primi_mese = [d for i, d in enumerate(calendario)
+                  if i > 0 and (d.year, d.month) != (calendario[i-1].year, calendario[i-1].month)
+                  and d <= fine]
     for nome, ruota, condizione, valori in REGOLE:
         attivi = set()
         fine_precedente = 0
-        for i, giorno in enumerate(calendario):
-            if not giorni[0] <= giorno <= fine:
-                continue
+        mensile = condizione == 'prima'
+        date_base = primi_mese if mensile else calendario
+        for i, giorno in enumerate(date_base):
             numeri = ruote[giorno][ruota]
-            if condizione == 'prima':
-                scatta = i > 0 and calendario[i-1].month != giorno.month
-            elif condizione == 'ultima':
-                scatta = i+1 < len(calendario) and calendario[i+1].month != giorno.month
-            else:
-                scatta = condizione in numeri
-            if not scatta:
-                continue
-            pool = set(valori) if isinstance(condizione,int) else {(numeri[0]+x-1)%90+1 for x in valori}
-            soglia = 1 if len(pool)==2 else 3
             inizio = bisect_right(giorni, giorno)
-            sovrapposti = max(0, fine_precedente - inizio)
-            fine_precedente = inizio + 9
-            finestra = giorni[inizio:inizio+9]
+            if mensile:
+                # La vecchia tredicina copre anche il concorso del giorno del rinnovo.
+                fine_periodo = (bisect_right(giorni, date_base[i+1])
+                                if i+1 < len(date_base) else len(giorni))
+                if fine_periodo == 0 and i+1 < len(date_base) and date_base[i+1] < giorni[0]:
+                    continue
+                pool = {(numeri[0]+x-1)%90+1 for x in valori}
+                sovrapposti = 0
+                finestra = giorni[inizio:fine_periodo]
+            else:
+                if not giorni[0] <= giorno <= fine or condizione != numeri[0]:
+                    continue
+                pool = set(valori)
+                sovrapposti = max(0, fine_precedente - inizio)
+                fine_precedente = inizio + 9
+                finestra = giorni[inizio:inizio+9]
+            soglia = 3
             attivi.update(finestra)
             primo, punti, data_esito = 0, 0, ''
             for n, d in enumerate(finestra, 1):
@@ -100,11 +104,11 @@ def analizza(ruote, estrazioni):
                 if not primo and len(comuni)>=soglia:
                     primo, punti, data_esito = n, len(comuni), d
             stato = 'OK' if primo else 'KO' if len(finestra)==9 else 'APERTO'
-            eventi.append(dict(Metodo=nome, Attivazione=giorno, Primo_estratto_Lotto=numeri[0],
+            eventi.append(dict(Metodo=nome, Sempre_attivo=mensile, Attivazione=giorno, Primo_estratto_Lotto=numeri[0],
                                Estratti_Lotto=' '.join(map(str, numeri)),
                                Posizione_spia=numeri.index(condizione)+1 if isinstance(condizione,int) else '',
                                Pool=' '.join(map(str,sorted(pool))),
-                               Soglia=soglia, Nuovi_concorsi=9-sovrapposti, Sovrapposti=sovrapposti, Osservati=len(finestra), Stato=stato, Primo_colpo=primo or '',
+                               Soglia=soglia, Nuovi_concorsi=0 if mensile else 9-sovrapposti, Sovrapposti=sovrapposti, Osservati=len(finestra), Stato='MENSILE' if mensile else stato, Primo_colpo=primo or '',
                                Punti_primo=punti or '', Data_esito=data_esito))
         if isinstance(condizione,int):
             # Nove concorsi interi come esposizione. Un concorso conta una sola volta per metodo.
@@ -142,6 +146,8 @@ def riepilogo(eventi, giornaliero, confronti):
             punti[periodo, r['Metodo']][r['Punti']] += 1
     gruppi = defaultdict(list)
     for r in eventi:
+        if r['Sempre_attivo']:
+            continue
         d = r['Attivazione']
         for periodo in periodi(d):
             gruppi[periodo,r['Metodo']].append(r)
@@ -171,9 +177,9 @@ def aggiorna_report(lotto, estrazioni, output):
     giornaliero = registro_giornaliero(colpi)
     stats = riepilogo(eventi, giornaliero, confronti)
     output.mkdir(parents=True,exist_ok=True)
-    for nome,righe in [('statistiche',stats),('attivazioni',eventi),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
+    for nome,righe in [('statistiche',stats),('attivazioni',[r for r in eventi if not r['Sempre_attivo']]),('tredicine_mensili',[r for r in eventi if r['Sempre_attivo']]),('colpi',colpi),('concorsi_attivi',giornaliero),('attivi_passivi',confronti)]:
         scrivi(output/(nome+'.csv'),righe)
-    return eventi, stats
+    return eventi, stats, giornaliero
 
 
 def main():
@@ -184,12 +190,13 @@ def main():
     args = parser.parse_args()
     lotto = carica_lotto(args.lotto)
     estrazioni = load_estrazioni_overall()
-    eventi, stats = aggiorna_report(lotto, estrazioni, args.output)
+    eventi, stats, _ = aggiorna_report(lotto, estrazioni, args.output)
     print(f'Ultimo Lotto {max(lotto)} | Ultimo SuperEnalotto {estrazioni[-1].data} | {args.periodo}')
-    print('Metodo               OK su complete    %            Nuovi  Disputati  Soglia')
-    for r in sorted(stats,key=lambda r:float(r['Percentuale'] or 0),reverse=True):
-        if r['Periodo']==args.periodo:
-            print(f"{r['Metodo']:20} {r['OK_complete']:3}/{r['Finestre_complete']:<4} {str(r['Percentuale']):>7}     {r['Nuovi_concorsi']:8}  {r['Concorsi_attivi_disputati']:9}    {1 if r['Metodo'] in ('Bari prima','Firenze ultima','Milano ultima') else 3}")
+    print('Metodo                Concorsi valutati   Con 3 o più')
+    for r in stats:
+        if r['Periodo'] == args.periodo:
+            centri = sum(r[f'Punti_{k}'] for k in range(3, 7))
+            print(f"{r['Metodo']:20} {r['Concorsi_attivi_disputati']:17} {centri:12}")
     print(f'Dettagli: {args.output}')
 
 
