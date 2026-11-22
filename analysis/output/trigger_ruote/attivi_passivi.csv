@@ -1,577 +1,535 @@
 ﻿Metodo;Periodo;Stato;Concorsi;Punti_0;Punti_1;Punti_2;Punti_3;Punti_4;Punti_5;Punti_6
-Roma 90;1998;attivo;76;20;32;16;7;1;0;0
-Roma 90;1998;passivo;28;11;11;5;1;0;0;0
-Roma 90;1999;attivo;41;9;22;7;1;2;0;0
-Roma 90;1999;passivo;63;24;24;11;4;0;0;0
-Roma 90;2000;attivo;32;13;13;4;2;0;0;0
-Roma 90;2000;passivo;73;21;32;17;3;0;0;0
-Roma 90;2001;attivo;22;7;9;4;1;1;0;0
-Roma 90;2001;passivo;83;38;32;8;4;1;0;0
-Roma 90;2002;attivo;36;13;13;9;1;0;0;0
-Roma 90;2002;passivo;73;20;35;15;3;0;0;0
-Roma 90;2003;attivo;47;22;20;5;0;0;0;0
-Roma 90;2003;passivo;58;20;19;17;2;0;0;0
-Roma 90;2004;attivo;52;16;20;14;2;0;0;0
-Roma 90;2004;passivo;52;18;24;9;1;0;0;0
-Roma 90;2005;attivo;78;28;31;14;5;0;0;0
-Roma 90;2005;passivo;55;18;30;6;1;0;0;0
-Roma 90;2006;attivo;42;21;11;8;2;0;0;0
-Roma 90;2006;passivo;114;36;49;26;2;1;0;0
-Roma 90;2007;attivo;77;23;35;16;2;1;0;0
-Roma 90;2007;passivo;79;25;36;14;3;1;0;0
-Roma 90;2008;attivo;67;28;24;12;3;0;0;0
-Roma 90;2008;passivo;90;27;43;16;4;0;0;0
-Roma 90;2009;attivo;42;15;15;10;2;0;0;0
-Roma 90;2009;passivo;115;43;46;18;8;0;0;0
-Roma 90;2010;attivo;36;14;15;4;2;1;0;0
-Roma 90;2010;passivo;120;55;48;14;2;1;0;0
-Roma 90;2011;attivo;51;18;26;5;2;0;0;0
-Roma 90;2011;passivo;106;46;41;17;2;0;0;0
-Roma 90;2012;attivo;54;14;26;13;1;0;0;0
-Roma 90;2012;passivo;102;38;47;14;2;1;0;0
-Roma 90;2013;attivo;83;26;39;16;2;0;0;0
-Roma 90;2013;passivo;74;29;35;5;5;0;0;0
-Roma 90;2014;attivo;68;31;23;12;2;0;0;0
-Roma 90;2014;passivo;88;31;40;9;8;0;0;0
-Roma 90;2015;attivo;49;17;21;10;1;0;0;0
-Roma 90;2015;passivo;108;39;47;20;2;0;0;0
-Roma 90;2016;attivo;20;9;8;3;0;0;0;0
-Roma 90;2016;passivo;137;51;60;22;4;0;0;0
-Roma 90;2017;attivo;42;15;18;9;0;0;0;0
-Roma 90;2017;passivo;114;43;44;21;6;0;0;0
-Roma 90;2018;attivo;69;27;27;13;2;0;0;0
-Roma 90;2018;passivo;87;30;35;21;1;0;0;0
-Roma 90;2019;attivo;59;28;21;8;2;0;0;0
-Roma 90;2019;passivo;98;45;33;15;5;0;0;0
-Roma 90;2020;attivo;85;31;36;14;4;0;0;0
-Roma 90;2020;passivo;54;25;23;5;1;0;0;0
-Roma 90;2021;attivo;83;31;29;17;6;0;0;0
-Roma 90;2021;passivo;73;24;31;14;4;0;0;0
-Roma 90;2022;attivo;67;30;25;10;2;0;0;0
-Roma 90;2022;passivo;90;31;37;20;2;0;0;0
-Roma 90;2023;attivo;81;35;35;8;3;0;0;0
-Roma 90;2023;passivo;101;31;50;15;5;0;0;0
-Roma 90;2024;attivo;82;38;23;18;3;0;0;0
-Roma 90;2024;passivo;126;34;56;25;9;2;0;0
-Roma 90;2025;attivo;62;24;24;13;1;0;0;0
-Roma 90;2025;passivo;146;65;49;25;6;1;0;0
-Roma 90;2026;attivo;68;26;31;8;2;0;1;0
-Roma 90;2026;passivo;119;34;61;21;3;0;0;0
-Roma 90;New mode;attivo;1074;419;434;184;35;1;1;0
-Roma 90;New mode;passivo;1807;676;763;292;71;5;0;0
-Roma 90;Overall;attivo;1671;629;672;300;63;6;1;0
-Roma 90;Overall;passivo;2626;952;1118;445;103;8;0;0
-Roma 90;Pre 2009-07;attivo;597;210;238;116;28;5;0;0
-Roma 90;Pre 2009-07;passivo;819;276;355;153;32;3;0;0
-Palermo 90;1998;attivo;22;4;8;7;0;2;1;0
-Palermo 90;1998;passivo;82;32;33;14;3;0;0;0
-Palermo 90;1999;attivo;48;13;22;10;3;0;0;0
-Palermo 90;1999;passivo;56;26;17;12;1;0;0;0
-Palermo 90;2000;attivo;46;16;21;9;0;0;0;0
-Palermo 90;2000;passivo;59;24;22;12;1;0;0;0
-Palermo 90;2001;attivo;79;27;40;9;3;0;0;0
-Palermo 90;2001;passivo;26;9;11;6;0;0;0;0
-Palermo 90;2002;attivo;45;15;19;9;2;0;0;0
-Palermo 90;2002;passivo;64;19;31;12;2;0;0;0
-Palermo 90;2003;attivo;22;8;10;2;1;1;0;0
-Palermo 90;2003;passivo;83;31;38;11;2;1;0;0
-Palermo 90;2004;attivo;33;14;13;3;3;0;0;0
-Palermo 90;2004;passivo;71;24;35;10;2;0;0;0
-Palermo 90;2005;attivo;37;14;16;7;0;0;0;0
-Palermo 90;2005;passivo;96;36;40;16;4;0;0;0
-Palermo 90;2006;attivo;54;23;21;9;0;0;1;0
-Palermo 90;2006;passivo;102;35;38;19;9;1;0;0
-Palermo 90;2007;attivo;42;13;20;7;2;0;0;0
-Palermo 90;2007;passivo;114;40;53;18;3;0;0;0
-Palermo 90;2008;attivo;59;17;32;8;1;1;0;0
-Palermo 90;2008;passivo;98;33;37;23;5;0;0;0
-Palermo 90;2009;attivo;76;23;35;15;3;0;0;0
-Palermo 90;2009;passivo;81;29;40;11;1;0;0;0
-Palermo 90;2010;attivo;49;26;16;4;3;0;0;0
-Palermo 90;2010;passivo;107;46;48;10;3;0;0;0
-Palermo 90;2011;attivo;87;34;37;13;3;0;0;0
-Palermo 90;2011;passivo;70;29;29;8;3;1;0;0
-Palermo 90;2012;attivo;93;46;32;13;2;0;0;0
-Palermo 90;2012;passivo;63;20;31;11;1;0;0;0
-Palermo 90;2013;attivo;98;33;49;10;6;0;0;0
-Palermo 90;2013;passivo;59;19;24;11;4;1;0;0
-Palermo 90;2014;attivo;73;35;29;6;3;0;0;0
-Palermo 90;2014;passivo;83;35;30;13;4;1;0;0
-Palermo 90;2015;attivo;40;19;13;7;1;0;0;0
-Palermo 90;2015;passivo;117;49;45;21;2;0;0;0
-Palermo 90;2016;attivo;55;19;27;8;1;0;0;0
-Palermo 90;2016;passivo;102;48;37;13;3;1;0;0
-Palermo 90;2017;attivo;61;25;25;10;1;0;0;0
-Palermo 90;2017;passivo;95;40;33;18;4;0;0;0
-Palermo 90;2018;attivo;95;36;43;14;2;0;0;0
-Palermo 90;2018;passivo;61;19;28;13;1;0;0;0
-Palermo 90;2019;attivo;88;38;36;11;2;1;0;0
-Palermo 90;2019;passivo;69;27;25;17;0;0;0;0
-Palermo 90;2020;attivo;51;18;21;10;1;1;0;0
-Palermo 90;2020;passivo;88;39;37;9;3;0;0;0
-Palermo 90;2021;attivo;73;22;37;12;1;1;0;0
-Palermo 90;2021;passivo;83;31;39;10;3;0;0;0
-Palermo 90;2022;attivo;71;30;23;15;1;2;0;0
-Palermo 90;2022;passivo;86;29;37;19;1;0;0;0
-Palermo 90;2023;attivo;78;31;36;9;2;0;0;0
-Palermo 90;2023;passivo;104;43;40;17;4;0;0;0
-Palermo 90;2024;attivo;111;43;44;17;7;0;0;0
-Palermo 90;2024;passivo;97;35;42;16;4;0;0;0
-Palermo 90;2025;attivo;108;41;40;25;1;1;0;0
-Palermo 90;2025;passivo;100;28;48;20;3;1;0;0
-Palermo 90;2026;attivo;73;21;37;12;2;1;0;0
-Palermo 90;2026;passivo;114;39;50;21;4;0;0;0
-Palermo 90;New mode;attivo;1342;529;563;203;40;7;0;0
-Palermo 90;New mode;passivo;1539;591;644;252;47;5;0;0
-Palermo 90;Overall;attivo;1867;704;802;291;57;11;2;0
-Palermo 90;Overall;passivo;2430;914;1018;411;80;7;0;0
-Palermo 90;Pre 2009-07;attivo;525;175;239;88;17;4;2;0
-Palermo 90;Pre 2009-07;passivo;891;323;374;159;33;2;0;0
-Napoli 90;1998;attivo;48;9;20;16;3;0;0;0
-Napoli 90;1998;passivo;56;23;24;8;1;0;0;0
-Napoli 90;1999;attivo;55;13;20;18;3;1;0;0
-Napoli 90;1999;passivo;49;17;20;8;3;1;0;0
-Napoli 90;2000;attivo;9;5;1;3;0;0;0;0
-Napoli 90;2000;passivo;96;40;39;16;1;0;0;0
-Napoli 90;2001;attivo;26;5;14;7;0;0;0;0
-Napoli 90;2001;passivo;79;24;38;12;4;1;0;0
-Napoli 90;2002;attivo;58;13;31;12;2;0;0;0
-Napoli 90;2002;passivo;51;20;21;9;1;0;0;0
-Napoli 90;2003;attivo;37;16;15;5;1;0;0;0
-Napoli 90;2003;passivo;68;22;30;13;3;0;0;0
-Napoli 90;2004;attivo;12;5;5;2;0;0;0;0
-Napoli 90;2004;passivo;92;27;46;17;2;0;0;0
-Napoli 90;2005;attivo;49;17;18;10;2;2;0;0
-Napoli 90;2005;passivo;84;31;36;14;3;0;0;0
-Napoli 90;2006;attivo;60;23;23;10;3;1;0;0
-Napoli 90;2006;passivo;96;33;36;22;5;0;0;0
-Napoli 90;2007;attivo;93;39;35;14;5;0;0;0
-Napoli 90;2007;passivo;63;15;33;13;2;0;0;0
-Napoli 90;2008;attivo;66;26;28;12;0;0;0;0
-Napoli 90;2008;passivo;91;38;33;19;1;0;0;0
-Napoli 90;2009;attivo;74;30;29;8;6;1;0;0
-Napoli 90;2009;passivo;83;35;35;12;1;0;0;0
-Napoli 90;2010;attivo;85;24;47;9;5;0;0;0
-Napoli 90;2010;passivo;71;26;34;6;5;0;0;0
-Napoli 90;2011;attivo;84;37;37;8;2;0;0;0
-Napoli 90;2011;passivo;73;22;30;17;3;1;0;0
-Napoli 90;2012;attivo;72;33;25;13;1;0;0;0
-Napoli 90;2012;passivo;84;31;36;15;2;0;0;0
-Napoli 90;2013;attivo;53;20;27;6;0;0;0;0
-Napoli 90;2013;passivo;104;34;47;19;4;0;0;0
-Napoli 90;2014;attivo;44;18;17;8;1;0;0;0
-Napoli 90;2014;passivo;112;46;46;19;1;0;0;0
-Napoli 90;2015;attivo;59;19;29;9;1;1;0;0
-Napoli 90;2015;passivo;98;36;41;18;2;0;1;0
-Napoli 90;2016;attivo;88;31;29;22;5;1;0;0
-Napoli 90;2016;passivo;69;38;20;10;1;0;0;0
-Napoli 90;2017;attivo;66;21;35;9;0;1;0;0
-Napoli 90;2017;passivo;90;35;38;14;3;0;0;0
-Napoli 90;2018;attivo;38;13;16;9;0;0;0;0
-Napoli 90;2018;passivo;118;45;49;21;3;0;0;0
-Napoli 90;2019;attivo;69;32;24;10;3;0;0;0
-Napoli 90;2019;passivo;88;36;38;12;2;0;0;0
-Napoli 90;2020;attivo;58;19;30;6;3;0;0;0
-Napoli 90;2020;passivo;81;35;29;14;2;1;0;0
-Napoli 90;2021;attivo;87;31;40;11;5;0;0;0
-Napoli 90;2021;passivo;69;30;23;13;3;0;0;0
-Napoli 90;2022;attivo;50;23;19;6;1;1;0;0
-Napoli 90;2022;passivo;107;40;48;15;4;0;0;0
-Napoli 90;2023;attivo;66;25;25;12;3;1;0;0
-Napoli 90;2023;passivo;116;45;48;21;2;0;0;0
-Napoli 90;2024;attivo;109;32;50;21;5;1;0;0
-Napoli 90;2024;passivo;99;36;45;15;3;0;0;0
-Napoli 90;2025;attivo;97;31;42;19;5;0;0;0
-Napoli 90;2025;passivo;111;46;49;12;3;1;0;0
-Napoli 90;2026;attivo;90;33;37;19;0;1;0;0
-Napoli 90;2026;passivo;97;45;30;17;4;1;0;0
-Napoli 90;New mode;attivo;1248;453;543;201;44;7;0;0
-Napoli 90;New mode;passivo;1633;647;668;266;47;4;1;0
-Napoli 90;Overall;attivo;1802;643;768;314;65;12;0;0
-Napoli 90;Overall;passivo;2495;951;1042;421;74;6;1;0
-Napoli 90;Pre 2009-07;attivo;554;190;225;113;21;5;0;0
-Napoli 90;Pre 2009-07;passivo;862;304;374;155;27;2;0;0
-Milano 90;1998;attivo;55;17;25;11;2;0;0;0
-Milano 90;1998;passivo;49;13;28;7;0;0;1;0
-Milano 90;1999;attivo;54;16;20;12;4;2;0;0
-Milano 90;1999;passivo;50;15;22;11;2;0;0;0
-Milano 90;2000;attivo;42;21;14;7;0;0;0;0
-Milano 90;2000;passivo;63;30;19;10;2;1;1;0
-Milano 90;2001;attivo;44;17;16;9;2;0;0;0
-Milano 90;2001;passivo;61;24;26;9;2;0;0;0
-Milano 90;2002;attivo;47;21;20;5;1;0;0;0
-Milano 90;2002;passivo;62;27;24;9;2;0;0;0
-Milano 90;2003;attivo;52;18;18;13;3;0;0;0
-Milano 90;2003;passivo;53;23;14;12;4;0;0;0
-Milano 90;2004;attivo;42;19;14;7;2;0;0;0
-Milano 90;2004;passivo;62;28;23;8;3;0;0;0
-Milano 90;2005;attivo;49;20;19;8;1;1;0;0
-Milano 90;2005;passivo;84;28;37;16;3;0;0;0
-Milano 90;2006;attivo;106;40;42;20;4;0;0;0
-Milano 90;2006;passivo;50;16;24;9;1;0;0;0
-Milano 90;2007;attivo;61;28;20;10;3;0;0;0
-Milano 90;2007;passivo;95;37;30;21;6;1;0;0
-Milano 90;2008;attivo;52;20;23;5;4;0;0;0
-Milano 90;2008;passivo;105;39;45;19;1;1;0;0
-Milano 90;2009;attivo;65;25;30;7;3;0;0;0
-Milano 90;2009;passivo;92;33;41;14;3;1;0;0
-Milano 90;2010;attivo;58;22;29;6;1;0;0;0
-Milano 90;2010;passivo;98;39;42;13;4;0;0;0
-Milano 90;2011;attivo;89;32;35;17;5;0;0;0
-Milano 90;2011;passivo;68;25;32;10;1;0;0;0
-Milano 90;2012;attivo;48;16;20;11;1;0;0;0
-Milano 90;2012;passivo;108;42;46;17;3;0;0;0
-Milano 90;2013;attivo;44;18;18;5;3;0;0;0
-Milano 90;2013;passivo;113;44;42;21;5;1;0;0
-Milano 90;2014;attivo;78;30;28;18;2;0;0;0
-Milano 90;2014;passivo;78;29;29;16;4;0;0;0
-Milano 90;2015;attivo;85;39;31;13;1;1;0;0
-Milano 90;2015;passivo;72;28;25;16;3;0;0;0
-Milano 90;2016;attivo;63;29;25;6;3;0;0;0
-Milano 90;2016;passivo;94;38;36;16;4;0;0;0
-Milano 90;2017;attivo;40;16;17;6;1;0;0;0
-Milano 90;2017;passivo;116;40;53;18;4;0;1;0
-Milano 90;2018;attivo;88;34;34;15;4;1;0;0
-Milano 90;2018;passivo;68;26;29;10;3;0;0;0
-Milano 90;2019;attivo;40;19;14;7;0;0;0;0
-Milano 90;2019;passivo;117;47;46;20;4;0;0;0
-Milano 90;2020;attivo;70;28;27;13;2;0;0;0
-Milano 90;2020;passivo;69;25;30;10;4;0;0;0
-Milano 90;2021;attivo;19;5;11;2;1;0;0;0
-Milano 90;2021;passivo;137;51;50;28;8;0;0;0
-Milano 90;2022;attivo;75;27;33;14;0;1;0;0
-Milano 90;2022;passivo;82;33;38;10;1;0;0;0
-Milano 90;2023;attivo;64;24;26;12;1;1;0;0
-Milano 90;2023;passivo;118;48;47;18;5;0;0;0
-Milano 90;2024;attivo;85;25;37;16;5;2;0;0
-Milano 90;2024;passivo;123;45;57;16;5;0;0;0
-Milano 90;2025;attivo;66;29;27;8;1;1;0;0
-Milano 90;2025;passivo;142;48;62;26;5;1;0;0
-Milano 90;2026;attivo;61;21;26;9;4;1;0;0
-Milano 90;2026;passivo;126;48;54;18;5;1;0;0
-Milano 90;New mode;attivo;1108;430;454;181;35;8;0;0
-Milano 90;New mode;passivo;1773;673;734;291;70;4;1;0
-Milano 90;Overall;attivo;1742;676;699;292;64;11;0;0
-Milano 90;Overall;passivo;2555;969;1051;428;97;7;3;0
-Milano 90;Pre 2009-07;attivo;634;246;245;111;29;3;0;0
-Milano 90;Pre 2009-07;passivo;782;296;317;137;27;3;2;0
-Firenze 90;1998;attivo;36;5;18;11;0;2;0;0
-Firenze 90;1998;passivo;68;30;28;9;1;0;0;0
-Firenze 90;1999;attivo;41;13;15;9;4;0;0;0
-Firenze 90;1999;passivo;63;23;17;20;3;0;0;0
-Firenze 90;2000;attivo;50;20;18;11;1;0;0;0
-Firenze 90;2000;passivo;55;14;28;11;2;0;0;0
-Firenze 90;2001;attivo;31;8;13;10;0;0;0;0
-Firenze 90;2001;passivo;74;30;36;7;1;0;0;0
-Firenze 90;2002;attivo;18;5;9;3;1;0;0;0
-Firenze 90;2002;passivo;91;25;45;18;3;0;0;0
-Firenze 90;2003;attivo;36;11;18;6;1;0;0;0
-Firenze 90;2003;passivo;69;21;35;10;2;1;0;0
-Firenze 90;2004;attivo;52;22;20;9;1;0;0;0
-Firenze 90;2004;passivo;52;19;21;11;1;0;0;0
-Firenze 90;2005;attivo;71;21;30;15;5;0;0;0
-Firenze 90;2005;passivo;62;25;23;11;3;0;0;0
-Firenze 90;2006;attivo;91;36;33;14;7;1;0;0
-Firenze 90;2006;passivo;65;23;28;11;3;0;0;0
-Firenze 90;2007;attivo;46;16;18;10;2;0;0;0
-Firenze 90;2007;passivo;110;32;53;17;8;0;0;0
-Firenze 90;2008;attivo;36;15;14;5;2;0;0;0
-Firenze 90;2008;passivo;121;50;42;25;4;0;0;0
-Firenze 90;2009;attivo;98;35;44;15;4;0;0;0
-Firenze 90;2009;passivo;59;21;26;11;1;0;0;0
-Firenze 90;2010;attivo;34;11;17;5;1;0;0;0
-Firenze 90;2010;passivo;122;44;50;27;1;0;0;0
-Firenze 90;2011;attivo;78;31;28;16;3;0;0;0
-Firenze 90;2011;passivo;79;21;39;16;2;1;0;0
-Firenze 90;2012;attivo;56;23;21;11;1;0;0;0
-Firenze 90;2012;passivo;100;44;40;10;6;0;0;0
-Firenze 90;2013;attivo;79;32;28;13;4;2;0;0
-Firenze 90;2013;passivo;78;28;34;16;0;0;0;0
-Firenze 90;2014;attivo;96;43;36;15;2;0;0;0
-Firenze 90;2014;passivo;60;18;27;14;1;0;0;0
-Firenze 90;2015;attivo;49;22;17;8;2;0;0;0
-Firenze 90;2015;passivo;108;45;47;14;1;1;0;0
-Firenze 90;2016;attivo;75;37;27;9;2;0;0;0
-Firenze 90;2016;passivo;82;35;35;10;2;0;0;0
-Firenze 90;2017;attivo;68;29;26;11;1;1;0;0
-Firenze 90;2017;passivo;88;39;29;16;4;0;0;0
-Firenze 90;2018;attivo;92;41;30;18;3;0;0;0
-Firenze 90;2018;passivo;64;22;29;9;3;1;0;0
-Firenze 90;2019;attivo;61;21;29;9;2;0;0;0
-Firenze 90;2019;passivo;96;32;39;24;1;0;0;0
-Firenze 90;2020;attivo;37;16;15;6;0;0;0;0
-Firenze 90;2020;passivo;102;41;43;12;5;0;1;0
-Firenze 90;2021;attivo;92;32;44;14;2;0;0;0
-Firenze 90;2021;passivo;64;16;32;15;1;0;0;0
-Firenze 90;2022;attivo;50;21;21;7;1;0;0;0
-Firenze 90;2022;passivo;107;44;37;23;3;0;0;0
-Firenze 90;2023;attivo;72;28;24;17;3;0;0;0
-Firenze 90;2023;passivo;110;43;49;14;4;0;0;0
-Firenze 90;2024;attivo;74;32;28;12;2;0;0;0
-Firenze 90;2024;passivo;134;60;50;18;5;1;0;0
-Firenze 90;2025;attivo;82;28;32;17;4;1;0;0
-Firenze 90;2025;passivo;126;52;48;24;2;0;0;0
-Firenze 90;2026;attivo;57;19;31;6;1;0;0;0
-Firenze 90;2026;passivo;130;53;53;16;7;1;0;0
-Firenze 90;New mode;attivo;1203;487;476;202;34;4;0;0
-Firenze 90;New mode;passivo;1678;647;690;286;49;5;1;0
-Firenze 90;Overall;attivo;1758;673;704;312;62;7;0;0
-Firenze 90;Overall;passivo;2539;950;1063;439;80;6;1;0
-Firenze 90;Pre 2009-07;attivo;555;186;228;110;28;3;0;0
-Firenze 90;Pre 2009-07;passivo;861;303;373;153;31;1;0;0
-Bari 90;1998;attivo;28;10;8;8;2;0;0;0
-Bari 90;1998;passivo;76;30;25;17;4;0;0;0
-Bari 90;1999;attivo;57;19;19;14;4;1;0;0
-Bari 90;1999;passivo;47;13;27;7;0;0;0;0
-Bari 90;2000;attivo;32;11;16;5;0;0;0;0
-Bari 90;2000;passivo;73;32;26;14;1;0;0;0
-Bari 90;2001;attivo;32;12;12;7;0;1;0;0
-Bari 90;2001;passivo;73;31;24;13;4;1;0;0
-Bari 90;2002;attivo;46;12;20;12;2;0;0;0
-Bari 90;2002;passivo;63;24;28;8;2;1;0;0
-Bari 90;2003;attivo;45;13;22;8;2;0;0;0
-Bari 90;2003;passivo;60;19;29;11;0;1;0;0
-Bari 90;2004;attivo;27;11;11;5;0;0;0;0
-Bari 90;2004;passivo;77;29;34;12;2;0;0;0
-Bari 90;2005;attivo;67;18;31;17;1;0;0;0
-Bari 90;2005;passivo;66;30;20;14;2;0;0;0
-Bari 90;2006;attivo;62;30;16;14;2;0;0;0
-Bari 90;2006;passivo;94;41;35;15;3;0;0;0
-Bari 90;2007;attivo;56;27;20;8;1;0;0;0
-Bari 90;2007;passivo;100;36;39;19;6;0;0;0
-Bari 90;2008;attivo;80;33;24;15;8;0;0;0
-Bari 90;2008;passivo;77;29;37;10;1;0;0;0
-Bari 90;2009;attivo;78;29;38;10;1;0;0;0
-Bari 90;2009;passivo;79;27;33;15;3;1;0;0
-Bari 90;2010;attivo;84;34;31;15;4;0;0;0
-Bari 90;2010;passivo;72;31;27;11;3;0;0;0
-Bari 90;2011;attivo;53;18;23;8;4;0;0;0
-Bari 90;2011;passivo;104;50;40;10;4;0;0;0
-Bari 90;2012;attivo;79;23;41;15;0;0;0;0
-Bari 90;2012;passivo;77;36;29;10;2;0;0;0
-Bari 90;2013;attivo;63;26;26;8;3;0;0;0
-Bari 90;2013;passivo;94;42;33;16;2;1;0;0
-Bari 90;2014;attivo;60;20;28;11;1;0;0;0
-Bari 90;2014;passivo;96;35;48;11;1;1;0;0
-Bari 90;2015;attivo;79;28;38;9;4;0;0;0
-Bari 90;2015;passivo;78;26;28;18;6;0;0;0
-Bari 90;2016;attivo;47;21;18;4;3;1;0;0
-Bari 90;2016;passivo;110;42;46;18;3;1;0;0
-Bari 90;2017;attivo;36;17;14;5;0;0;0;0
-Bari 90;2017;passivo;120;51;48;14;5;2;0;0
-Bari 90;2018;attivo;77;30;28;18;1;0;0;0
-Bari 90;2018;passivo;79;27;36;12;4;0;0;0
-Bari 90;2019;attivo;69;32;29;6;2;0;0;0
-Bari 90;2019;passivo;88;39;34;11;4;0;0;0
-Bari 90;2020;attivo;63;29;24;6;4;0;0;0
-Bari 90;2020;passivo;76;31;33;10;2;0;0;0
-Bari 90;2021;attivo;52;20;20;12;0;0;0;0
-Bari 90;2021;passivo;104;39;40;19;6;0;0;0
-Bari 90;2022;attivo;77;29;32;13;3;0;0;0
-Bari 90;2022;passivo;80;38;25;14;3;0;0;0
-Bari 90;2023;attivo;66;29;26;9;2;0;0;0
-Bari 90;2023;passivo;116;45;52;18;1;0;0;0
-Bari 90;2024;attivo;78;28;31;16;3;0;0;0
-Bari 90;2024;passivo;130;49;45;31;5;0;0;0
-Bari 90;2025;attivo;52;22;20;9;1;0;0;0
-Bari 90;2025;passivo;156;58;67;28;3;0;0;0
-Bari 90;2026;attivo;77;30;34;11;2;0;0;0
-Bari 90;2026;passivo;110;37;53;17;3;0;0;0
-Bari 90;New mode;attivo;1148;449;484;177;37;1;0;0
-Bari 90;New mode;passivo;1733;689;705;274;59;6;0;0
-Bari 90;Overall;attivo;1722;661;700;298;60;3;0;0
-Bari 90;Overall;passivo;2575;1017;1041;423;85;9;0;0
-Bari 90;Pre 2009-07;attivo;574;212;216;121;23;2;0;0
-Bari 90;Pre 2009-07;passivo;842;328;336;149;26;3;0;0
-Venezia 90;1998;attivo;33;10;16;7;0;0;0;0
-Venezia 90;1998;passivo;71;20;37;11;2;0;1;0
-Venezia 90;1999;attivo;27;5;13;6;3;0;0;0
-Venezia 90;1999;passivo;77;26;29;17;3;2;0;0
-Venezia 90;2000;attivo;29;16;8;4;1;0;0;0
-Venezia 90;2000;passivo;76;35;25;13;1;1;1;0
-Venezia 90;2001;attivo;37;15;17;4;1;0;0;0
-Venezia 90;2001;passivo;68;26;25;14;3;0;0;0
-Venezia 90;2002;attivo;53;23;23;6;1;0;0;0
-Venezia 90;2002;passivo;56;25;21;8;2;0;0;0
-Venezia 90;2003;attivo;40;15;12;11;2;0;0;0
-Venezia 90;2003;passivo;65;26;20;14;5;0;0;0
-Venezia 90;2004;attivo;43;20;13;9;1;0;0;0
-Venezia 90;2004;passivo;61;27;24;6;4;0;0;0
-Venezia 90;2005;attivo;63;21;27;14;1;0;0;0
-Venezia 90;2005;passivo;70;27;29;10;3;1;0;0
-Venezia 90;2006;attivo;91;34;37;18;2;0;0;0
-Venezia 90;2006;passivo;65;22;29;11;3;0;0;0
-Venezia 90;2007;attivo;36;12;10;12;2;0;0;0
-Venezia 90;2007;passivo;120;53;40;19;7;1;0;0
-Venezia 90;2008;attivo;77;34;28;13;2;0;0;0
-Venezia 90;2008;passivo;80;25;40;11;3;1;0;0
-Venezia 90;2009;attivo;38;15;15;6;2;0;0;0
-Venezia 90;2009;passivo;119;43;56;15;4;1;0;0
-Venezia 90;2010;attivo;55;20;26;5;4;0;0;0
-Venezia 90;2010;passivo;101;41;45;14;1;0;0;0
-Venezia 90;2011;attivo;63;18;32;12;1;0;0;0
-Venezia 90;2011;passivo;94;39;35;15;5;0;0;0
-Venezia 90;2012;attivo;70;20;31;15;4;0;0;0
-Venezia 90;2012;passivo;86;38;35;13;0;0;0;0
-Venezia 90;2013;attivo;48;24;17;5;2;0;0;0
-Venezia 90;2013;passivo;109;38;43;21;6;1;0;0
-Venezia 90;2014;attivo;89;29;38;19;3;0;0;0
-Venezia 90;2014;passivo;67;30;19;15;3;0;0;0
-Venezia 90;2015;attivo;49;20;17;11;1;0;0;0
-Venezia 90;2015;passivo;108;47;39;18;3;1;0;0
-Venezia 90;2016;attivo;62;25;25;9;3;0;0;0
-Venezia 90;2016;passivo;95;42;36;13;4;0;0;0
-Venezia 90;2017;attivo;57;20;28;7;2;0;0;0
-Venezia 90;2017;passivo;99;36;42;17;3;0;1;0
-Venezia 90;2018;attivo;66;24;24;13;4;1;0;0
-Venezia 90;2018;passivo;90;36;39;12;3;0;0;0
-Venezia 90;2019;attivo;70;36;23;10;1;0;0;0
-Venezia 90;2019;passivo;87;30;37;17;3;0;0;0
-Venezia 90;2020;attivo;86;33;35;15;3;0;0;0
-Venezia 90;2020;passivo;53;20;22;8;3;0;0;0
-Venezia 90;2021;attivo;74;26;25;18;5;0;0;0
-Venezia 90;2021;passivo;82;30;36;12;4;0;0;0
-Venezia 90;2022;attivo;44;19;16;9;0;0;0;0
-Venezia 90;2022;passivo;113;41;55;15;1;1;0;0
-Venezia 90;2023;attivo;62;22;24;15;0;1;0;0
-Venezia 90;2023;passivo;120;50;49;15;6;0;0;0
-Venezia 90;2024;attivo;72;22;34;14;2;0;0;0
-Venezia 90;2024;passivo;136;48;60;18;8;2;0;0
-Venezia 90;2025;attivo;86;32;37;14;3;0;0;0
-Venezia 90;2025;passivo;122;45;52;20;3;2;0;0
-Venezia 90;2026;attivo;54;22;27;4;1;0;0;0
-Venezia 90;2026;passivo;133;47;53;23;8;2;0;0
-Venezia 90;New mode;attivo;1125;420;466;198;39;2;0;0
-Venezia 90;New mode;passivo;1756;683;722;274;66;10;1;0
-Venezia 90;Overall;attivo;1674;632;678;305;57;2;0;0
-Venezia 90;Overall;passivo;2623;1013;1072;415;104;16;3;0
-Venezia 90;Pre 2009-07;attivo;549;212;212;107;18;0;0;0
-Venezia 90;Pre 2009-07;passivo;867;330;350;141;38;6;2;0
-Milano 10 libro;1998;attivo;62;17;21;19;5;0;0;0
-Milano 10 libro;1998;passivo;42;17;15;9;1;0;0;0
-Milano 10 libro;1999;attivo;20;7;8;3;1;1;0;0
-Milano 10 libro;1999;passivo;84;35;32;15;2;0;0;0
-Milano 10 libro;2000;attivo;51;23;16;10;2;0;0;0
-Milano 10 libro;2000;passivo;54;21;19;10;4;0;0;0
-Milano 10 libro;2001;attivo;34;16;15;2;1;0;0;0
-Milano 10 libro;2001;passivo;71;29;26;14;0;2;0;0
-Milano 10 libro;2002;attivo;42;13;20;8;1;0;0;0
-Milano 10 libro;2002;passivo;67;25;22;17;2;1;0;0
-Milano 10 libro;2003;attivo;37;16;14;6;1;0;0;0
-Milano 10 libro;2003;passivo;68;24;25;16;3;0;0;0
-Milano 10 libro;2004;attivo;49;21;20;5;3;0;0;0
-Milano 10 libro;2004;passivo;55;24;18;11;2;0;0;0
-Milano 10 libro;2005;attivo;56;26;20;6;4;0;0;0
-Milano 10 libro;2005;passivo;77;20;37;14;6;0;0;0
-Milano 10 libro;2006;attivo;66;26;21;17;2;0;0;0
-Milano 10 libro;2006;passivo;90;37;44;5;4;0;0;0
-Milano 10 libro;2007;attivo;53;18;25;7;3;0;0;0
-Milano 10 libro;2007;passivo;103;31;49;15;6;2;0;0
-Milano 10 libro;2008;attivo;78;27;30;16;5;0;0;0
-Milano 10 libro;2008;passivo;79;24;34;14;7;0;0;0
-Milano 10 libro;2009;attivo;43;12;20;8;2;1;0;0
-Milano 10 libro;2009;passivo;114;46;50;14;4;0;0;0
-Milano 10 libro;2010;attivo;78;34;35;5;4;0;0;0
-Milano 10 libro;2010;passivo;78;28;36;13;0;1;0;0
-Milano 10 libro;2011;attivo;66;27;29;9;1;0;0;0
-Milano 10 libro;2011;passivo;91;47;30;13;1;0;0;0
-Milano 10 libro;2012;attivo;50;23;17;7;3;0;0;0
-Milano 10 libro;2012;passivo;106;42;42;16;5;1;0;0
-Milano 10 libro;2013;attivo;66;26;31;7;2;0;0;0
-Milano 10 libro;2013;passivo;91;33;39;17;2;0;0;0
-Milano 10 libro;2014;attivo;68;23;27;15;3;0;0;0
-Milano 10 libro;2014;passivo;88;37;39;9;3;0;0;0
-Milano 10 libro;2015;attivo;36;16;13;5;2;0;0;0
-Milano 10 libro;2015;passivo;121;38;55;25;3;0;0;0
-Milano 10 libro;2016;attivo;76;32;28;11;5;0;0;0
-Milano 10 libro;2016;passivo;81;28;33;18;2;0;0;0
-Milano 10 libro;2017;attivo;67;27;30;8;2;0;0;0
-Milano 10 libro;2017;passivo;89;37;36;14;2;0;0;0
-Milano 10 libro;2018;attivo;93;31;36;24;2;0;0;0
-Milano 10 libro;2018;passivo;63;22;28;10;3;0;0;0
-Milano 10 libro;2019;attivo;45;20;17;8;0;0;0;0
-Milano 10 libro;2019;passivo;112;47;45;16;4;0;0;0
-Milano 10 libro;2020;attivo;45;18;19;4;4;0;0;0
-Milano 10 libro;2020;passivo;94;32;37;22;3;0;0;0
-Milano 10 libro;2021;attivo;72;19;40;12;1;0;0;0
-Milano 10 libro;2021;passivo;84;27;40;14;3;0;0;0
-Milano 10 libro;2022;attivo;74;30;28;14;1;1;0;0
-Milano 10 libro;2022;passivo;83;32;33;16;2;0;0;0
-Milano 10 libro;2023;attivo;45;14;22;8;1;0;0;0
-Milano 10 libro;2023;passivo;137;50;52;26;9;0;0;0
-Milano 10 libro;2024;attivo;79;27;30;17;5;0;0;0
-Milano 10 libro;2024;passivo;129;46;47;31;5;0;0;0
-Milano 10 libro;2025;attivo;97;37;38;17;4;1;0;0
-Milano 10 libro;2025;passivo;111;46;47;14;4;0;0;0
-Milano 10 libro;2026;attivo;111;36;41;27;5;2;0;0
-Milano 10 libro;2026;passivo;76;27;35;9;5;0;0;0
-Milano 10 libro;New mode;attivo;1182;445;489;199;45;4;0;0
-Milano 10 libro;New mode;passivo;1699;643;704;292;58;2;0;0
-Milano 10 libro;Overall;attivo;1759;662;711;305;75;6;0;0
-Milano 10 libro;Overall;passivo;2538;952;1045;437;97;7;0;0
-Milano 10 libro;Pre 2009-07;attivo;577;217;222;106;30;2;0;0
-Milano 10 libro;Pre 2009-07;passivo;839;309;341;145;39;5;0;0
-Milano 10 Excel;1998;attivo;62;19;21;19;3;0;0;0
-Milano 10 Excel;1998;passivo;42;19;13;9;1;0;0;0
-Milano 10 Excel;1999;attivo;20;7;8;2;3;0;0;0
-Milano 10 Excel;1999;passivo;84;37;31;13;3;0;0;0
-Milano 10 Excel;2000;attivo;51;20;20;8;3;0;0;0
-Milano 10 Excel;2000;passivo;54;22;19;11;2;0;0;0
-Milano 10 Excel;2001;attivo;34;18;12;3;1;0;0;0
-Milano 10 Excel;2001;passivo;71;28;28;12;1;2;0;0
-Milano 10 Excel;2002;attivo;42;11;23;7;1;0;0;0
-Milano 10 Excel;2002;passivo;67;25;23;15;3;1;0;0
-Milano 10 Excel;2003;attivo;37;16;14;6;1;0;0;0
-Milano 10 Excel;2003;passivo;68;25;25;15;3;0;0;0
-Milano 10 Excel;2004;attivo;49;23;16;7;3;0;0;0
-Milano 10 Excel;2004;passivo;55;24;19;10;2;0;0;0
-Milano 10 Excel;2005;attivo;56;25;18;9;4;0;0;0
-Milano 10 Excel;2005;passivo;77;23;33;18;3;0;0;0
-Milano 10 Excel;2006;attivo;66;25;25;14;2;0;0;0
-Milano 10 Excel;2006;passivo;90;36;44;6;3;1;0;0
-Milano 10 Excel;2007;attivo;53;18;23;11;1;0;0;0
-Milano 10 Excel;2007;passivo;103;29;49;18;5;1;1;0
-Milano 10 Excel;2008;attivo;78;28;32;15;3;0;0;0
-Milano 10 Excel;2008;passivo;79;24;31;19;4;1;0;0
-Milano 10 Excel;2009;attivo;43;13;23;4;2;1;0;0
-Milano 10 Excel;2009;passivo;114;45;47;19;3;0;0;0
-Milano 10 Excel;2010;attivo;78;36;32;6;4;0;0;0
-Milano 10 Excel;2010;passivo;78;28;37;12;0;1;0;0
-Milano 10 Excel;2011;attivo;66;27;30;6;3;0;0;0
-Milano 10 Excel;2011;passivo;91;44;32;11;4;0;0;0
-Milano 10 Excel;2012;attivo;50;24;15;7;3;1;0;0
-Milano 10 Excel;2012;passivo;106;45;37;20;4;0;0;0
-Milano 10 Excel;2013;attivo;66;23;33;7;3;0;0;0
-Milano 10 Excel;2013;passivo;91;33;39;18;1;0;0;0
-Milano 10 Excel;2014;attivo;68;23;27;15;3;0;0;0
-Milano 10 Excel;2014;passivo;88;35;39;11;2;1;0;0
-Milano 10 Excel;2015;attivo;36;15;14;6;1;0;0;0
-Milano 10 Excel;2015;passivo;121;39;54;24;4;0;0;0
-Milano 10 Excel;2016;attivo;76;36;25;12;3;0;0;0
-Milano 10 Excel;2016;passivo;81;25;37;17;2;0;0;0
-Milano 10 Excel;2017;attivo;67;26;31;8;2;0;0;0
-Milano 10 Excel;2017;passivo;89;35;38;13;3;0;0;0
-Milano 10 Excel;2018;attivo;93;32;37;22;2;0;0;0
-Milano 10 Excel;2018;passivo;63;20;33;8;2;0;0;0
-Milano 10 Excel;2019;attivo;45;18;18;9;0;0;0;0
-Milano 10 Excel;2019;passivo;112;43;47;18;3;1;0;0
-Milano 10 Excel;2020;attivo;45;14;22;6;2;1;0;0
-Milano 10 Excel;2020;passivo;94;33;38;20;3;0;0;0
-Milano 10 Excel;2021;attivo;72;21;39;10;1;1;0;0
-Milano 10 Excel;2021;passivo;84;25;43;12;4;0;0;0
-Milano 10 Excel;2022;attivo;74;28;32;10;3;1;0;0
-Milano 10 Excel;2022;passivo;83;33;31;18;1;0;0;0
-Milano 10 Excel;2023;attivo;45;14;21;10;0;0;0;0
-Milano 10 Excel;2023;passivo;137;52;53;24;8;0;0;0
-Milano 10 Excel;2024;attivo;79;27;30;17;5;0;0;0
-Milano 10 Excel;2024;passivo;129;49;43;31;5;1;0;0
-Milano 10 Excel;2025;attivo;97;37;41;15;3;1;0;0
-Milano 10 Excel;2025;passivo;111;42;51;14;4;0;0;0
-Milano 10 Excel;2026;attivo;111;36;42;26;6;1;0;0
-Milano 10 Excel;2026;passivo;76;27;35;9;5;0;0;0
-Milano 10 Excel;New mode;attivo;1182;441;499;192;44;6;0;0
-Milano 10 Excel;New mode;passivo;1699;632;714;292;57;4;0;0
-Milano 10 Excel;Overall;attivo;1759;660;724;297;71;7;0;0
-Milano 10 Excel;Overall;passivo;2538;945;1049;445;88;10;1;0
-Milano 10 Excel;Pre 2009-07;attivo;577;219;225;105;27;1;0;0
-Milano 10 Excel;Pre 2009-07;passivo;839;313;335;153;31;6;1;0
+Roma 90;1998;attivo;18;2;12;3;1;0;0;0
+Roma 90;1998;passivo;86;29;31;18;7;1;0;0
+Roma 90;1999;attivo;29;8;14;5;1;1;0;0
+Roma 90;1999;passivo;75;25;32;13;4;1;0;0
+Roma 90;2000;attivo;9;2;6;0;1;0;0;0
+Roma 90;2000;passivo;96;32;39;21;4;0;0;0
+Roma 90;2001;passivo;105;45;41;12;5;2;0;0
+Roma 90;2002;attivo;18;8;6;3;1;0;0;0
+Roma 90;2002;passivo;91;25;42;21;3;0;0;0
+Roma 90;2003;attivo;27;11;14;2;0;0;0;0
+Roma 90;2003;passivo;78;31;25;20;2;0;0;0
+Roma 90;2004;attivo;9;2;4;3;0;0;0;0
+Roma 90;2004;passivo;95;32;40;20;3;0;0;0
+Roma 90;2005;attivo;18;5;8;3;2;0;0;0
+Roma 90;2005;passivo;115;41;53;17;4;0;0;0
+Roma 90;2006;passivo;156;57;60;34;4;1;0;0
+Roma 90;2007;attivo;21;6;12;3;0;0;0;0
+Roma 90;2007;passivo;135;42;59;27;5;2;0;0
+Roma 90;2008;attivo;18;3;9;5;1;0;0;0
+Roma 90;2008;passivo;139;52;58;23;6;0;0;0
+Roma 90;2009;attivo;9;5;1;3;0;0;0;0
+Roma 90;2009;passivo;148;53;60;25;10;0;0;0
+Roma 90;2010;passivo;156;69;63;18;4;2;0;0
+Roma 90;2011;attivo;9;2;5;1;1;0;0;0
+Roma 90;2011;passivo;148;62;62;21;3;0;0;0
+Roma 90;2012;passivo;156;52;73;27;3;1;0;0
+Roma 90;2013;attivo;18;7;8;2;1;0;0;0
+Roma 90;2013;passivo;139;48;66;19;6;0;0;0
+Roma 90;2014;attivo;9;5;1;3;0;0;0;0
+Roma 90;2014;passivo;147;57;62;18;10;0;0;0
+Roma 90;2015;attivo;9;3;3;3;0;0;0;0
+Roma 90;2015;passivo;148;53;65;27;3;0;0;0
+Roma 90;2016;passivo;157;60;68;25;4;0;0;0
+Roma 90;2017;passivo;156;58;62;30;6;0;0;0
+Roma 90;2018;attivo;18;6;7;5;0;0;0;0
+Roma 90;2018;passivo;138;51;55;29;3;0;0;0
+Roma 90;2019;attivo;10;5;4;1;0;0;0;0
+Roma 90;2019;passivo;147;68;50;22;7;0;0;0
+Roma 90;2020;attivo;27;9;12;3;3;0;0;0
+Roma 90;2020;passivo;112;47;47;16;2;0;0;0
+Roma 90;2021;attivo;27;11;8;4;4;0;0;0
+Roma 90;2021;passivo;129;44;52;27;6;0;0;0
+Roma 90;2022;attivo;18;3;8;6;1;0;0;0
+Roma 90;2022;passivo;139;58;54;24;3;0;0;0
+Roma 90;2023;attivo;45;22;20;3;0;0;0;0
+Roma 90;2023;passivo;137;44;65;20;8;0;0;0
+Roma 90;2024;attivo;16;7;5;4;0;0;0;0
+Roma 90;2024;passivo;192;65;74;39;12;2;0;0
+Roma 90;2025;attivo;18;10;3;5;0;0;0;0
+Roma 90;2025;passivo;190;79;70;33;7;1;0;0
+Roma 90;2026;attivo;18;7;7;2;1;0;1;0
+Roma 90;2026;passivo;169;53;85;27;4;0;0;0
+Roma 90;New mode;attivo;242;97;91;42;11;0;1;0
+Roma 90;New mode;passivo;2639;998;1106;434;95;6;0;0
+Roma 90;Overall;attivo;418;149;177;72;18;1;1;0
+Roma 90;Overall;passivo;3879;1432;1613;673;148;13;0;0
+Roma 90;Pre 2009-07;attivo;176;52;86;30;7;1;0;0
+Roma 90;Pre 2009-07;passivo;1240;434;507;239;53;7;0;0
+Palermo 90;1998;passivo;104;36;41;21;3;2;1;0
+Palermo 90;1999;attivo;20;4;10;5;1;0;0;0
+Palermo 90;1999;passivo;84;35;29;17;3;0;0;0
+Palermo 90;2000;attivo;18;6;8;4;0;0;0;0
+Palermo 90;2000;passivo;87;34;35;17;1;0;0;0
+Palermo 90;2001;attivo;12;5;6;1;0;0;0;0
+Palermo 90;2001;passivo;93;31;45;14;3;0;0;0
+Palermo 90;2002;attivo;18;7;9;2;0;0;0;0
+Palermo 90;2002;passivo;91;27;41;19;4;0;0;0
+Palermo 90;2003;passivo;105;39;48;13;3;2;0;0
+Palermo 90;2004;attivo;18;10;4;1;3;0;0;0
+Palermo 90;2004;passivo;86;28;44;12;2;0;0;0
+Palermo 90;2005;passivo;133;50;56;23;4;0;0;0
+Palermo 90;2006;passivo;156;58;59;28;9;1;1;0
+Palermo 90;2007;attivo;9;3;6;0;0;0;0;0
+Palermo 90;2007;passivo;147;50;67;25;5;0;0;0
+Palermo 90;2008;attivo;14;3;7;4;0;0;0;0
+Palermo 90;2008;passivo;143;47;62;27;6;1;0;0
+Palermo 90;2009;attivo;17;2;9;4;2;0;0;0
+Palermo 90;2009;passivo;140;50;66;22;2;0;0;0
+Palermo 90;2010;passivo;156;72;64;14;6;0;0;0
+Palermo 90;2011;attivo;45;22;17;5;1;0;0;0
+Palermo 90;2011;passivo;112;41;49;16;5;1;0;0
+Palermo 90;2012;attivo;36;19;15;2;0;0;0;0
+Palermo 90;2012;passivo;120;47;48;22;3;0;0;0
+Palermo 90;2013;attivo;18;3;9;4;2;0;0;0
+Palermo 90;2013;passivo;139;49;64;17;8;1;0;0
+Palermo 90;2014;attivo;18;5;10;3;0;0;0;0
+Palermo 90;2014;passivo;138;65;49;16;7;1;0;0
+Palermo 90;2015;attivo;18;10;4;3;1;0;0;0
+Palermo 90;2015;passivo;139;58;54;25;2;0;0;0
+Palermo 90;2016;attivo;22;9;9;3;1;0;0;0
+Palermo 90;2016;passivo;135;58;55;18;3;1;0;0
+Palermo 90;2017;attivo;9;4;3;1;1;0;0;0
+Palermo 90;2017;passivo;147;61;55;27;4;0;0;0
+Palermo 90;2018;attivo;38;17;15;5;1;0;0;0
+Palermo 90;2018;passivo;118;38;56;22;2;0;0;0
+Palermo 90;2019;attivo;18;8;8;2;0;0;0;0
+Palermo 90;2019;passivo;139;57;53;26;2;1;0;0
+Palermo 90;2020;attivo;9;3;5;1;0;0;0;0
+Palermo 90;2020;passivo;130;54;53;18;4;1;0;0
+Palermo 90;2021;attivo;27;9;13;4;0;1;0;0
+Palermo 90;2021;passivo;129;44;63;18;4;0;0;0
+Palermo 90;2022;attivo;9;3;2;3;0;1;0;0
+Palermo 90;2022;passivo;148;56;58;31;2;1;0;0
+Palermo 90;2023;attivo;9;4;4;1;0;0;0;0
+Palermo 90;2023;passivo;173;70;72;25;6;0;0;0
+Palermo 90;2024;attivo;36;13;12;8;3;0;0;0
+Palermo 90;2024;passivo;172;65;74;25;8;0;0;0
+Palermo 90;2025;attivo;36;14;12;10;0;0;0;0
+Palermo 90;2025;passivo;172;55;76;35;4;2;0;0
+Palermo 90;2026;attivo;12;4;5;3;0;0;0;0
+Palermo 90;2026;passivo;175;56;82;30;6;1;0;0
+Palermo 90;New mode;attivo;360;147;143;58;10;2;0;0
+Palermo 90;New mode;passivo;2521;973;1064;397;77;10;0;0
+Palermo 90;Overall;attivo;486;187;202;79;16;2;0;0
+Palermo 90;Overall;passivo;3811;1431;1618;623;121;16;2;0
+Palermo 90;Pre 2009-07;attivo;126;40;59;21;6;0;0;0
+Palermo 90;Pre 2009-07;passivo;1290;458;554;226;44;6;2;0
+Napoli 90;1998;passivo;104;32;44;24;4;0;0;0
+Napoli 90;1999;attivo;18;2;6;7;2;1;0;0
+Napoli 90;1999;passivo;86;28;34;19;4;1;0;0
+Napoli 90;2000;passivo;105;45;40;19;1;0;0;0
+Napoli 90;2001;attivo;11;3;5;3;0;0;0;0
+Napoli 90;2001;passivo;94;26;47;16;4;1;0;0
+Napoli 90;2002;attivo;16;3;10;3;0;0;0;0
+Napoli 90;2002;passivo;93;30;42;18;3;0;0;0
+Napoli 90;2003;attivo;18;6;8;3;1;0;0;0
+Napoli 90;2003;passivo;87;32;37;15;3;0;0;0
+Napoli 90;2004;attivo;9;3;4;2;0;0;0;0
+Napoli 90;2004;passivo;95;29;47;17;2;0;0;0
+Napoli 90;2005;attivo;24;7;9;6;1;1;0;0
+Napoli 90;2005;passivo;109;41;45;18;4;1;0;0
+Napoli 90;2006;attivo;12;4;3;2;2;1;0;0
+Napoli 90;2006;passivo;144;52;56;30;6;0;0;0
+Napoli 90;2007;attivo;26;11;6;6;3;0;0;0
+Napoli 90;2007;passivo;130;43;62;21;4;0;0;0
+Napoli 90;2008;attivo;9;3;4;2;0;0;0;0
+Napoli 90;2008;passivo;148;61;57;29;1;0;0;0
+Napoli 90;2009;attivo;22;7;10;3;2;0;0;0
+Napoli 90;2009;passivo;135;58;54;17;5;1;0;0
+Napoli 90;2010;attivo;27;8;15;3;1;0;0;0
+Napoli 90;2010;passivo;129;42;66;12;9;0;0;0
+Napoli 90;2011;attivo;27;9;15;3;0;0;0;0
+Napoli 90;2011;passivo;130;50;52;22;5;1;0;0
+Napoli 90;2012;passivo;156;64;61;28;3;0;0;0
+Napoli 90;2013;passivo;157;54;74;25;4;0;0;0
+Napoli 90;2014;attivo;18;5;9;3;1;0;0;0
+Napoli 90;2014;passivo;138;59;54;24;1;0;0;0
+Napoli 90;2015;attivo;28;11;13;3;0;1;0;0
+Napoli 90;2015;passivo;129;44;57;24;3;0;1;0
+Napoli 90;2016;attivo;12;3;4;4;1;0;0;0
+Napoli 90;2016;passivo;145;66;45;28;5;1;0;0
+Napoli 90;2017;attivo;9;3;5;1;0;0;0;0
+Napoli 90;2017;passivo;147;53;68;22;3;1;0;0
+Napoli 90;2018;attivo;9;3;4;2;0;0;0;0
+Napoli 90;2018;passivo;147;55;61;28;3;0;0;0
+Napoli 90;2019;attivo;18;9;5;3;1;0;0;0
+Napoli 90;2019;passivo;139;59;57;19;4;0;0;0
+Napoli 90;2020;passivo;139;54;59;20;5;1;0;0
+Napoli 90;2021;attivo;9;4;4;1;0;0;0;0
+Napoli 90;2021;passivo;147;57;59;23;8;0;0;0
+Napoli 90;2022;passivo;157;63;67;21;5;1;0;0
+Napoli 90;2023;attivo;27;10;9;8;0;0;0;0
+Napoli 90;2023;passivo;155;60;64;25;5;1;0;0
+Napoli 90;2024;attivo;36;10;16;9;1;0;0;0
+Napoli 90;2024;passivo;172;58;79;27;7;1;0;0
+Napoli 90;2025;attivo;20;4;9;6;1;0;0;0
+Napoli 90;2025;passivo;188;73;82;25;7;1;0;0
+Napoli 90;2026;attivo;9;1;5;2;0;1;0;0
+Napoli 90;2026;passivo;178;77;62;34;4;1;0;0
+Napoli 90;New mode;attivo;262;83;119;50;8;2;0;0
+Napoli 90;New mode;passivo;2619;1017;1092;417;83;9;1;0
+Napoli 90;Overall;attivo;414;129;178;85;17;5;0;0
+Napoli 90;Overall;passivo;3883;1465;1632;650;122;13;1;0
+Napoli 90;Pre 2009-07;attivo;152;46;59;35;9;3;0;0
+Napoli 90;Pre 2009-07;passivo;1264;448;540;233;39;4;0;0
+Milano 90;1998;attivo;18;5;7;5;1;0;0;0
+Milano 90;1998;passivo;86;25;46;13;1;0;1;0
+Milano 90;1999;attivo;9;4;4;0;0;1;0;0
+Milano 90;1999;passivo;95;27;38;23;6;1;0;0
+Milano 90;2000;attivo;9;5;2;2;0;0;0;0
+Milano 90;2000;passivo;96;46;31;15;2;1;1;0
+Milano 90;2001;attivo;9;4;2;2;1;0;0;0
+Milano 90;2001;passivo;96;37;40;16;3;0;0;0
+Milano 90;2002;attivo;9;5;3;1;0;0;0;0
+Milano 90;2002;passivo;100;43;41;13;3;0;0;0
+Milano 90;2003;attivo;23;9;7;6;1;0;0;0
+Milano 90;2003;passivo;82;32;25;19;6;0;0;0
+Milano 90;2004;attivo;9;5;3;1;0;0;0;0
+Milano 90;2004;passivo;95;42;34;14;5;0;0;0
+Milano 90;2005;attivo;18;6;7;4;1;0;0;0
+Milano 90;2005;passivo;115;42;49;20;3;1;0;0
+Milano 90;2006;attivo;27;12;7;7;1;0;0;0
+Milano 90;2006;passivo;129;44;59;22;4;0;0;0
+Milano 90;2007;attivo;27;9;11;5;2;0;0;0
+Milano 90;2007;passivo;129;56;39;26;7;1;0;0
+Milano 90;2008;attivo;16;5;8;1;2;0;0;0
+Milano 90;2008;passivo;141;54;60;23;3;1;0;0
+Milano 90;2009;attivo;12;4;7;1;0;0;0;0
+Milano 90;2009;passivo;145;54;64;20;6;1;0;0
+Milano 90;2010;attivo;18;6;10;2;0;0;0;0
+Milano 90;2010;passivo;138;55;61;17;5;0;0;0
+Milano 90;2011;attivo;18;8;7;3;0;0;0;0
+Milano 90;2011;passivo;139;49;60;24;6;0;0;0
+Milano 90;2012;attivo;9;2;4;2;1;0;0;0
+Milano 90;2012;passivo;147;56;62;26;3;0;0;0
+Milano 90;2013;attivo;9;3;3;2;1;0;0;0
+Milano 90;2013;passivo;148;59;57;24;7;1;0;0
+Milano 90;2014;attivo;9;2;5;2;0;0;0;0
+Milano 90;2014;passivo;147;57;52;32;6;0;0;0
+Milano 90;2015;attivo;9;5;3;1;0;0;0;0
+Milano 90;2015;passivo;148;62;53;28;4;1;0;0
+Milano 90;2016;attivo;9;5;2;1;1;0;0;0
+Milano 90;2016;passivo;148;62;59;21;6;0;0;0
+Milano 90;2017;attivo;18;7;9;1;1;0;0;0
+Milano 90;2017;passivo;138;49;61;23;4;0;1;0
+Milano 90;2018;attivo;18;5;5;5;2;1;0;0
+Milano 90;2018;passivo;138;55;58;20;5;0;0;0
+Milano 90;2019;attivo;15;7;5;3;0;0;0;0
+Milano 90;2019;passivo;142;59;55;24;4;0;0;0
+Milano 90;2020;attivo;9;5;3;1;0;0;0;0
+Milano 90;2020;passivo;130;48;54;22;6;0;0;0
+Milano 90;2021;attivo;9;2;5;1;1;0;0;0
+Milano 90;2021;passivo;147;54;56;29;8;0;0;0
+Milano 90;2022;attivo;18;6;8;4;0;0;0;0
+Milano 90;2022;passivo;139;54;63;20;1;1;0;0
+Milano 90;2023;attivo;18;6;8;3;0;1;0;0
+Milano 90;2023;passivo;164;66;65;27;6;0;0;0
+Milano 90;2024;attivo;36;6;15;10;3;2;0;0
+Milano 90;2024;passivo;172;64;79;22;7;0;0;0
+Milano 90;2025;attivo;9;4;4;1;0;0;0;0
+Milano 90;2025;passivo;199;73;85;33;6;2;0;0
+Milano 90;2026;attivo;9;3;4;2;0;0;0;0
+Milano 90;2026;passivo;178;66;76;25;9;2;0;0
+Milano 90;New mode;attivo;249;85;105;45;10;4;0;0
+Milano 90;New mode;passivo;2632;1018;1083;427;95;8;1;0
+Milano 90;Overall;attivo;426;155;168;79;19;5;0;0
+Milano 90;Overall;passivo;3871;1490;1582;641;142;13;3;0
+Milano 90;Pre 2009-07;attivo;177;70;63;34;9;1;0;0
+Milano 90;Pre 2009-07;passivo;1239;472;499;214;47;5;2;0
+Firenze 90;1998;attivo;15;1;9;5;0;0;0;0
+Firenze 90;1998;passivo;89;34;37;15;1;2;0;0
+Firenze 90;1999;passivo;104;36;32;29;7;0;0;0
+Firenze 90;2000;passivo;105;34;46;22;3;0;0;0
+Firenze 90;2001;attivo;9;3;3;3;0;0;0;0
+Firenze 90;2001;passivo;96;35;46;14;1;0;0;0
+Firenze 90;2002;passivo;109;30;54;21;4;0;0;0
+Firenze 90;2003;attivo;15;2;10;3;0;0;0;0
+Firenze 90;2003;passivo;90;30;43;13;3;1;0;0
+Firenze 90;2004;attivo;31;13;13;5;0;0;0;0
+Firenze 90;2004;passivo;73;28;28;15;2;0;0;0
+Firenze 90;2005;attivo;10;5;4;1;0;0;0;0
+Firenze 90;2005;passivo;123;41;49;25;8;0;0;0
+Firenze 90;2006;attivo;31;13;11;5;1;1;0;0
+Firenze 90;2006;passivo;125;46;50;20;9;0;0;0
+Firenze 90;2007;attivo;10;2;2;6;0;0;0;0
+Firenze 90;2007;passivo;146;46;69;21;10;0;0;0
+Firenze 90;2008;attivo;18;7;6;3;2;0;0;0
+Firenze 90;2008;passivo;139;58;50;27;4;0;0;0
+Firenze 90;2009;attivo;27;7;16;2;2;0;0;0
+Firenze 90;2009;passivo;130;49;54;24;3;0;0;0
+Firenze 90;2010;attivo;12;5;6;0;1;0;0;0
+Firenze 90;2010;passivo;144;50;61;32;1;0;0;0
+Firenze 90;2011;attivo;36;14;11;9;2;0;0;0
+Firenze 90;2011;passivo;121;38;56;23;3;1;0;0
+Firenze 90;2012;attivo;18;7;6;5;0;0;0;0
+Firenze 90;2012;passivo;138;60;55;16;7;0;0;0
+Firenze 90;2013;attivo;18;8;7;1;1;1;0;0
+Firenze 90;2013;passivo;139;52;55;28;3;1;0;0
+Firenze 90;2014;attivo;18;5;10;2;1;0;0;0
+Firenze 90;2014;passivo;138;56;53;27;2;0;0;0
+Firenze 90;2015;attivo;9;4;1;2;2;0;0;0
+Firenze 90;2015;passivo;148;63;63;20;1;1;0;0
+Firenze 90;2016;attivo;17;10;5;2;0;0;0;0
+Firenze 90;2016;passivo;140;62;57;17;4;0;0;0
+Firenze 90;2017;passivo;156;68;55;27;5;1;0;0
+Firenze 90;2018;attivo;27;14;11;2;0;0;0;0
+Firenze 90;2018;passivo;129;49;48;25;6;1;0;0
+Firenze 90;2019;attivo;18;5;10;3;0;0;0;0
+Firenze 90;2019;passivo;139;48;58;30;3;0;0;0
+Firenze 90;2020;passivo;139;57;58;18;5;0;1;0
+Firenze 90;2021;attivo;16;6;8;1;1;0;0;0
+Firenze 90;2021;passivo;140;42;68;28;2;0;0;0
+Firenze 90;2022;passivo;157;65;58;30;4;0;0;0
+Firenze 90;2023;attivo;10;5;4;1;0;0;0;0
+Firenze 90;2023;passivo;172;66;69;30;7;0;0;0
+Firenze 90;2024;attivo;17;5;8;2;2;0;0;0
+Firenze 90;2024;passivo;191;87;70;28;5;1;0;0
+Firenze 90;2025;passivo;208;80;80;41;6;1;0;0
+Firenze 90;2026;attivo;9;5;3;1;0;0;0;0
+Firenze 90;2026;passivo;178;67;81;21;8;1;0;0
+Firenze 90;New mode;attivo;234;95;96;32;10;1;0;0
+Firenze 90;New mode;passivo;2647;1039;1070;456;73;8;1;0
+Firenze 90;Overall;attivo;391;146;164;64;15;2;0;0
+Firenze 90;Overall;passivo;3906;1477;1603;687;127;11;1;0
+Firenze 90;Pre 2009-07;attivo;157;51;68;32;5;1;0;0
+Firenze 90;Pre 2009-07;passivo;1259;438;533;231;54;3;0;0
+Bari 90;1998;attivo;9;3;3;1;2;0;0;0
+Bari 90;1998;passivo;95;37;30;24;4;0;0;0
+Bari 90;1999;attivo;18;4;5;7;2;0;0;0
+Bari 90;1999;passivo;86;28;41;14;2;1;0;0
+Bari 90;2000;attivo;12;4;7;1;0;0;0;0
+Bari 90;2000;passivo;93;39;35;18;1;0;0;0
+Bari 90;2001;attivo;6;4;2;0;0;0;0;0
+Bari 90;2001;passivo;99;39;34;20;4;2;0;0
+Bari 90;2002;passivo;109;36;48;20;4;1;0;0
+Bari 90;2003;attivo;18;6;7;4;1;0;0;0
+Bari 90;2003;passivo;87;26;44;15;1;1;0;0
+Bari 90;2004;passivo;104;40;45;17;2;0;0;0
+Bari 90;2005;attivo;9;3;1;5;0;0;0;0
+Bari 90;2005;passivo;124;45;50;26;3;0;0;0
+Bari 90;2006;attivo;18;10;2;6;0;0;0;0
+Bari 90;2006;passivo;138;61;49;23;5;0;0;0
+Bari 90;2007;attivo;9;3;4;2;0;0;0;0
+Bari 90;2007;passivo;147;60;55;25;7;0;0;0
+Bari 90;2008;attivo;27;12;10;4;1;0;0;0
+Bari 90;2008;passivo;130;50;51;21;8;0;0;0
+Bari 90;2009;attivo;27;13;11;3;0;0;0;0
+Bari 90;2009;passivo;130;43;60;22;4;1;0;0
+Bari 90;2010;attivo;9;3;5;1;0;0;0;0
+Bari 90;2010;passivo;147;62;53;25;7;0;0;0
+Bari 90;2011;attivo;11;6;2;1;2;0;0;0
+Bari 90;2011;passivo;146;62;61;17;6;0;0;0
+Bari 90;2012;attivo;36;8;22;6;0;0;0;0
+Bari 90;2012;passivo;120;51;48;19;2;0;0;0
+Bari 90;2013;attivo;18;8;8;1;1;0;0;0
+Bari 90;2013;passivo;139;60;51;23;4;1;0;0
+Bari 90;2014;attivo;9;3;5;1;0;0;0;0
+Bari 90;2014;passivo;147;52;71;21;2;1;0;0
+Bari 90;2015;attivo;42;13;23;3;3;0;0;0
+Bari 90;2015;passivo;115;41;43;24;7;0;0;0
+Bari 90;2016;attivo;8;3;3;2;0;0;0;0
+Bari 90;2016;passivo;149;60;61;20;6;2;0;0
+Bari 90;2017;attivo;10;6;3;1;0;0;0;0
+Bari 90;2017;passivo;146;62;59;18;5;2;0;0
+Bari 90;2018;attivo;18;6;5;7;0;0;0;0
+Bari 90;2018;passivo;138;51;59;23;5;0;0;0
+Bari 90;2019;attivo;9;3;4;1;1;0;0;0
+Bari 90;2019;passivo;148;68;59;16;5;0;0;0
+Bari 90;2020;attivo;18;10;5;2;1;0;0;0
+Bari 90;2020;passivo;121;50;52;14;5;0;0;0
+Bari 90;2021;attivo;22;7;10;5;0;0;0;0
+Bari 90;2021;passivo;134;52;50;26;6;0;0;0
+Bari 90;2022;attivo;5;4;0;0;1;0;0;0
+Bari 90;2022;passivo;152;63;57;27;5;0;0;0
+Bari 90;2023;passivo;182;74;78;27;3;0;0;0
+Bari 90;2024;attivo;18;7;10;1;0;0;0;0
+Bari 90;2024;passivo;190;70;66;46;8;0;0;0
+Bari 90;2025;attivo;18;10;5;3;0;0;0;0
+Bari 90;2025;passivo;190;70;82;34;4;0;0;0
+Bari 90;2026;attivo;18;8;8;2;0;0;0;0
+Bari 90;2026;passivo;169;59;79;26;5;0;0;0
+Bari 90;New mode;attivo;287;113;127;38;9;0;0;0
+Bari 90;New mode;passivo;2594;1025;1062;413;87;7;0;0
+Bari 90;Overall;attivo;422;167;170;70;15;0;0;0
+Bari 90;Overall;passivo;3875;1511;1571;651;130;12;0;0
+Bari 90;Pre 2009-07;attivo;135;54;43;32;6;0;0;0
+Bari 90;Pre 2009-07;passivo;1281;486;509;238;43;5;0;0
+Venezia 90;1998;attivo;23;7;10;6;0;0;0;0
+Venezia 90;1998;passivo;81;23;43;12;2;0;1;0
+Venezia 90;1999;attivo;9;1;5;2;1;0;0;0
+Venezia 90;1999;passivo;95;30;37;21;5;2;0;0
+Venezia 90;2000;attivo;9;7;2;0;0;0;0;0
+Venezia 90;2000;passivo;96;44;31;17;2;1;1;0
+Venezia 90;2001;attivo;9;3;6;0;0;0;0;0
+Venezia 90;2001;passivo;96;38;36;18;4;0;0;0
+Venezia 90;2002;attivo;22;7;13;1;1;0;0;0
+Venezia 90;2002;passivo;87;41;31;13;2;0;0;0
+Venezia 90;2003;attivo;14;8;3;3;0;0;0;0
+Venezia 90;2003;passivo;91;33;29;22;7;0;0;0
+Venezia 90;2004;passivo;104;47;37;15;5;0;0;0
+Venezia 90;2005;attivo;13;6;5;1;1;0;0;0
+Venezia 90;2005;passivo;120;42;51;23;3;1;0;0
+Venezia 90;2006;attivo;41;16;14;10;1;0;0;0
+Venezia 90;2006;passivo;115;40;52;19;4;0;0;0
+Venezia 90;2007;attivo;19;5;5;8;1;0;0;0
+Venezia 90;2007;passivo;137;60;45;23;8;1;0;0
+Venezia 90;2008;attivo;8;3;5;0;0;0;0;0
+Venezia 90;2008;passivo;149;56;63;24;5;1;0;0
+Venezia 90;2009;attivo;10;3;4;1;2;0;0;0
+Venezia 90;2009;passivo;147;55;67;20;4;1;0;0
+Venezia 90;2010;attivo;9;6;2;1;0;0;0;0
+Venezia 90;2010;passivo;147;55;69;18;5;0;0;0
+Venezia 90;2011;attivo;9;5;3;1;0;0;0;0
+Venezia 90;2011;passivo;148;52;64;26;6;0;0;0
+Venezia 90;2012;passivo;156;58;66;28;4;0;0;0
+Venezia 90;2013;passivo;157;62;60;26;8;1;0;0
+Venezia 90;2014;attivo;13;1;7;5;0;0;0;0
+Venezia 90;2014;passivo;143;58;50;29;6;0;0;0
+Venezia 90;2015;attivo;9;5;3;1;0;0;0;0
+Venezia 90;2015;passivo;148;62;53;28;4;1;0;0
+Venezia 90;2016;attivo;9;6;3;0;0;0;0;0
+Venezia 90;2016;passivo;148;61;58;22;7;0;0;0
+Venezia 90;2017;passivo;156;56;70;24;5;0;1;0
+Venezia 90;2018;attivo;9;1;4;2;1;1;0;0
+Venezia 90;2018;passivo;147;59;59;23;6;0;0;0
+Venezia 90;2019;attivo;18;10;6;2;0;0;0;0
+Venezia 90;2019;passivo;139;56;54;25;4;0;0;0
+Venezia 90;2020;attivo;27;12;8;5;2;0;0;0
+Venezia 90;2020;passivo;112;41;49;18;4;0;0;0
+Venezia 90;2021;attivo;9;1;4;4;0;0;0;0
+Venezia 90;2021;passivo;147;55;57;26;9;0;0;0
+Venezia 90;2022;attivo;10;3;6;1;0;0;0;0
+Venezia 90;2022;passivo;147;57;65;23;1;1;0;0
+Venezia 90;2023;passivo;182;72;73;30;6;1;0;0
+Venezia 90;2024;attivo;27;7;13;6;1;0;0;0
+Venezia 90;2024;passivo;181;63;81;26;9;2;0;0
+Venezia 90;2025;attivo;49;18;21;9;1;0;0;0
+Venezia 90;2025;passivo;159;59;68;25;5;2;0;0
+Venezia 90;2026;attivo;9;5;4;0;0;0;0;0
+Venezia 90;2026;passivo;178;64;76;27;9;2;0;0
+Venezia 90;New mode;attivo;207;80;84;37;5;1;0;0
+Venezia 90;New mode;passivo;2674;1023;1104;435;100;11;1;0
+Venezia 90;Overall;attivo;384;146;156;69;12;1;0;0
+Venezia 90;Overall;passivo;3913;1499;1594;651;149;17;3;0
+Venezia 90;Pre 2009-07;attivo;177;66;72;32;7;0;0;0
+Venezia 90;Pre 2009-07;passivo;1239;476;490;216;49;6;2;0
+Milano 10 libro;1998;attivo;9;1;3;4;1;0;0;0
+Milano 10 libro;1998;passivo;95;33;33;24;5;0;0;0
+Milano 10 libro;1999;passivo;104;42;40;18;3;1;0;0
+Milano 10 libro;2000;attivo;9;2;4;2;1;0;0;0
+Milano 10 libro;2000;passivo;96;42;31;18;5;0;0;0
+Milano 10 libro;2001;attivo;18;6;11;0;1;0;0;0
+Milano 10 libro;2001;passivo;87;39;30;16;0;2;0;0
+Milano 10 libro;2002;attivo;25;8;13;4;0;0;0;0
+Milano 10 libro;2002;passivo;84;30;29;21;3;1;0;0
+Milano 10 libro;2003;attivo;18;6;8;3;1;0;0;0
+Milano 10 libro;2003;passivo;87;34;31;19;3;0;0;0
+Milano 10 libro;2004;attivo;9;5;2;2;0;0;0;0
+Milano 10 libro;2004;passivo;95;40;36;14;5;0;0;0
+Milano 10 libro;2005;attivo;9;4;4;1;0;0;0;0
+Milano 10 libro;2005;passivo;124;42;53;19;10;0;0;0
+Milano 10 libro;2006;attivo;14;7;5;1;1;0;0;0
+Milano 10 libro;2006;passivo;142;56;60;21;5;0;0;0
+Milano 10 libro;2007;attivo;18;7;8;2;1;0;0;0
+Milano 10 libro;2007;passivo;138;42;66;20;8;2;0;0
+Milano 10 libro;2008;passivo;157;51;64;30;12;0;0;0
+Milano 10 libro;2009;passivo;157;58;70;22;6;1;0;0
+Milano 10 libro;2010;attivo;18;6;10;2;0;0;0;0
+Milano 10 libro;2010;passivo;138;56;61;16;4;1;0;0
+Milano 10 libro;2011;attivo;27;10;12;5;0;0;0;0
+Milano 10 libro;2011;passivo;130;64;47;17;2;0;0;0
+Milano 10 libro;2012;attivo;9;8;1;0;0;0;0;0
+Milano 10 libro;2012;passivo;147;57;58;23;8;1;0;0
+Milano 10 libro;2013;passivo;157;59;70;24;4;0;0;0
+Milano 10 libro;2014;attivo;18;7;7;3;1;0;0;0
+Milano 10 libro;2014;passivo;138;53;59;21;5;0;0;0
+Milano 10 libro;2015;attivo;9;5;2;2;0;0;0;0
+Milano 10 libro;2015;passivo;148;49;66;28;5;0;0;0
+Milano 10 libro;2016;attivo;27;10;11;4;2;0;0;0
+Milano 10 libro;2016;passivo;130;50;50;25;5;0;0;0
+Milano 10 libro;2017;attivo;25;12;9;3;1;0;0;0
+Milano 10 libro;2017;passivo;131;52;57;19;3;0;0;0
+Milano 10 libro;2018;attivo;18;7;4;6;1;0;0;0
+Milano 10 libro;2018;passivo;138;46;60;28;4;0;0;0
+Milano 10 libro;2019;attivo;15;5;6;4;0;0;0;0
+Milano 10 libro;2019;passivo;142;62;56;20;4;0;0;0
+Milano 10 libro;2020;attivo;27;8;12;4;3;0;0;0
+Milano 10 libro;2020;passivo;112;42;44;22;4;0;0;0
+Milano 10 libro;2021;attivo;18;2;14;2;0;0;0;0
+Milano 10 libro;2021;passivo;138;44;66;24;4;0;0;0
+Milano 10 libro;2022;passivo;157;62;61;30;3;1;0;0
+Milano 10 libro;2023;attivo;9;2;5;2;0;0;0;0
+Milano 10 libro;2023;passivo;173;62;69;32;10;0;0;0
+Milano 10 libro;2024;attivo;18;3;9;5;1;0;0;0
+Milano 10 libro;2024;passivo;190;70;68;43;9;0;0;0
+Milano 10 libro;2025;attivo;36;15;14;6;1;0;0;0
+Milano 10 libro;2025;passivo;172;68;71;25;7;1;0;0
+Milano 10 libro;2026;attivo;27;12;8;7;0;0;0;0
+Milano 10 libro;2026;passivo;160;51;68;29;10;2;0;0
+Milano 10 libro;New mode;attivo;301;112;124;55;10;0;0;0
+Milano 10 libro;New mode;passivo;2580;976;1069;436;93;6;0;0
+Milano 10 libro;Overall;attivo;430;158;182;74;16;0;0;0
+Milano 10 libro;Overall;passivo;3867;1456;1574;668;156;13;0;0
+Milano 10 libro;Pre 2009-07;attivo;129;46;58;19;6;0;0;0
+Milano 10 libro;Pre 2009-07;passivo;1287;480;505;232;63;7;0;0
+Milano 10 Excel;1998;attivo;9;2;3;3;1;0;0;0
+Milano 10 Excel;1998;passivo;95;36;31;25;3;0;0;0
+Milano 10 Excel;1999;passivo;104;44;39;15;6;0;0;0
+Milano 10 Excel;2000;attivo;9;1;4;3;1;0;0;0
+Milano 10 Excel;2000;passivo;96;41;35;16;4;0;0;0
+Milano 10 Excel;2001;attivo;18;8;8;1;1;0;0;0
+Milano 10 Excel;2001;passivo;87;38;32;14;1;2;0;0
+Milano 10 Excel;2002;attivo;25;6;16;3;0;0;0;0
+Milano 10 Excel;2002;passivo;84;30;30;19;4;1;0;0
+Milano 10 Excel;2003;attivo;18;6;7;4;1;0;0;0
+Milano 10 Excel;2003;passivo;87;35;32;17;3;0;0;0
+Milano 10 Excel;2004;attivo;9;5;2;2;0;0;0;0
+Milano 10 Excel;2004;passivo;95;42;33;15;5;0;0;0
+Milano 10 Excel;2005;attivo;9;4;3;2;0;0;0;0
+Milano 10 Excel;2005;passivo;124;44;48;25;7;0;0;0
+Milano 10 Excel;2006;attivo;14;7;5;1;1;0;0;0
+Milano 10 Excel;2006;passivo;142;54;64;19;4;1;0;0
+Milano 10 Excel;2007;attivo;18;7;8;3;0;0;0;0
+Milano 10 Excel;2007;passivo;138;40;64;26;6;1;1;0
+Milano 10 Excel;2008;passivo;157;52;63;34;7;1;0;0
+Milano 10 Excel;2009;passivo;157;58;70;23;5;1;0;0
+Milano 10 Excel;2010;attivo;18;7;7;4;0;0;0;0
+Milano 10 Excel;2010;passivo;138;57;62;14;4;1;0;0
+Milano 10 Excel;2011;attivo;27;13;10;4;0;0;0;0
+Milano 10 Excel;2011;passivo;130;58;52;13;7;0;0;0
+Milano 10 Excel;2012;attivo;9;8;1;0;0;0;0;0
+Milano 10 Excel;2012;passivo;147;61;51;27;7;1;0;0
+Milano 10 Excel;2013;passivo;157;56;72;25;4;0;0;0
+Milano 10 Excel;2014;attivo;18;7;6;4;1;0;0;0
+Milano 10 Excel;2014;passivo;138;51;60;22;4;1;0;0
+Milano 10 Excel;2015;attivo;9;6;1;2;0;0;0;0
+Milano 10 Excel;2015;passivo;148;48;67;28;5;0;0;0
+Milano 10 Excel;2016;attivo;27;10;11;5;1;0;0;0
+Milano 10 Excel;2016;passivo;130;51;51;24;4;0;0;0
+Milano 10 Excel;2017;attivo;25;12;10;2;1;0;0;0
+Milano 10 Excel;2017;passivo;131;49;59;19;4;0;0;0
+Milano 10 Excel;2018;attivo;18;7;6;4;1;0;0;0
+Milano 10 Excel;2018;passivo;138;45;64;26;3;0;0;0
+Milano 10 Excel;2019;attivo;15;5;6;4;0;0;0;0
+Milano 10 Excel;2019;passivo;142;56;59;23;3;1;0;0
+Milano 10 Excel;2020;attivo;27;6;14;5;1;1;0;0
+Milano 10 Excel;2020;passivo;112;41;46;21;4;0;0;0
+Milano 10 Excel;2021;attivo;18;2;13;3;0;0;0;0
+Milano 10 Excel;2021;passivo;138;44;69;19;5;1;0;0
+Milano 10 Excel;2022;passivo;157;61;63;28;4;1;0;0
+Milano 10 Excel;2023;attivo;9;3;4;2;0;0;0;0
+Milano 10 Excel;2023;passivo;173;63;70;32;8;0;0;0
+Milano 10 Excel;2024;attivo;18;3;9;5;1;0;0;0
+Milano 10 Excel;2024;passivo;190;73;64;43;9;1;0;0
+Milano 10 Excel;2025;attivo;36;15;14;5;2;0;0;0
+Milano 10 Excel;2025;passivo;172;64;78;24;5;1;0;0
+Milano 10 Excel;2026;attivo;27;12;9;6;0;0;0;0
+Milano 10 Excel;2026;passivo;160;51;68;29;11;1;0;0
+Milano 10 Excel;New mode;attivo;301;116;121;55;8;1;0;0
+Milano 10 Excel;New mode;passivo;2580;957;1092;429;93;9;0;0
+Milano 10 Excel;Overall;attivo;430;162;177;77;13;1;0;0
+Milano 10 Excel;Overall;passivo;3867;1443;1596;665;146;16;1;0
+Milano 10 Excel;Pre 2009-07;attivo;129;46;56;22;5;0;0;0
+Milano 10 Excel;Pre 2009-07;passivo;1287;486;504;236;53;7;1;0
