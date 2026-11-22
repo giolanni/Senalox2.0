@@ -205,14 +205,14 @@ class WheelPage(ttk.Frame):
         if self.lotto != self.se:
             aggiornamento += f'   ·   Situazione al {min(self.lotto,self.se):%d/%m/%Y}'
         self.info.configure(text=aggiornamento)
-        nomi_attivi = sorted({self.nome_segnale(n) for n in self.attivi})
+        nomi_attivi = sorted({self.nome_segnale(n) for n, r in self.attivi.items() if not r['Sempre_attivo']})
         self.tabs.tab(0,text=f'  Prossimo concorso ({len(nomi_attivi)} attivi)  ')
         precedente = self.elenco.selection()
         self.elenco.delete(*self.elenco.get_children())
         for i, nome in enumerate(nomi_attivi):
             r = self.attivi[self.variante(nome)]
-            self.elenco.insert('', 'end', iid=nome, values=(nome, 'Sempre attivo' if r['Sempre_attivo'] else '9 concorsi', r['Attivazione'].strftime('%d/%m/%Y'),
-                              '—' if r['Sempre_attivo'] else r['Osservati'], '—' if r['Sempre_attivo'] else 9-r['Osservati']), tags=('chiaro',) if i%2==0 else ())
+            self.elenco.insert('', 'end', iid=nome, values=(nome, '9 concorsi', r['Attivazione'].strftime('%d/%m/%Y'),
+                              r['Osservati'], 9-r['Osservati']), tags=('chiaro',) if i%2==0 else ())
         if nomi_attivi:
             self.elenco.selection_set(precedente[0] if precedente and precedente[0] in nomi_attivi else nomi_attivi[0])
         self.scegli_attivo()
@@ -270,15 +270,10 @@ class WheelPage(ttk.Frame):
     def scegli_attivo(self, event=None):
         scelta = self.elenco.selection()
         if not scelta:
-            self.prova.configure(text='Nessun metodo attivo alla data degli archivi.')
+            self.prova.configure(text='Nessun trigger 90/10 con colpi residui alla data degli archivi.')
             self.apri.state(['disabled'])
             return
         r = self.attivi[self.variante(scelta[0])]
-        if r['Sempre_attivo']:
-            self.prova.configure(text=f"{scelta[0]} · Sempre attivo. Tredicina calcolata sul primo estratto "
-                                     f"{r['Primo_estratto_Lotto']} del {r['Attivazione']:%d/%m/%Y}.")
-            self.apri.state(['!disabled'])
-            return
         pos = r['Posizione_spia']
         motivo = f"Spia in posizione {pos}." if pos else f"Primo estratto {r['Primo_estratto_Lotto']}."
         self.prova.configure(text=f"{scelta[0]} · Cinque estratti Lotto: {r['Estratti_Lotto']}. {motivo} "
@@ -364,7 +359,7 @@ class WheelPage(ttk.Frame):
         _, ruota, condizione, valori = next(regola for regola in REGOLE if regola[0]==nome)
         r = self.righe.get(nome, {})
         if isinstance(condizione,int):
-            regola = f'{nome}: {condizione} primo estratto su {ruota}.'
+            regola = f'{nome}: {condizione} tra i cinque estratti su {ruota}.'
         else:
             regola = (f'{nome}: {condizione} estrazione del mese su {ruota}. Al primo estratto si sommano '
                       + ', '.join(map(str,valori))+' (oltre 90 si sottrae 90).')

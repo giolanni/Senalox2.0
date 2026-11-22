@@ -1,14 +1,14 @@
 # Trigger su ruota
 
-Dal pannello operativo scegliere **Trigger su ruota**. La scheda **Prossimo concorso** mostra i trigger con colpi disponibili e le tre tredicine mensili sempre attive alla data comune dei due archivi. Selezionare un metodo, impostare la quantità e premere **Genera sestine**. Per le tredicine ogni combinazione contiene sei numeri del metodo. Le combinazioni sono distinte all’interno di ciascuna generazione. Il cambio di metodo conserva l’ultimo gruppo generato durante la sessione.
+Dal pannello operativo scegliere **Trigger su ruota**. La scheda **Prossimo concorso** mostra solo i trigger 90/10 con colpi disponibili alla data comune dei due archivi. Le tredicine mensili sempre attive sono disponibili in **Genera sestine** e nelle schede dei risultati. Selezionare un metodo, impostare la quantità e premere **Genera sestine**. Per le tredicine ogni combinazione contiene sei numeri del metodo. Le combinazioni sono distinte all’interno di ciascuna generazione. Il cambio di metodo conserva l’ultimo gruppo generato durante la sessione.
 
-La scheda **Ultime estrazioni** confronta le tredicine valide con la sestina principale per ciascuno degli ultimi 30 concorsi coperti da entrambi gli archivi. Riporta anche i metodi con zero punti e ordina per numeri centrati.
+La scheda **Ultime estrazioni** confronta le tredicine valide con la sestina principale per ciascuno degli ultimi N concorsi coperti da entrambi gli archivi. Riporta anche i metodi con zero punti e ordina per numeri centrati.
 
 La scheda **Risultati per metodo** permette di scegliere tutto lo storico, il periodo dal luglio 2009 o un singolo anno. **Aggiorna dati** rilegge gli archivi e ricalcola le tabelle. Il calcolo scarica lo ZIP completo di Lotto Italia e legge le sestine locali con il caricatore condiviso. Aggiornare le sestine dalla pagina Archivio. Per riutilizzare uno ZIP già scaricato:
 
     python -m analysis.laboratory.trigger_ruote --lotto storico.zip --periodo 2026
 
-Il 90 (o il 10 per Milano 10) come primo estratto sulla ruota Lotto indicata apre una finestra distinta, anche quando due finestre si sovrappongono. I metodi mensili usano il primo estratto e la somma circolare da 1 a 90. Roma prima, Napoli prima e Palermo prima coprono ogni concorso. Il primo Lotto del mese rinnova la tredicina dal concorso SuperEnalotto successivo. Fino ad allora vale quella precedente.
+Il 90 (o il 10 per Milano 10) tra i cinque estratti sulla ruota Lotto indicata apre una finestra distinta, anche quando due finestre si sovrappongono. I metodi mensili usano il primo estratto e la somma circolare da 1 a 90. Roma prima, Napoli prima e Palermo prima coprono ogni concorso. Il primo Lotto del mese rinnova la tredicina dal concorso SuperEnalotto successivo. Fino ad allora vale quella precedente.
 
 Il colpo 1 è il primo concorso SuperEnalotto con data successiva all'estrazione Lotto. I risultati riguardano la copertura della sestina principale. Jolly, SuperStar, importi e combinazioni effettivamente giocate sono esclusi. Il centro richiede almeno 3 numeri della tredicina.
 
@@ -28,15 +28,15 @@ New mode inizia il 1° luglio 2009. Milano 10 ha due versioni, con 71 nella font
 
 | Metodo | Attivazione sulla ruota del Lotto | Numeri fissi o addendi |
 |---|---|---|
-| Roma 90 | RM · 90 primo estratto | 33, 73, 85, 81, 88, 71, 89, 61, 77, 43, 13, 3, 6 |
-| Palermo 90 | PA · 90 primo estratto | 33, 42, 16, 25, 5, 73, 71, 3, 61, 72, 1, 88, 2 |
-| Napoli 90 | NA · 90 primo estratto | 1, 88, 72, 63, 23, 45, 83, 14, 81, 87, 46, 4, 24 |
-| Milano 90 | MI · 90 primo estratto | 43, 40, 75, 72, 73, 20, 81, 6, 3, 26, 7, 12, 54 |
-| Firenze 90 | FI · 90 primo estratto | 55, 90, 20, 70, 3, 25, 71, 1, 76, 88, 37, 72, 46 |
-| Bari 90 | BA · 90 primo estratto | 23, 13, 88, 34, 36, 61, 89, 1, 18, 77, 7, 81, 48 |
-| Venezia 90 | VE · 90 primo estratto | 43, 40, 75, 72, 73, 20, 81, 6, 3, 26, 7, 12, 54 |
-| Milano 10 libro | MI · 10 primo estratto | 33, 85, 47, 3, 73, 40, 23, 81, 28, 68, 61, 87, 71 |
-| Milano 10 Excel | MI · 10 primo estratto | 33, 85, 47, 3, 73, 40, 23, 81, 28, 68, 61, 87, 21 |
+| Roma 90 | RM · 90 tra i cinque estratti | 33, 73, 85, 81, 88, 71, 89, 61, 77, 43, 13, 3, 6 |
+| Palermo 90 | PA · 90 tra i cinque estratti | 33, 42, 16, 25, 5, 73, 71, 3, 61, 72, 1, 88, 2 |
+| Napoli 90 | NA · 90 tra i cinque estratti | 1, 88, 72, 63, 23, 45, 83, 14, 81, 87, 46, 4, 24 |
+| Milano 90 | MI · 90 tra i cinque estratti | 43, 40, 75, 72, 73, 20, 81, 6, 3, 26, 7, 12, 54 |
+| Firenze 90 | FI · 90 tra i cinque estratti | 55, 90, 20, 70, 3, 25, 71, 1, 76, 88, 37, 72, 46 |
+| Bari 90 | BA · 90 tra i cinque estratti | 23, 13, 88, 34, 36, 61, 89, 1, 18, 77, 7, 81, 48 |
+| Venezia 90 | VE · 90 tra i cinque estratti | 43, 40, 75, 72, 73, 20, 81, 6, 3, 26, 7, 12, 54 |
+| Milano 10 libro | MI · 10 tra i cinque estratti | 33, 85, 47, 3, 73, 40, 23, 81, 28, 68, 61, 87, 71 |
+| Milano 10 Excel | MI · 10 tra i cinque estratti | 33, 85, 47, 3, 73, 40, 23, 81, 28, 68, 61, 87, 21 |
 | Roma prima | RM · Prima estrazione del mese, primo estratto + addendi | 74, 83, 17, 38, 7, 70, 23, 27, 42, 55, 52, 75, 16 |
 | Palermo prima | PA · Prima estrazione del mese, primo estratto + addendi | 27, 35, 24, 4, 49, 20, 42, 43, 6, 65, 30, 50, 23 |
 | Napoli prima | NA · Prima estrazione del mese, primo estratto + addendi | 41, 85, 26, 35, 50, 39, 44, 55, 13, 19, 52, 78, 38 |

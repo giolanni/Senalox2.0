@@ -87,7 +87,7 @@ def analizza(ruote, estrazioni):
                 sovrapposti = 0
                 finestra = giorni[inizio:fine_periodo]
             else:
-                if not giorni[0] <= giorno <= fine or condizione != numeri[0]:
+                if not giorni[0] <= giorno <= fine or condizione not in numeri:
                     continue
                 pool = set(valori)
                 sovrapposti = max(0, fine_precedente - inizio)
