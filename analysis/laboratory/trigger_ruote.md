@@ -2,7 +2,7 @@
 
 Dal pannello operativo scegliere **Trigger su ruota**. La scheda **Prossimo concorso** mostra solo i trigger 90/10 con colpi disponibili alla data comune dei due archivi. Le tredicine mensili sempre attive sono disponibili in **Genera sestine** e nelle schede dei risultati. Selezionare un metodo, impostare la quantità e premere **Genera sestine**. Per le tredicine ogni combinazione contiene sei numeri del metodo. Le combinazioni sono distinte all’interno di ciascuna generazione. Il cambio di metodo conserva l’ultimo gruppo generato durante la sessione.
 
-La scheda **Ultime estrazioni** confronta le tredicine valide con la sestina principale per ciascuno degli ultimi N concorsi coperti da entrambi gli archivi. Riporta anche i metodi con zero punti e ordina per numeri centrati.
+La scheda **Ultime estrazioni** confronta le tredicine valide con la sestina principale per ciascuno degli ultimi N concorsi coperti da entrambi gli archivi. Mostra i metodi con almeno 2 punti, ordinati per numeri centrati in ciascuna data.
 
 La scheda **Risultati per metodo** permette di scegliere tutto lo storico, il periodo dal luglio 2009 o un singolo anno. **Aggiorna dati** rilegge gli archivi e ricalcola le tabelle. Il calcolo scarica lo ZIP completo di Lotto Italia e legge le sestine locali con il caricatore condiviso. Aggiornare le sestine dalla pagina Archivio. Per riutilizzare uno ZIP già scaricato:
 

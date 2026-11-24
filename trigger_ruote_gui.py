@@ -247,16 +247,20 @@ class WheelPage(ttk.Frame):
         if not date:
             self.sei_estratti.configure(text='Nessuna estrazione disponibile.')
             return
-        self.sei_estratti.configure(text=f'Estrazioni visualizzate: {len(date)}   ·   '
-                                    f'Dal {date[-1]:%d/%m/%Y} al {date[0]:%d/%m/%Y}')
+        mostrati = 0
         for giorno in date:
             sestina, righe = self.risultati[giorno]
             concorso = (giorno.strftime('%d/%m/%Y'), numeri(sestina))
-            if not righe:
-                self.esiti_recenti.insert('', 'end', values=(*concorso, 'Nessun trigger attivo', '—', '—', '—'))
-            for riga in sorted(righe, key=lambda r: (-r[1], r[0])):
+            validi = [r for r in righe if r[1] >= 2]
+            mostrati += len(validi)
+            for riga in sorted(validi, key=lambda r: (-r[1], r[0])):
                 self.esiti_recenti.insert('', 'end', values=(*concorso, *riga),
                                           tags=('centro',) if riga[1] >= 3 else ())
+
+        esito = f'{mostrati} risultati da 2 punti in su' if mostrati else 'Nessun metodo con almeno 2 punti'
+        self.sei_estratti.configure(text=f'{date[0]:%d/%m/%Y}' + (
+            f' · Ultime {len(date)} estrazioni dal {date[-1]:%d/%m/%Y}' if len(date) > 1 else ''
+        ) + f' · {esito}')
 
     @staticmethod
     def nome_segnale(nome):
