@@ -56,11 +56,11 @@ Roma 90;2024;passivo;126;34;56;25;9;2;0;0
 Roma 90;2025;attivo;62;24;24;13;1;0;0;0
 Roma 90;2025;passivo;146;65;49;25;6;1;0;0
 Roma 90;2026;attivo;68;26;31;8;2;0;1;0
-Roma 90;2026;passivo;119;34;61;21;3;0;0;0
+Roma 90;2026;passivo;120;35;61;21;3;0;0;0
 Roma 90;New mode;attivo;1074;419;434;184;35;1;1;0
-Roma 90;New mode;passivo;1807;676;763;292;71;5;0;0
+Roma 90;New mode;passivo;1808;677;763;292;71;5;0;0
 Roma 90;Overall;attivo;1671;629;672;300;63;6;1;0
-Roma 90;Overall;passivo;2626;952;1118;445;103;8;0;0
+Roma 90;Overall;passivo;2627;953;1118;445;103;8;0;0
 Roma 90;Pre 2009-07;attivo;597;210;238;116;28;5;0;0
 Roma 90;Pre 2009-07;passivo;819;276;355;153;32;3;0;0
 Palermo 90;1998;attivo;22;4;8;7;0;2;1;0
@@ -120,11 +120,11 @@ Palermo 90;2024;passivo;97;35;42;16;4;0;0;0
 Palermo 90;2025;attivo;108;41;40;25;1;1;0;0
 Palermo 90;2025;passivo;100;28;48;20;3;1;0;0
 Palermo 90;2026;attivo;73;21;37;12;2;1;0;0
-Palermo 90;2026;passivo;114;39;50;21;4;0;0;0
+Palermo 90;2026;passivo;115;39;51;21;4;0;0;0
 Palermo 90;New mode;attivo;1342;529;563;203;40;7;0;0
-Palermo 90;New mode;passivo;1539;591;644;252;47;5;0;0
+Palermo 90;New mode;passivo;1540;591;645;252;47;5;0;0
 Palermo 90;Overall;attivo;1867;704;802;291;57;11;2;0
-Palermo 90;Overall;passivo;2430;914;1018;411;80;7;0;0
+Palermo 90;Overall;passivo;2431;914;1019;411;80;7;0;0
 Palermo 90;Pre 2009-07;attivo;525;175;239;88;17;4;2;0
 Palermo 90;Pre 2009-07;passivo;891;323;374;159;33;2;0;0
 Napoli 90;1998;attivo;48;9;20;16;3;0;0;0
@@ -183,11 +183,11 @@ Napoli 90;2024;attivo;109;32;50;21;5;1;0;0
 Napoli 90;2024;passivo;99;36;45;15;3;0;0;0
 Napoli 90;2025;attivo;97;31;42;19;5;0;0;0
 Napoli 90;2025;passivo;111;46;49;12;3;1;0;0
-Napoli 90;2026;attivo;90;33;37;19;0;1;0;0
+Napoli 90;2026;attivo;91;33;38;19;0;1;0;0
 Napoli 90;2026;passivo;97;45;30;17;4;1;0;0
-Napoli 90;New mode;attivo;1248;453;543;201;44;7;0;0
+Napoli 90;New mode;attivo;1249;453;544;201;44;7;0;0
 Napoli 90;New mode;passivo;1633;647;668;266;47;4;1;0
-Napoli 90;Overall;attivo;1802;643;768;314;65;12;0;0
+Napoli 90;Overall;attivo;1803;643;769;314;65;12;0;0
 Napoli 90;Overall;passivo;2495;951;1042;421;74;6;1;0
 Napoli 90;Pre 2009-07;attivo;554;190;225;113;21;5;0;0
 Napoli 90;Pre 2009-07;passivo;862;304;374;155;27;2;0;0
@@ -248,11 +248,11 @@ Milano 90;2024;passivo;123;45;57;16;5;0;0;0
 Milano 90;2025;attivo;66;29;27;8;1;1;0;0
 Milano 90;2025;passivo;142;48;62;26;5;1;0;0
 Milano 90;2026;attivo;61;21;26;9;4;1;0;0
-Milano 90;2026;passivo;126;48;54;18;5;1;0;0
+Milano 90;2026;passivo;127;49;54;18;5;1;0;0
 Milano 90;New mode;attivo;1108;430;454;181;35;8;0;0
-Milano 90;New mode;passivo;1773;673;734;291;70;4;1;0
+Milano 90;New mode;passivo;1774;674;734;291;70;4;1;0
 Milano 90;Overall;attivo;1742;676;699;292;64;11;0;0
-Milano 90;Overall;passivo;2555;969;1051;428;97;7;3;0
+Milano 90;Overall;passivo;2556;970;1051;428;97;7;3;0
 Milano 90;Pre 2009-07;attivo;634;246;245;111;29;3;0;0
 Milano 90;Pre 2009-07;passivo;782;296;317;137;27;3;2;0
 Firenze 90;1998;attivo;36;5;18;11;0;2;0;0
@@ -312,11 +312,11 @@ Firenze 90;2024;passivo;134;60;50;18;5;1;0;0
 Firenze 90;2025;attivo;82;28;32;17;4;1;0;0
 Firenze 90;2025;passivo;126;52;48;24;2;0;0;0
 Firenze 90;2026;attivo;57;19;31;6;1;0;0;0
-Firenze 90;2026;passivo;130;53;53;16;7;1;0;0
+Firenze 90;2026;passivo;131;53;54;16;7;1;0;0
 Firenze 90;New mode;attivo;1203;487;476;202;34;4;0;0
-Firenze 90;New mode;passivo;1678;647;690;286;49;5;1;0
+Firenze 90;New mode;passivo;1679;647;691;286;49;5;1;0
 Firenze 90;Overall;attivo;1758;673;704;312;62;7;0;0
-Firenze 90;Overall;passivo;2539;950;1063;439;80;6;1;0
+Firenze 90;Overall;passivo;2540;950;1064;439;80;6;1;0
 Firenze 90;Pre 2009-07;attivo;555;186;228;110;28;3;0;0
 Firenze 90;Pre 2009-07;passivo;861;303;373;153;31;1;0;0
 Bari 90;1998;attivo;28;10;8;8;2;0;0;0
@@ -376,11 +376,11 @@ Bari 90;2024;passivo;130;49;45;31;5;0;0;0
 Bari 90;2025;attivo;52;22;20;9;1;0;0;0
 Bari 90;2025;passivo;156;58;67;28;3;0;0;0
 Bari 90;2026;attivo;77;30;34;11;2;0;0;0
-Bari 90;2026;passivo;110;37;53;17;3;0;0;0
+Bari 90;2026;passivo;111;38;53;17;3;0;0;0
 Bari 90;New mode;attivo;1148;449;484;177;37;1;0;0
-Bari 90;New mode;passivo;1733;689;705;274;59;6;0;0
+Bari 90;New mode;passivo;1734;690;705;274;59;6;0;0
 Bari 90;Overall;attivo;1722;661;700;298;60;3;0;0
-Bari 90;Overall;passivo;2575;1017;1041;423;85;9;0;0
+Bari 90;Overall;passivo;2576;1018;1041;423;85;9;0;0
 Bari 90;Pre 2009-07;attivo;574;212;216;121;23;2;0;0
 Bari 90;Pre 2009-07;passivo;842;328;336;149;26;3;0;0
 Venezia 90;1998;attivo;33;10;16;7;0;0;0;0
@@ -440,11 +440,11 @@ Venezia 90;2024;passivo;136;48;60;18;8;2;0;0
 Venezia 90;2025;attivo;86;32;37;14;3;0;0;0
 Venezia 90;2025;passivo;122;45;52;20;3;2;0;0
 Venezia 90;2026;attivo;54;22;27;4;1;0;0;0
-Venezia 90;2026;passivo;133;47;53;23;8;2;0;0
+Venezia 90;2026;passivo;134;48;53;23;8;2;0;0
 Venezia 90;New mode;attivo;1125;420;466;198;39;2;0;0
-Venezia 90;New mode;passivo;1756;683;722;274;66;10;1;0
+Venezia 90;New mode;passivo;1757;684;722;274;66;10;1;0
 Venezia 90;Overall;attivo;1674;632;678;305;57;2;0;0
-Venezia 90;Overall;passivo;2623;1013;1072;415;104;16;3;0
+Venezia 90;Overall;passivo;2624;1014;1072;415;104;16;3;0
 Venezia 90;Pre 2009-07;attivo;549;212;212;107;18;0;0;0
 Venezia 90;Pre 2009-07;passivo;867;330;350;141;38;6;2;0
 Milano 10 libro;1998;attivo;62;17;21;19;5;0;0;0
@@ -503,11 +503,11 @@ Milano 10 libro;2024;attivo;79;27;30;17;5;0;0;0
 Milano 10 libro;2024;passivo;129;46;47;31;5;0;0;0
 Milano 10 libro;2025;attivo;97;37;38;17;4;1;0;0
 Milano 10 libro;2025;passivo;111;46;47;14;4;0;0;0
-Milano 10 libro;2026;attivo;111;36;41;27;5;2;0;0
+Milano 10 libro;2026;attivo;112;36;42;27;5;2;0;0
 Milano 10 libro;2026;passivo;76;27;35;9;5;0;0;0
-Milano 10 libro;New mode;attivo;1182;445;489;199;45;4;0;0
+Milano 10 libro;New mode;attivo;1183;445;490;199;45;4;0;0
 Milano 10 libro;New mode;passivo;1699;643;704;292;58;2;0;0
-Milano 10 libro;Overall;attivo;1759;662;711;305;75;6;0;0
+Milano 10 libro;Overall;attivo;1760;662;712;305;75;6;0;0
 Milano 10 libro;Overall;passivo;2538;952;1045;437;97;7;0;0
 Milano 10 libro;Pre 2009-07;attivo;577;217;222;106;30;2;0;0
 Milano 10 libro;Pre 2009-07;passivo;839;309;341;145;39;5;0;0
@@ -567,11 +567,11 @@ Milano 10 Excel;2024;attivo;79;27;30;17;5;0;0;0
 Milano 10 Excel;2024;passivo;129;49;43;31;5;1;0;0
 Milano 10 Excel;2025;attivo;97;37;41;15;3;1;0;0
 Milano 10 Excel;2025;passivo;111;42;51;14;4;0;0;0
-Milano 10 Excel;2026;attivo;111;36;42;26;6;1;0;0
+Milano 10 Excel;2026;attivo;112;36;43;26;6;1;0;0
 Milano 10 Excel;2026;passivo;76;27;35;9;5;0;0;0
-Milano 10 Excel;New mode;attivo;1182;441;499;192;44;6;0;0
+Milano 10 Excel;New mode;attivo;1183;441;500;192;44;6;0;0
 Milano 10 Excel;New mode;passivo;1699;632;714;292;57;4;0;0
-Milano 10 Excel;Overall;attivo;1759;660;724;297;71;7;0;0
+Milano 10 Excel;Overall;attivo;1760;660;725;297;71;7;0;0
 Milano 10 Excel;Overall;passivo;2538;945;1049;445;88;10;1;0
 Milano 10 Excel;Pre 2009-07;attivo;577;219;225;105;27;1;0;0
 Milano 10 Excel;Pre 2009-07;passivo;839;313;335;153;31;6;1;0
